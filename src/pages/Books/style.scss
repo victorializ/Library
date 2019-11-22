@@ -1,0 +1,23 @@
+@import '../../assets/variables.scss';
+
+.books {
+    &__wrapper {
+        @include centered-vertical-container;
+    }
+    &__list, &__search {
+        margin: $space-sm;
+    }
+    &__label {
+        height: 50px;
+    }
+    &__filters {
+        padding: $space-lg;
+        width: 100vw;
+        @include centered-vertical-container;
+        background-image: url(./../../assets/images/books.jpg);
+    }
+    &__search {
+        @include centered-horizontal-container;
+        margin: $space-sm;
+    }
+}

@@ -1,0 +1,15 @@
+$space-sm: 30px;
+$space-lg: 70px;
+
+@mixin centered-vertical-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@mixin centered-horizontal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

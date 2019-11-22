@@ -1,0 +1,13 @@
+@import '../../assets/variables.scss';
+
+.authors {
+    &__list {
+        overflow-y: scroll;
+        height: 80vh;
+        width: 10vw;
+        border: 1px solid #ccc;
+        &-item {
+            padding: $space-sm;
+        }
+    }
+}
