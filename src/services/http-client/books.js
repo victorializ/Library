@@ -1,46 +1,6 @@
 import { get } from './index';
 
-import { book } from '../../types';
-
-function getAuthorsStr(arr) {
-    let str = '';
-    if(arr) {
-        arr.forEach(element => {
-            const { author: { firstName, lastName } } = element;
-            str += firstName + ' ' + lastName + ', ';
-        })
-    }
-    return str;
-}
-function getGenresStr(arr) {
-    let str = '';
-    if(arr) {
-        arr.forEach(element => {
-            const { genre: { name } } = element;
-            str += name + ', ';
-        });
-    }
-    return str;
-}
-
-export function formatData(data) {
-    console.log(data);
-    return {
-     [book.Name]: data[book.Name], 
-     [book.BookYear]: data[book.BookYear],
-     [book.NumberAvailable]: data[book.NumberAvailable],
-     [book.BookGenres]: getGenresStr(data[book.BookGenres]), 
-     [book.BookAuthors]: getAuthorsStr(data[book.BookAuthors])
-    }
-}
-
-export function getAllBooks() {
-    /*
-    const url = `/Books`;
-    return get(url);
-    */
-
-   const resalt = [
+const mock = [
     {
         "bookId": 6,
         "name": "1984",
@@ -88,5 +48,11 @@ export function getAllBooks() {
         ]
     }
 ];
-   return new Promise((res, rej) => setTimeout(res(resalt), 200));
+
+export function getAllBooks() {
+    /*
+    const url = `/Books`;
+    return get(url);
+    */
+   return new Promise((res, rej) => setTimeout(res(mock), 200));
 }

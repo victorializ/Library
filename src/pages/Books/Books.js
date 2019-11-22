@@ -2,9 +2,10 @@ import React,  { useState, useEffect }  from 'react';
 
 import { Search, Button } from 'semantic-ui-react'
 
-import { constants  } from '../../i18n';
+import { constants } from '../../i18n';
 import { book, colors, sorting } from '../../types';
-import { getAllBooks, formatData } from '../../services/http-client/books';
+import { formatData } from '../../services/format-data/books';
+import { getAllBooks } from '../../services/http-client/books';
 
 import './style.scss';
 import { BooksList } from '../../components';

@@ -1,14 +1,6 @@
 import { get } from './index';
 
-import { author, authorsDetails } from '../../types';
-import { formatData } from './books';
-
-export function getAllAuthors() {
-    /*
-    const url = `/Authors`;
-    return get(url);
-    */
-   return [
+const mock = [
     {
         "authorId": 1,
         "firstName": "Jane",
@@ -99,15 +91,13 @@ export function getAllAuthors() {
         "lastName": "Dickinson",
         "bookAuthors": []
     }
-].map(value => {
-    const { authorId, firstName, lastName, bookAuthors } = value;
-    console.log(value.bookAuthors, 'book');
-    return {
-        authorId, 
-        firstName,
-        lastName,
-        ...formatData(bookAuthors)
-    }
-})
- 
+];
+
+export function getAllAuthors() {
+    /*
+    const url = `/Authors`;
+    return get(url);
+    */
+   
+    return new Promise((res, rej) => res(mock));
 }

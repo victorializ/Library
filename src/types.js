@@ -17,14 +17,3 @@ export const colors = {
     secondary: 'secondary',
     grey: '#ccc'
 }
-  
-export const authors = {
-    authorId: 'authorId',
-    firstName: 'firstName',
-    lastName: 'lastName'
-}
-
-export const authorsDetails = {
-    authorsBooks: 'bookAuthors',
-    details: 'details'
-}
