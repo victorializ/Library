@@ -1,6 +1,7 @@
 import { get } from './index';
 
-const mock = [
+const mock = {
+    data : [
     {
         "bookId": 6,
         "name": "1984",
@@ -46,8 +47,8 @@ const mock = [
                 }
             }
         ]
-    }
-];
+    }]
+};
 
 export function getAllBooks() {
     /*

@@ -17,7 +17,7 @@ function Books() {
   const [ books, setBooks ] = useState([]);
 
   useEffect(() => {
-    getAllBooks().then(res => setBooks(res.map(data => formatData(data))));
+    getAllBooks().then(res => setBooks(res.data.map(element => formatData(element))));
   }, []);
 
   const getButtonColor = (buttonName, selected) =>  {

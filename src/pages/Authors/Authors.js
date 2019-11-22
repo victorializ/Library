@@ -8,7 +8,7 @@ import './style.scss';
 function Authors() {
   const [ authors, setAuthors ] = useState([]);
   useEffect(() => {
-    getAllAuthors().then(res => setAuthors(res));
+    getAllAuthors().then(res => setAuthors(res.data));
   }, []);
   return (
     <List divided className='authors__list'>
