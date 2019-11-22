@@ -42,13 +42,13 @@ export function getAllBooks() {
 
    const resalt = [
     {
-        "bookId": 1,
-        "name": "Name1",
+        "bookId": 6,
+        "name": "1984",
         "bookYear": 1949,
         "numberAvailable": 10,
         "bookGenres": [
             {
-                "bookId": 1,
+                "bookId": 6,
                 "genreId": 1,
                 "genre": {
                     "genreId": 1,
@@ -56,7 +56,7 @@ export function getAllBooks() {
                 }
             },
             {
-                "bookId": 1,
+                "bookId": 6,
                 "genreId": 2,
                 "genre": {
                     "genreId": 2,
@@ -66,94 +66,27 @@ export function getAllBooks() {
         ],
         "bookAuthors": [
             {
-                "bookId": 1,
+                "bookId": 6,
                 "authorId": 2,
                 "author": {
                     "authorId": 2,
                     "firstName": "Emily",
-                    "lastName": "Dickinson"
+                    "lastName": "Dickinson",
+                    "bookAuthors": []
                 }
             },
             {
-                "bookId": 1,
+                "bookId": 6,
                 "authorId": 8,
                 "author": {
                     "authorId": 8,
                     "firstName": "George",
-                    "lastName": "Orwell"
+                    "lastName": "Orwell",
+                    "bookAuthors": []
                 }
             }
         ]
-    },  {
-        "bookId": 2,
-        "name": "Name2",
-        "bookYear": 2000,
-        "numberAvailable": 1,
-        "bookGenres": [
-            {
-                "bookId": 2,
-                "genreId": 1,
-                "genre": {
-                    "genreId": 1,
-                    "name": "g1"
-                }
-            }
-        ],
-        "bookAuthors": [
-            {
-                "bookId": 2,
-                "authorId": 2,
-                "author": {
-                    "authorId": 2,
-                    "firstName": "A1",
-                    "lastName": "A1"
-                }
-            }
-        ]
-    },  {
-        "bookId": 3,
-        "name": "Book3",
-        "bookYear": 1992,
-        "numberAvailable": 2,
-        "bookGenres": [
-            {
-                "bookId": 3,
-                "genreId": 1,
-                "genre": {
-                    "genreId": 1,
-                    "name": "sf"
-                }
-            },
-            {
-                "bookId": 3,
-                "genreId": 2,
-                "genre": {
-                    "genreId": 2,
-                    "name": "d"
-                }
-            }
-        ],
-        "bookAuthors": [
-            {
-                "bookId": 6,
-                "authorId": 2,
-                "author": {
-                    "authorId": 2,
-                    "firstName": "Emily",
-                    "lastName": "Dickinson"
-                }
-            },
-            {
-                "bookId": 6,
-                "authorId": 8,
-                "author": {
-                    "authorId": 8,
-                    "firstName": "A1",
-                    "lastName": "A1"
-                }
-            }
-        ]
-    }     
-   ].map(res => formatData(res));
+    }
+];
    return new Promise((res, rej) => setTimeout(res(resalt), 200));
 }

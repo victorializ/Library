@@ -4,7 +4,7 @@ import { Search, Button } from 'semantic-ui-react'
 
 import { constants  } from '../../i18n';
 import { book, colors, sorting } from '../../types';
-import { getAllBooks } from '../../services/http-client/books';
+import { getAllBooks, formatData } from '../../services/http-client/books';
 
 import './style.scss';
 import { BooksList } from '../../components';
@@ -16,7 +16,7 @@ function Books() {
   const [ books, setBooks ] = useState([]);
 
   useEffect(() => {
-    getAllBooks().then(res => setBooks(res));
+    getAllBooks().then(res => setBooks(res.map(data => formatData(data))));
   }, []);
 
   const getButtonColor = (buttonName, selected) =>  {
