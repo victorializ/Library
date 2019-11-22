@@ -18,7 +18,7 @@ function getGenresStr(arr) {
         arr.forEach(element => {
             const { genre: { name } } = element;
             str += name + ', ';
-           });
+        });
     }
     return str;
 }
@@ -40,7 +40,7 @@ export function getAllBooks() {
     return get(url);
     */
 
-   const res = [
+   const resalt = [
     {
         "bookId": 1,
         "name": "Name1",
@@ -155,5 +155,5 @@ export function getAllBooks() {
         ]
     }     
    ].map(res => formatData(res));
-   return res;
+   return new Promise((res, rej) => setTimeout(res(resalt), 200));
 }

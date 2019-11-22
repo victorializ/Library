@@ -1,4 +1,4 @@
-import React,  { useState }  from 'react';
+import React,  { useState, useEffect }  from 'react';
 
 import { Search, Button } from 'semantic-ui-react'
 
@@ -13,6 +13,11 @@ function Books() {
   const [ input, setInput ] = useState('');
   const [ sort, setSort ] = useState('');
   const [ filter, setFilter ] = useState(book.Name);
+  const [ books, setBooks ] = useState([]);
+
+  useEffect(() => {
+    getAllBooks().then(res => setBooks(res));
+  }, []);
 
   const getButtonColor = (buttonName, selected) =>  {
     return buttonName === selected ? colors.primary : colors.grey;
@@ -80,7 +85,7 @@ function Books() {
           </Button>
         </Button.Group>
       </div>
-      <BooksList elements={putInOrder(getAllBooks())}></BooksList>
+      <BooksList elements={putInOrder(books)}></BooksList>
     </div>
   );
 }
