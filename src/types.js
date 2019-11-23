@@ -15,5 +15,6 @@ export const sorting = {
 export const colors = {
     primary: 'olive', 
     secondary: 'secondary',
-    grey: '#ccc'
+    grey: '#ccc',
+    red: 'red'
 }

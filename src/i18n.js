@@ -13,7 +13,8 @@ const allConstants = {
         filter: 'Filters',
         sort: 'Sort',
         asc: 'ASC',
-        desc: 'DESC'
+        desc: 'DESC', 
+        nobooks: 'No books available!'
     },
     ru: {
         title: 'Здорова, шо надо?',
@@ -30,6 +31,7 @@ const allConstants = {
         sort: 'Сортировочка подьехала',
         asc: 'Туды',
         desc: 'Сюды',
+        nobooks: 'Сорян дорогой!'
 
     }
 };

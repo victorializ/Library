@@ -103,3 +103,15 @@ export function getAllAuthors() {
    
     return new Promise((res, rej) => res(mock));
 }
+
+export function getAuthor(id) {
+    /*
+    const url = `/Author/${id}`;
+    return get(url);
+    */
+   
+   return new Promise((res, rej) => {
+       const data = mock.data.find(element => element.authorId === id);
+       res({ data });
+   });
+}
