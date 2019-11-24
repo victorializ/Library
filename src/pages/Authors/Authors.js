@@ -1,13 +1,42 @@
 import React, { useState, useEffect } from 'react';
 
-import { List, Segment } from 'semantic-ui-react';
+import { List } from 'semantic-ui-react';
 
-import { BooksList } from '../../components';
+import { BooksList, ErrorMessage } from '../../components';
 import { constants } from '../../i18n';
 import { getAllAuthors, getAuthor } from '../../services/http-client/authors';
 import { formatData } from '../../services/format-data/books';
 
 import './style.scss';
+
+const AuthorsList = (
+  {
+    authors,
+    onAuthorSelect
+  }) => 
+  <List divided className='authors__list'>
+    { authors.map(
+      ({
+        authorId, 
+        firstName, 
+        lastName
+      }) => 
+      <List.Item key={authorId}>
+        <List.Content 
+          className='authors__list-item' 
+          onClick={() => onAuthorSelect(authorId)}>
+          <List.Header as='a'>{firstName}  {lastName}</List.Header>
+        </List.Content>
+      </List.Item>
+      )
+    }
+  </List>
+
+const AuthorsBooks = ({books}) => 
+  books.length ? 
+    <BooksList elements = {books.map(element => formatData(element.book))} />
+    : 
+    <ErrorMessage text = {constants.nobooks} />
 
 function Authors() {
   const [ authors, setAuthors ] = useState([]);
@@ -19,25 +48,10 @@ function Authors() {
 
   return (
     <div className='authors'>
-      <List divided className='authors__list'>
-        { authors.map(element => 
-          <List.Item 
-            key={element.authorId}
-            onClick={() => getAuthor(element.authorId).then(res => setBookAuthors(res.data.bookAuthors))}>
-            <List.Content className='authors__list-item'>
-              <List.Header as='a'>{element.firstName}  {element.lastName}</List.Header>
-            </List.Content>
-          </List.Item>
-          )
-        }
-      </List>
-      {
-        bookAuthors.length ? 
-          <BooksList 
-            elements={bookAuthors.map(element => formatData(element.book))}>
-          </BooksList> : 
-          <Segment color='red' className='authors__error-message'>{constants.nobooks}</Segment>
-      }
+      <AuthorsList 
+        authors={authors} 
+        onAuthorSelect={authorId => getAuthor(authorId).then(res => setBookAuthors(res.data.bookAuthors))} />
+      <AuthorsBooks books={bookAuthors} />
     </div>
   );
 }

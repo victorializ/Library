@@ -8,22 +8,9 @@
         height: 90vh;
         width: 300px;
         border: 1px solid #ccc;
-        //background-image: url(./../../assets/images/books.jpg);
+        background-image: url(./../../assets/images/books.jpg);
         &-item {
             padding: $space-sm;
-            //border: 1px solid black;
-            //color: white;
         }
     }
-    &__error-message {
-        width: 100%;
-        height: 50px;
-        text-align: center;
-        //margin: 20px;
-       // padding: 20px;
-    }
-}
-
-.ui.segment {
-    margin: 0;
 }

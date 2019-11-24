@@ -4,7 +4,7 @@
     &__wrapper {
         @include centered-vertical-container;
     }
-    &__list, &__search {
+    &__search {
         margin: $space-sm;
     }
     &__label {

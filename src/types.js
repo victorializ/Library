@@ -11,10 +11,3 @@ export const sorting = {
     asc: 'asc', 
     desc: 'desc'
 }
-  
-export const colors = {
-    primary: 'olive', 
-    secondary: 'secondary',
-    grey: '#ccc',
-    red: 'red'
-}

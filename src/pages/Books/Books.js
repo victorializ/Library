@@ -3,7 +3,8 @@ import React,  { useState, useEffect }  from 'react';
 import { Search, Button } from 'semantic-ui-react'
 
 import { constants } from '../../i18n';
-import { book, colors, sorting } from '../../types';
+import { book, sorting } from '../../types';
+import { colors } from '../../assets/semantic-colors';
 import { formatData } from '../../services/format-data/books';
 import { getAllBooks } from '../../services/http-client/books';
 

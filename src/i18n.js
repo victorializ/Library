@@ -14,7 +14,8 @@ const allConstants = {
         sort: 'Sort',
         asc: 'ASC',
         desc: 'DESC', 
-        nobooks: 'No books available!'
+        nobooks: 'No books available!', 
+        ok: 'Ok!'
     },
     ru: {
         title: 'Здорова, шо надо?',
@@ -31,8 +32,8 @@ const allConstants = {
         sort: 'Сортировочка подьехала',
         asc: 'Туды',
         desc: 'Сюды',
-        nobooks: 'Сорян дорогой!'
-
+        nobooks: 'Сорян дорогой!',
+        ok: 'Согласен'
     }
 };
 
