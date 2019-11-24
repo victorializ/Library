@@ -3,6 +3,7 @@
 .books {
     &__wrapper {
         @include centered-vertical-container;
+        margin: $space-sm;
     }
     &__search {
         margin: $space-sm;

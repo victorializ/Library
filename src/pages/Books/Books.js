@@ -11,6 +11,47 @@ import { getAllBooks } from '../../services/http-client/books';
 import './style.scss';
 import { BooksList } from '../../components';
 
+const MenuButton = ({name, selectedButton, clickHandler}) => {
+  const getButtonColor = (buttonName, selected) =>  {
+    return buttonName === selected ? colors.primary : colors.grey;
+  }
+  return (
+    <Button 
+      onClick={() => clickHandler(name)}
+      color={getButtonColor(name, selectedButton)}>
+        {constants[name]}
+    </Button>
+  )
+}
+
+const TopLevelMenu = ({filter, onFilterSet, input, onInput, sort, onSortSet}) =>
+  <div className="books__filters">
+    <div className="books__search">
+      <Button.Group>
+        <Button color={colors.secondary}>{constants.filter}</Button>
+        <MenuButton name={book.name} selectedButton={filter} clickHandler={onFilterSet} />
+        <Button.Or />
+        <MenuButton name={book.bookYear} selectedButton={filter} clickHandler={onFilterSet} />
+        <Button.Or />
+        <MenuButton name={book.bookAuthors} selectedButton={filter} clickHandler={onFilterSet} />
+        <Button.Or />
+        <MenuButton name={book.bookGenres} selectedButton={filter} clickHandler={onFilterSet} />
+      </Button.Group>
+      <Search
+        className="books__list"
+        value = {input}
+        onSearchChange ={(e, {value}) => onInput(value)}
+      ></Search>
+    </div>
+    <Button.Group>
+      <Button color={colors.secondary}>{constants.sort}</Button>
+      <MenuButton name={sorting.asc} selectedButton={sort} clickHandler={onSortSet} />
+      <Button.Or />
+      <MenuButton name={sorting.desc} selectedButton={sort} clickHandler={onSortSet} />
+    </Button.Group>
+</div>
+
+
 function Books() {
   const [ input, setInput ] = useState('');
   const [ sort, setSort ] = useState('');
@@ -21,9 +62,6 @@ function Books() {
     getAllBooks().then(res => setBooks(res.data.map(element => formatData(element))));
   }, []);
 
-  const getButtonColor = (buttonName, selected) =>  {
-    return buttonName === selected ? colors.primary : colors.grey;
-  }
 
   const putInOrder = (items) => {
     const fileredItems = input === '' ? 
@@ -38,55 +76,14 @@ function Books() {
 
   return (
     <div className="books__wrapper">
-      <div className="books__filters">
-        <div className="books__search">
-          <Button.Group>
-            <Button color={colors.secondary}>{constants.filter}</Button>
-            <Button 
-              onClick={() => setFilter(book.Name)}
-              color={getButtonColor(book.Name, filter)}>
-                {constants.name}
-            </Button>
-            <Button.Or />
-            <Button 
-              onClick={() => setFilter(book.BookYear)} 
-              color={getButtonColor(book.BookYear, filter)}>
-                {constants.year}
-            </Button>
-            <Button.Or />
-            <Button 
-              onClick={() => setFilter(book.BookAuthors)} 
-              color={getButtonColor(book.BookAuthors, filter)}>
-                {constants.authors}
-            </Button>
-            <Button.Or />
-            <Button 
-              onClick={() => setFilter(book.BookGenres)} 
-              color={getButtonColor(book.BookGenres, filter)}>
-                {constants.genres}
-            </Button>
-          </Button.Group>
-          <Search
-            className="books__list"
-            value = {input}
-            onSearchChange ={(e, {value}) => setInput(value)}
-          ></Search>
-        </div>
-        <Button.Group>
-          <Button color={colors.secondary}>{constants.sort}</Button>
-          <Button 
-            onClick={() => setSort(sorting.asc)} 
-            color={getButtonColor(sorting.asc, sort)}>
-              {constants.asc}
-          </Button>
-          <Button.Or />
-          <Button 
-            onClick={() => setSort(sorting.desc)} 
-            color={getButtonColor(sorting.desc, sort)}>
-              {constants.desc}
-          </Button>
-        </Button.Group>
-      </div>
+      <TopLevelMenu 
+        sort={sort}
+        input={input}
+        filter={filter}
+        onSortSet={sort => setSort(sort)} 
+        onInput={input => setInput(input)}
+        onFilterSet={filter => setFilter(filter)} 
+      />
       <BooksList elements={putInOrder(books)}></BooksList>
     </div>
   );

@@ -18,7 +18,7 @@ function Header() {
             {constants.login}
         </SHeader>
         <SHeader as={Link} to='/author' floated='right'>
-            {constants.authors}
+            {constants.bookAuthors}
         </SHeader>
         <SHeader as={Link} to='/book' floated='right'>
             {constants.books}

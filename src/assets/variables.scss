@@ -1,10 +1,10 @@
 $space-sm: 30px;
 $space-lg: 70px;
 
-@mixin centered-vertical-container {
+@mixin centered-vertical-container($justify: 'center', $align: 'center') {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: $justify;
+    align-items: $align;
     flex-direction: column;
 }
 

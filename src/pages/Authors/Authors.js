@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { List } from 'semantic-ui-react';
+import { List, Segment } from 'semantic-ui-react';
 
 import { BooksList, ErrorMessage } from '../../components';
 import { constants } from '../../i18n';
@@ -9,23 +9,26 @@ import { formatData } from '../../services/format-data/books';
 
 import './style.scss';
 
+const SelectedAuthorName = ({firstName = '', lastName = ''}) =>
+  (firstName || lastName) && 
+  <Segment className='authors__name'>{`${firstName} ${lastName}`}</Segment>
+
 const AuthorsList = (
   {
     authors,
     onAuthorSelect
   }) => 
-  <List divided className='authors__list'>
+  <List inverted divided className='authors__list'>
     { authors.map(
       ({
         authorId, 
         firstName, 
         lastName
       }) => 
-      <List.Item key={authorId}>
+      <List.Item key={authorId} onClick={() => onAuthorSelect(authorId)}>
         <List.Content 
-          className='authors__list-item' 
-          onClick={() => onAuthorSelect(authorId)}>
-          <List.Header as='a'>{firstName}  {lastName}</List.Header>
+          className='authors__list-item'>
+          <List.Header>{`${firstName} ${lastName}`}</List.Header>
         </List.Content>
       </List.Item>
       )
@@ -34,13 +37,13 @@ const AuthorsList = (
 
 const AuthorsBooks = ({books}) => 
   books.length ? 
-    <BooksList elements = {books.map(element => formatData(element.book))} />
+    <BooksList elements = {books.map(({book}) => formatData(book))} />
     : 
     <ErrorMessage text = {constants.nobooks} />
 
 function Authors() {
   const [ authors, setAuthors ] = useState([]);
-  const [ bookAuthors, setBookAuthors ] = useState([]);
+  const [ selectedAuthor, setSelectedAuthor ] = useState({bookAuthors: []});
 
   useEffect(() => {
     getAllAuthors().then(res => setAuthors(res.data));
@@ -50,8 +53,16 @@ function Authors() {
     <div className='authors'>
       <AuthorsList 
         authors={authors} 
-        onAuthorSelect={authorId => getAuthor(authorId).then(res => setBookAuthors(res.data.bookAuthors))} />
-      <AuthorsBooks books={bookAuthors} />
+        onAuthorSelect={
+          authorId => getAuthor(authorId)
+            .then(({ data }) => setSelectedAuthor(data))
+        } 
+      />
+      <div className='authors--selected'>
+        <SelectedAuthorName {...selectedAuthor} />
+        {(selectedAuthor.firstName || selectedAuthor.lastName) && 
+          <AuthorsBooks books={selectedAuthor.bookAuthors} /> }
+      </div>
     </div>
   );
 }

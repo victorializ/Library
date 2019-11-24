@@ -3,13 +3,21 @@
 .authors {
     display: flex;
     align-items: top;
+    &--selected {
+        width: 100%;
+        @include centered-vertical-container('top', 'left');
+    }
+    &__name {
+        width: 100%;
+        text-align: center;
+    }
     &__list {
         overflow-y: scroll;
         height: 90vh;
         width: 300px;
-        border: 1px solid #ccc;
         background-image: url(./../../assets/images/books.jpg);
         &-item {
+            border-bottom: 3px solid #ccc;
             padding: $space-sm;
         }
     }

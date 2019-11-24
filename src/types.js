@@ -1,10 +1,10 @@
 export const book = {
-    BookId: 'bookId',
-    Name: 'name',
-    BookYear: 'bookYear',
-    NumberAvailable: 'numberAvailable',
-    BookGenres: 'bookGenres',
-    BookAuthors: 'bookAuthors'
+    bookId: 'bookId',
+    name: 'name',
+    bookYear: 'bookYear',
+    numberAvailable: 'numberAvailable',
+    bookGenres: 'bookGenres',
+    bookAuthors: 'bookAuthors'
 }
 
 export const sorting = {

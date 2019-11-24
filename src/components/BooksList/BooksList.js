@@ -3,10 +3,11 @@ import React  from 'react';
 import { Card } from 'semantic-ui-react';
 import { constants } from '../../i18n';
 
+import './style.scss';
+
 const Book = (
   {
     book: {
-      bookId, 
       name, 
       bookYear, 
       numberAvailable,
@@ -14,7 +15,7 @@ const Book = (
       bookGenres
     }
   }) => 
-  <Card key={bookId}>
+  <Card className='book'>
     <Card.Content>
       <Card.Header>
         {name}
@@ -37,7 +38,10 @@ const Book = (
 function BooksList({elements}) {
     return (
       <Card.Group>
-        { elements.map(element => <Book book={element} />) }
+        {
+          elements.map(element => 
+            <Book key={element.bookId} book={element} />) 
+        }
       </Card.Group>
     )
 }
