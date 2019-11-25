@@ -1,24 +1,20 @@
 @import '../../assets/variables.scss';
 
 .books {
-    &__wrapper {
-        @include centered-vertical-container;
-        margin: $space-sm;
-    }
-    &__search {
-        margin: $space-sm;
-    }
     &__label {
         height: 50px;
     }
-    &__filters {
-        padding: $space-lg;
-        width: 100vw;
-        @include centered-vertical-container;
-        background-image: url(./../../assets/images/books.jpg);
+    &__menu {
+        margin: 0;
+        @include column-flex-container;
+        background-image: $main-background;
     }
-    &__search {
+    &__search, &__filter {
         @include centered-horizontal-container;
         margin: $space-sm;
     }
+}
+
+.ui.search {
+    margin: $space-sm;
 }

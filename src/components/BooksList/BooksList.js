@@ -27,10 +27,10 @@ const Book = (
         {constants.available}: {numberAvailable}
       </Card.Description>
       <Card.Description>
-        {constants.authors}: {bookAuthors}
+        {constants.bookAuthors}: {bookAuthors}
       </Card.Description>
       <Card.Description>
-        {constants.genres}: {bookGenres}
+        {constants.bookGenres}: {bookGenres}
       </Card.Description>
     </Card.Content>
   </Card>

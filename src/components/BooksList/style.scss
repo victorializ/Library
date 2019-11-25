@@ -3,3 +3,8 @@
 .ui.cards>.card {
     margin: $space-sm;
 }
+
+.ui.card, .ui.cards>.card {
+    width: 300px;
+    overflow: hidden;
+}

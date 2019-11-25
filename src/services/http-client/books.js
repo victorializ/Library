@@ -47,7 +47,36 @@ const mock = {
                 }
             }
         ]
-    }]
+    },
+    {
+        "bookId": 1,
+        "name": "B1",
+        "bookYear": 2000,
+        "numberAvailable": 1,
+        "bookGenres": [
+            {
+                "bookId": 1,
+                "genreId": 2,
+                "genre": {
+                    "genreId": 2,
+                    "name": "g1"
+                }
+            }
+        ],
+        "bookAuthors": [
+            {
+                "bookId": 1,
+                "authorId": 3,
+                "author": {
+                    "authorId": 3,
+                    "firstName": "A1",
+                    "lastName": "A1",
+                    "bookAuthors": []
+                }
+            }
+        ]
+    }
+    ]
 };
 
 export function getAllBooks() {

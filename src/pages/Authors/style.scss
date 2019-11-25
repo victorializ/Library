@@ -5,7 +5,7 @@
     align-items: top;
     &--selected {
         width: 100%;
-        @include centered-vertical-container('top', 'left');
+        @include column-flex-container('top', 'left');
     }
     &__name {
         width: 100%;
@@ -15,9 +15,9 @@
         overflow-y: scroll;
         height: 90vh;
         width: 300px;
-        background-image: url(./../../assets/images/books.jpg);
+        background-image: $main-background;
         &-item {
-            border-bottom: 3px solid #ccc;
+            border-bottom: 3px solid $grey;
             padding: $space-sm;
         }
     }

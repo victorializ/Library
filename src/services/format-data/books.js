@@ -20,14 +20,14 @@ function genres(obj) {
 
 export function formatData(data) {
     const { 
-        bookName, 
+        name, 
         bookYear, 
         numberAvailable, 
         bookGenres, 
         bookAuthors 
     } = data;
     return {
-     bookName, 
+     name, 
      bookYear,
      numberAvailable,
      bookGenres: getStr(bookGenres, genres), 
