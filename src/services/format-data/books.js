@@ -1,17 +1,17 @@
 function getStr(arr, formatFunc) {
     return arr.reduce((accumulator, current) => 
-        accumulator + formatFunc(current), ''
+        `${accumulator} ${formatFunc(current)}`, ''
     );
 }
 
 function authors(obj) {
     const { author: { firstName, lastName } } = obj;
-    return firstName + ' ' + lastName + ', ';
+    return `${firstName} ${lastName},`;
 }
 
 function genres(obj) {
     const { genre: { name } } = obj;
-    return name + ', ';
+    return `${name},`;
 }
 
 export function formatData(data) {
