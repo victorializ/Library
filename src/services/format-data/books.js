@@ -1,11 +1,7 @@
 function getStr(arr, formatFunc) {
-    let str = '';
-    if(arr) {
-        arr.forEach(element => {
-            str += formatFunc(element);
-        })
-    }
-    return str;
+    return arr.reduce((accumulator, current) => 
+        accumulator + formatFunc(current), ''
+    );
 }
 
 function authors(obj) {
