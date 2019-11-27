@@ -1,0 +1,7 @@
+@import '../../assets/variables.scss';
+
+.login {
+    &__wrapper {
+        @include column-flex-container;
+    }
+}

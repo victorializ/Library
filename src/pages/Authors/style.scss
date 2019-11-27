@@ -5,7 +5,7 @@
     align-items: top;
     &--selected {
         width: 100%;
-        @include column-flex-container('top', 'left');
+        @include column-flex-container(top, left);
     }
     &__name {
         width: 100%;

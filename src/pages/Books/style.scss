@@ -6,12 +6,13 @@
     }
     &__menu {
         margin: 0;
+        height: 30vh;
         @include column-flex-container;
         background-image: $main-background;
     }
     &__search, &__filter {
         @include centered-horizontal-container;
-        margin: $space-sm;
+        margin: $space-xs;
     }
 }
 

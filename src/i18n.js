@@ -15,7 +15,12 @@ const allConstants = {
         asc: 'ASC',
         desc: 'DESC', 
         nobooks: 'No books available!', 
-        ok: 'Ok!'
+        ok: 'Ok!', 
+        firstName: 'First name', 
+        lastName: 'Last name', 
+        password: 'Password', 
+        email: 'email', 
+        agree: 'I agree to the Terms and Conditions'
     },
     ru: {
         title: 'Здорова, шо надо?',
@@ -33,7 +38,12 @@ const allConstants = {
         asc: 'Туды',
         desc: 'Сюды',
         nobooks: 'Сорян дорогой!',
-        ok: 'Согласен'
+        ok: 'Согласен', 
+        firstName: 'Имя', 
+        lastName: 'Погонялово', 
+        password: '1111', 
+        email: 'Голубиная почта', 
+        agree: 'Я дурак!'
     }
 };
 

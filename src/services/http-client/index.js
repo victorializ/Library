@@ -1,5 +1,5 @@
 import axios from 'axios';
-//import { store } from 'redux/store/configureStore';
+import { store } from '../../redux/store';
 
 const instance = axios.create({
   headers: { 'Content-Type': 'application/json' },
@@ -14,10 +14,10 @@ const redirects = {
 
 instance.interceptors.request.use(
   (config) => {
-   // const AUTH_TOKEN = JSON.stringify(store.getState().auth);
-    //if (AUTH_TOKEN) {
-    //  config.headers['Authorization'] = AUTH_TOKEN;
-   // }
+   const AUTH_TOKEN = JSON.stringify(store.getState().user.token);
+   if (AUTH_TOKEN) {
+    config.headers['Authorization'] = AUTH_TOKEN;
+   }
     return config;
   }, error => Promise.reject(error)
 );

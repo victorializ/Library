@@ -1,3 +1,4 @@
+$space-xs: 10px;
 $space-sm: 30px;
 $space-lg: 70px;
 
@@ -5,7 +6,7 @@ $grey: #ccc;
 
 $main-background: url(./../../assets/images/books.jpg);
 
-@mixin column-flex-container($justify: 'center', $align: 'center') {
+@mixin column-flex-container($justify: center, $align: center) {
     display: flex;
     justify-content: $justify;
     align-items: $align;

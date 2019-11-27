@@ -11,3 +11,12 @@ export const sorting = {
     asc: 'asc', 
     desc: 'desc'
 }
+
+export const user = {
+    id: 'id',
+    token: 'token',
+    firstName: "firstName",
+    lastName: "lastName",
+    email: "email",
+    password: "password"
+}

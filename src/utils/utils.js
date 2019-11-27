@@ -8,3 +8,7 @@ export const compare = ((a, b, sort, field, direction = sorting) =>
         a[field] < b[field] ? -1 : 1 : 
         a[field] > b[field] ? -1 : 1
 );
+
+export const promisify = (data, delay = 200) => {
+    return new Promise(res => setTimeout(res(data), delay));
+}
