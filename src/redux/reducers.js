@@ -17,17 +17,13 @@ function authReducer(state = initialState, action) {
   switch (action.type) {
     case constants.LOGIN_REQUEST:
       return {
-        ...state,
-        loading: true,
-        user: action.user
+        ...initialState,
+        loading: true
       };
     case constants.LOGIN_SUCCESS:
       return {
         ...state,
-        user: {
-          ...state.user, 
-          token: action.token
-        },
+        user: action.user,
         loading: false,
       };
     case constants.LOGIN_FAILURE:

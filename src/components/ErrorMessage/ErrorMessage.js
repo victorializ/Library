@@ -13,7 +13,7 @@ const ErrorMessage = ({text}) => {
         visible && <Segment color={colors.red} className='error-message'>
             <Header>{text}</Header>
             <Segment.Inline>
-                <Button floated='right' basic color={colors.primary} onClick={() => setVisibility(false)}>
+                <Button basic color={colors.primary} onClick={() => setVisibility(false)}>
                     {constants.ok}
                 </Button>
             </Segment.Inline>

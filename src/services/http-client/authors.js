@@ -1,4 +1,5 @@
 import { get } from './index';
+import { promisify } from '../../utils/utils';
 
 const mock = { 
     data: [
@@ -101,7 +102,7 @@ export function getAllAuthors() {
     return get(url);
     */
    
-    return new Promise((res, rej) => res(mock));
+    return promisify(mock);
 }
 
 export function getAuthor(id) {
@@ -110,8 +111,5 @@ export function getAuthor(id) {
     return get(url);
     */
    
-   return new Promise((res, rej) => {
-       const data = mock.data.find(element => element.authorId === id);
-       res({ data });
-   });
+   return promisify(mock.data.find(element => element.authorId === id));
 }

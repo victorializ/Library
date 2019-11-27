@@ -14,7 +14,8 @@ function login(email, password) {
     //const url = '/authenticate';
     //return post(url, {})
 
-    console.log(email, password);
+    //return promisify(mock, 'login error!'); //login with error
+
     return promisify(mock);
 }
 
@@ -23,7 +24,6 @@ function register(firstName, lastName, email, password) {
     //const url = '/register';
     //return post(url, {firstName, lastName, email, password});
     
-    console.log(firstName, lastName, email, password);
     return promisify(true);
 }
 

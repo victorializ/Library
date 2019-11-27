@@ -7,8 +7,8 @@ function login(email, password) {
 
         httpLogin(email, password)
             .then(
-                res => { 
-                    dispatch(success());
+                user => { 
+                    dispatch(success(user));
                 },
                 error => {
                     dispatch(failure(error));
@@ -18,7 +18,7 @@ function login(email, password) {
 
     function request(user) { return { type: constants.LOGIN_REQUEST, user } }
     function success(user) { return { type: constants.LOGIN_SUCCESS, user } }
-    function failure(error) { return { type: constants.LOGIN_FAILURE, error } }
+    function failure(errorMessage) { return { type: constants.LOGIN_FAILURE, errorMessage } }
 }
 
 function logout() {

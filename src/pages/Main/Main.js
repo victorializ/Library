@@ -9,7 +9,7 @@ import './style.scss';
 function Main() {
   return (
     <Fragment>
-        <img src={image} alt="Library" class="main__image"></img>
+        <img src={image} alt="Library" className="main__image"></img>
         <Header as='h1' textAlign='center'>{constants.title}</Header>
     </Fragment>
   );

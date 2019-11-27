@@ -10,16 +10,16 @@ function App() {
   return (
     <Router>
       <Header />
-      <Switch>
-        <div className="page__wrapper">
+      <div className="page__wrapper">
+        <Switch>
           <Route exact path='/' component={MainPage} />
           <Route exact path='/registration' component={RegistrationPage} />
           <Route path='/login' component={LoginPage} />
           <Route path='/book' component={BooksPage} />
           <Route path='/author' component={AuthorsPage} />
           <Route path='/admin' component={AdminPage} />
-        </div>
-      </Switch>
+        </Switch>
+      </div>
       <Footer />
     </Router>
   );

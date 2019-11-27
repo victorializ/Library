@@ -10,9 +10,7 @@ function mapStateToProps({loading, user:{token: isLoggedIn}, errorMessage}) {
     errorMessage
   };
 }
+ 
+const LoginPage = connect(mapStateToProps, { login, logout })(Login);
 
-const mapDispatchToProps = { login, logout };
-  
-const LoginPage = connect(mapStateToProps, mapDispatchToProps)(Login);
-
-export { LoginPage };
+export { LoginPage as Login };

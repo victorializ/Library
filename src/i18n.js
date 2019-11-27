@@ -20,7 +20,11 @@ const allConstants = {
         lastName: 'Last name', 
         password: 'Password', 
         email: 'email', 
-        agree: 'I agree to the Terms and Conditions'
+        agree: 'I agree to the Terms and Conditions', 
+        loggedin: 'You are logged in!', 
+        personalAccount: "Go to personal account", 
+        logout: 'Logout', 
+        register: 'register'
     },
     ru: {
         title: 'Здорова, шо надо?',
@@ -43,7 +47,11 @@ const allConstants = {
         lastName: 'Погонялово', 
         password: '1111', 
         email: 'Голубиная почта', 
-        agree: 'Я дурак!'
+        agree: 'Я дурак!', 
+        loggedin: 'О, привет!',
+        personalAccount: "Погнали", 
+        logout: 'Выйти нахуй', 
+        register: 'я не с этого района'
     }
 };
 

@@ -1,5 +1,5 @@
 import { get } from './index';
-
+import { promisify } from '../../utils/utils';
 const mock = {
     data : [
     {
@@ -84,5 +84,5 @@ export function getAllBooks() {
     const url = `/Books`;
     return get(url);
     */
-   return new Promise((res, rej) => setTimeout(res(mock), 200));
+   return promisify(mock);
 }
