@@ -25,11 +25,22 @@ const MenuButton = ({name, selectedButton, clickHandler}) => {
   )
 }
 
-const TopLevelMenu = ({filter, onFilterSet, input, onInput, sort, onSortSet}) =>
+const TopLevelMenu = ({
+  filter, 
+  onFilterSet, 
+  input, 
+  onInput, 
+  sort, 
+  onSortSet, 
+  onSortUnsert, 
+  onFilterUnsert
+}) =>
   <div className="books__menu">
     <div className="books__search">
       <Button.Group>
-        <Button color={colors.secondary}>
+        <Button 
+          onClick={onFilterUnsert}
+          color={colors.secondary}>
           {constants.filter}
         </Button>
         <MenuButton 
@@ -54,12 +65,15 @@ const TopLevelMenu = ({filter, onFilterSet, input, onInput, sort, onSortSet}) =>
       </Button.Group>
       <Search
         value = {input}
+        showNoResults=''
         onSearchChange ={(e, {value}) => onInput(value)}
       ></Search>
     </div>
     <div className="books__filter">
       <Button.Group>
-        <Button color={colors.secondary}>
+        <Button 
+          onClick={onSortUnsert}
+          color={colors.secondary}>
           {constants.sort}
         </Button>
         <MenuButton 
@@ -87,12 +101,12 @@ function Books() {
   }, []);
   
   const sortFunction = arr => 
-    sort === '' ? 
-      arr : arr.sort((a, b) => compare(a, b, sort, filter));
+    !sort ? arr : 
+      arr.sort((a, b) => compare(a, b, sort, filter));
   
   const findFunction = arr => 
-    input === '' ?
-     arr : arr.filter(book => book[filter].toString().includes(input));
+    !input || !filter ? arr :
+      arr.filter(book => book[filter].toString().toLowerCase().includes(input.toLowerCase()));
 
   const putInOrder = items => compose(findFunction, sortFunction)(items);
 
@@ -103,8 +117,10 @@ function Books() {
         input={input}
         filter={filter}
         onSortSet={sort => setSort(sort)} 
+        onSortUnsert={() => setSort('')}
         onInput={input => setInput(input)}
         onFilterSet={filter => setFilter(filter)} 
+        onFilterUnsert={() => setFilter('')}
       />
       <BooksList elements={putInOrder(books)}></BooksList>
     </Fragment>
