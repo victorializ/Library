@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import {
   Button,
   Form,
-  Checkbox,
   Loader,
   Header,
   Segment
@@ -59,7 +58,7 @@ function Login({
                   {constants.login}
                 </Button>
               </Form>
-              <Link  to='/register'>{constants.register}</Link>
+              <Link to='/registration'>{constants.register}</Link>
             </Fragment> 
             :
             <Fragment>
@@ -68,7 +67,7 @@ function Login({
               </Header>
               <Button.Group>
                 <Button 
-                  as={Link} to='/' 
+                  as={Link} to='/account' 
                   color={colors.primary}>
                   {constants.personalAccount}
                 </Button>

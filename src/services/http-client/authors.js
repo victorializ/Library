@@ -110,6 +110,5 @@ export function getAuthor(id) {
     const url = `/Author/${id}`;
     return get(url);
     */
-   
-   return promisify(mock.data.find(element => element.authorId === id));
+   return promisify({data: mock.data.find(element => element.authorId === id)});
 }

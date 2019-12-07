@@ -1,0 +1,21 @@
+@import '../../assets/variables.scss';
+
+.registration{
+   &__wrapper {
+        height: 100%;
+        @include column-flex-container;
+    }
+    &__form {
+        height: 600px;
+        width: 500px;
+        @include column-flex-container;
+    }
+    &__button {
+        width: 100%;
+    }
+}
+
+//TODO: move all styles with .ui to Add component
+.ui.button {
+    margin: $space-sm 0;
+}

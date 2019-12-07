@@ -19,12 +19,14 @@ const allConstants = {
         firstName: 'First name', 
         lastName: 'Last name', 
         password: 'Password', 
-        email: 'email', 
+        email: 'Email', 
         agree: 'I agree to the Terms and Conditions', 
         loggedin: 'You are logged in!', 
         personalAccount: "Go to personal account", 
         logout: 'Logout', 
-        register: 'register'
+        register: 'Registration', 
+        registered: 'Registered successfully', 
+        reenter: 'Reenter password'
     },
     ru: {
         title: 'Здорова, шо надо?',
@@ -51,7 +53,9 @@ const allConstants = {
         loggedin: 'О, привет!',
         personalAccount: "Погнали", 
         logout: 'Выйти нахуй', 
-        register: 'я не с этого района'
+        register: 'я не с этого района', 
+        registered: 'Ну здорова', 
+        reenter: 'Еще разок'
     }
 };
 

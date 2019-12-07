@@ -1,8 +1,15 @@
+@import '../../assets/variables.scss';
+
 .ui.segment {
     margin: 0;
 }
 .error-message {
-    width: 100%;
+    &__wrapper {
+        height: 80%;
+        width: 100%;
+       @include column-flex-container;
+    }
+    width: 50%;
     height: 100px;
-    text-align: center;
+    @include column-flex-container;
 }

@@ -24,7 +24,7 @@ function register(firstName, lastName, email, password) {
     //const url = '/register';
     //return post(url, {firstName, lastName, email, password});
     
-    return promisify(true);
+    return promisify({data: {}});
 }
 
 export { login, register };

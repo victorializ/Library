@@ -1,30 +1,50 @@
 import React from 'react';
 
-import { Segment, Header as SHeader } from 'semantic-ui-react'
+import { Menu, Header as SHeader, MenuItem } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 
 import { constants  } from '../../i18n';
+import { UserIcon } from '../../components';
 
-function Header() {
+import './style.scss';
+
+function Header({user}) {
   return (
-    <Segment clearing>
-        <SHeader as={Link} to='/' floated='left'>
-            {constants.title}
-        </SHeader>
-        <SHeader as={Link} to='/admin' floated='right'>
-            {constants.admin}
-        </SHeader>
-        <SHeader as={Link} to='/login' floated='right'>
-            {constants.login}
-        </SHeader>
-        <SHeader as={Link} to='/author' floated='right'>
-            {constants.bookAuthors}
-        </SHeader>
-        <SHeader as={Link} to='/book' floated='right'>
-            {constants.books}
-        </SHeader>
-    </Segment>
+    <header>
+        <Menu>
+            <Menu.Item as={Link} to='/' className='app__header__logo'>
+                <SHeader>
+                    {constants.title}
+                </SHeader>
+            </Menu.Item>
+            <Menu.Item as={Link} to='/account'>
+                <SHeader>
+                    <UserIcon />
+                </SHeader>
+            </Menu.Item> 
+            <Menu.Item as={Link} to='/admin'>
+                <SHeader>
+                    {constants.admin}
+                </SHeader>
+            </Menu.Item>
+            <Menu.Item as={Link} to='/login'>
+                <SHeader>
+                    {constants.login}
+                </SHeader>
+            </Menu.Item>
+            <Menu.Item as={Link} to='/author'>
+                <SHeader>
+                    {constants.bookAuthors}
+                </SHeader>
+            </Menu.Item>
+            <Menu.Item as={Link} to='/book'>
+                <SHeader>
+                    {constants.books}
+                </SHeader>
+            </Menu.Item>
+        </Menu>
+    </header>
   );
 }
 
-export { Header };
+export {  Header };

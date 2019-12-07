@@ -2,6 +2,7 @@ import React  from 'react';
 
 import { Card } from 'semantic-ui-react';
 import { constants } from '../../i18n';
+import { formatData } from '../../services/format-data/books';
 
 import './style.scss';
 
@@ -35,12 +36,12 @@ const Book = (
     </Card.Content>
   </Card>
 
-function BooksList({elements}) {
+function BooksList({data}) {
     return (
       <Card.Group>
         {
-          elements.map(element => 
-            <Book key={element.bookId} book={element} />) 
+          data.map(element => 
+            <Book key={element.bookId} book={formatData(element)} />) 
         }
       </Card.Group>
     )

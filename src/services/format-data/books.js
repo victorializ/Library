@@ -14,19 +14,19 @@ function genres(obj) {
     return `${name},`;
 }
 
-export function formatData(data) {
-    const { 
+export function formatData(
+    { 
         name, 
         bookYear, 
         numberAvailable, 
         bookGenres, 
         bookAuthors 
-    } = data;
+    }) {
     return {
-     name, 
-     bookYear,
-     numberAvailable,
-     bookGenres: getStr(bookGenres, genres), 
-     bookAuthors: getStr(bookAuthors, authors)
+        name, 
+        bookYear,
+        numberAvailable,
+        bookGenres: getStr(bookGenres, genres), 
+        bookAuthors: getStr(bookAuthors, authors)
     }
 }

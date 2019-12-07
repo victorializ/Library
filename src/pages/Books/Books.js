@@ -1,4 +1,4 @@
-import React,  { useState, useEffect, Fragment }  from 'react';
+import React,  { useState, Fragment }  from 'react';
 
 import { Search, Button } from 'semantic-ui-react'
 
@@ -6,11 +6,10 @@ import { constants } from '../../i18n';
 import { book, sorting } from '../../types';
 import { colors } from '../../assets/semantic-colors';
 import { compose, compare } from '../../utils/utils';
-import { formatData } from '../../services/format-data/books';
 import { getAllBooks } from '../../services/http-client/books';
 
 import './style.scss';
-import { BooksList } from '../../components';
+import { BooksList, useRequest, WithRequest } from '../../components';
 
 const MenuButton = ({name, selectedButton, clickHandler}) => {
   const getButtonColor = (buttonName, selected) =>  {
@@ -65,7 +64,7 @@ const TopLevelMenu = ({
       </Button.Group>
       <Search
         value = {input}
-        showNoResults=''
+        showNoResults={false}
         onSearchChange ={(e, {value}) => onInput(value)}
       ></Search>
     </div>
@@ -91,14 +90,12 @@ const TopLevelMenu = ({
 
 
 function Books() {
+
   const [ input, setInput ] = useState('');
   const [ sort, setSort ] = useState('');
   const [ filter, setFilter ] = useState(book.Name);
-  const [ books, setBooks ] = useState([]);
 
-  useEffect(() => {
-    getAllBooks().then(({data}) => setBooks(data.map(element => formatData(element))));
-  }, []);
+  const [ books, error ]  = useRequest(getAllBooks);
   
   const sortFunction = arr => 
     !sort ? arr : 
@@ -122,7 +119,11 @@ function Books() {
         onFilterSet={filter => setFilter(filter)} 
         onFilterUnsert={() => setFilter('')}
       />
-      <BooksList elements={putInOrder(books)}></BooksList>
+      <WithRequest 
+        error={error}
+        data={putInOrder(books)} 
+        WrappedComponent={BooksList} 
+      /> 
     </Fragment>
   );
 }

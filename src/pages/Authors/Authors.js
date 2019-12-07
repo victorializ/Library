@@ -5,21 +5,21 @@ import { List, Segment } from 'semantic-ui-react';
 import { BooksList, ErrorMessage } from '../../components';
 import { constants } from '../../i18n';
 import { getAllAuthors, getAuthor } from '../../services/http-client/authors';
-import { formatData } from '../../services/format-data/books';
+import { useRequest, WithRequest } from '../../components';
 
 import './style.scss';
 
-const SelectedAuthorName = ({firstName = '', lastName = ''}) =>
+const SelectedAuthorName = ({data: {firstName = '', lastName = ''}}) =>
   (firstName || lastName) && 
   <Segment className='authors__name'>{`${firstName} ${lastName}`}</Segment>
 
 const AuthorsList = (
   {
-    authors,
+    data,
     onAuthorSelect
   }) => 
-  <List inverted divided className='authors__list'>
-    { authors.map(
+  <List inverted divided>
+    { data.map(
       ({
         authorId, 
         firstName, 
@@ -35,34 +35,47 @@ const AuthorsList = (
     }
   </List>
 
-const AuthorsBooks = ({books}) => 
+const AuthorsBooks = ({data : {bookAuthors: books}}) =>
   books.length ? 
-    <BooksList elements = {books.map(({book}) => formatData(book))} />
+    <BooksList data={books.map(({book}) => book)} />
     : 
-    <ErrorMessage text = {constants.nobooks} />
+    <ErrorMessage text={constants.nobooks} />
+
+
+const SelectedAuthor = ({authorId}) => {
+  const selectedAuthor = useRequest(getAuthor, authorId);
+  return (
+    <div className='authors--selected'>
+      <WithRequest 
+        data={selectedAuthor[0]} 
+        error={selectedAuthor[1]}
+        WrappedComponent={SelectedAuthorName} 
+      />
+      <WithRequest 
+        data={selectedAuthor[0]} 
+        error={selectedAuthor[1]}
+        WrappedComponent={AuthorsBooks} 
+      />
+    </div>
+  ); 
+}
 
 function Authors() {
-  const [ authors, setAuthors ] = useState([]);
-  const [ selectedAuthor, setSelectedAuthor ] = useState({bookAuthors: []});
+  const [ authorId, setAuthorId ] = useState(null);
 
-  useEffect(() => {
-    getAllAuthors().then(res => setAuthors(res.data));
-  }, []);
+  const authors = useRequest(getAllAuthors);
 
   return (
     <div className='authors'>
-      <AuthorsList 
-        authors={authors} 
-        onAuthorSelect={
-          authorId => getAuthor(authorId)
-            .then(({ data }) => setSelectedAuthor(data))
-        } 
-      />
-      <div className='authors--selected'>
-        <SelectedAuthorName {...selectedAuthor} />
-        {(selectedAuthor.firstName || selectedAuthor.lastName) && 
-          <AuthorsBooks books={selectedAuthor.bookAuthors} /> }
+      <div className='authors__list'>
+        <WithRequest 
+          error={authors[1]}
+          data={authors[0]} 
+          onAuthorSelect={authorId => setAuthorId(authorId)}
+          WrappedComponent={AuthorsList} 
+        />
       </div>
+      {authorId && <SelectedAuthor authorId={authorId} />}
     </div>
   );
 }

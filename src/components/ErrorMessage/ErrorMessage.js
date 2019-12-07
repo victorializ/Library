@@ -10,14 +10,20 @@ import './style.scss';
 const ErrorMessage = ({text}) => {
     const [ visible, setVisibility ] = useState(true);
     return (
-        visible && <Segment color={colors.red} className='error-message'>
-            <Header>{text}</Header>
-            <Segment.Inline>
-                <Button basic color={colors.primary} onClick={() => setVisibility(false)}>
-                    {constants.ok}
-                </Button>
-            </Segment.Inline>
-        </Segment>
+        <div className='error-message__wrapper'>
+        {
+            visible && <Segment color={colors.red} className='error-message'>
+                <Header>{text}</Header>
+                {/*
+                <Segment.Inline>
+                    <Button basic color={colors.primary} onClick={() => setVisibility(false)}>
+                        {constants.ok}
+                    </Button>
+                </Segment.Inline>
+                */}
+            </Segment>
+        }
+        </div>
     )
 }
 export { ErrorMessage };

@@ -1,0 +1,19 @@
+@import '../../assets/variables.scss';
+
+header {
+    .ui.menu {
+        margin: 0;
+        height: 10vh;
+    }
+    .item {
+        border: 0;
+        width: 10vw;
+        @include centered-horizontal-container;
+    }
+}
+
+.app__header {
+    &__logo {
+        margin-right: auto;
+    }
+}
