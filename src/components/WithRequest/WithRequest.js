@@ -21,6 +21,7 @@ function useRequest(request, ...params) {
 
 function WithRequest (props) {
     const { WrappedComponent, data, error: { message } } = props;
+    
     return (
         data || message ? 
             message ? 
