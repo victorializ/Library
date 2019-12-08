@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Menu, Header as SHeader, MenuItem } from 'semantic-ui-react'
+import { Menu, Header as SHeader } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 
 import { constants  } from '../../i18n';
@@ -8,7 +8,7 @@ import { UserIcon } from '../../components';
 
 import './style.scss';
 
-function Header({user}) {
+function Header() {
   return (
     <header>
         <Menu>
@@ -17,16 +17,11 @@ function Header({user}) {
                     {constants.title}
                 </SHeader>
             </Menu.Item>
-            <Menu.Item as={Link} to='/account'>
+            <Menu.Item>
                 <SHeader>
                     <UserIcon />
                 </SHeader>
             </Menu.Item> 
-            <Menu.Item as={Link} to='/admin'>
-                <SHeader>
-                    {constants.admin}
-                </SHeader>
-            </Menu.Item>
             <Menu.Item as={Link} to='/login'>
                 <SHeader>
                     {constants.login}

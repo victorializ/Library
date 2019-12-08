@@ -1,3 +1,9 @@
-.user-icon {
+@import '../../assets/variables.scss';
+
+.user {
     display: flex;
+    height: 6vh;
+    &__name {
+        overflow: hidden;
+    }
 }

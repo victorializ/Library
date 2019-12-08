@@ -19,7 +19,8 @@ function Login({
   isLoggedIn,
   error, 
   login, 
-  logout
+  logout, 
+  isAdmin
 }) {
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
@@ -39,7 +40,7 @@ function Login({
                   </label>
                   <input 
                     value={email}
-                    placeholder={constants.firstName} 
+                    placeholder={constants.email} 
                     onChange={({target: {value}}) => setEmail(value)}/>
                 </Form.Field>
                 <Form.Field>
@@ -49,7 +50,7 @@ function Login({
                   <input 
                     type='password'
                     value={password}
-                    placeholder={constants.lastName} 
+                    placeholder={constants.password} 
                     onChange={({target: {value}}) => setPassword(value)}/>
                 </Form.Field>
                 <Button 
@@ -67,11 +68,19 @@ function Login({
                 {constants.loggedin}
               </Header>
               <Button.Group>
-                <Button 
-                  as={Link} to='/account' 
-                  color={colors.primary}>
-                  {constants.personalAccount}
-                </Button>
+                {isAdmin ? 
+                  <Button 
+                    as={Link} to='/admin' 
+                    color={colors.red}>
+                    {constants.admin}
+                  </Button>
+                  :
+                  <Button 
+                    as={Link} to='/orders' 
+                    color={colors.primary}>
+                    {constants.personalAccount}
+                  </Button>
+                }
                 <Button.Or />
                 <Button onClick={logout}>
                   {constants.logout}

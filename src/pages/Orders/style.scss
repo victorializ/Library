@@ -1,0 +1,8 @@
+@import '../../assets/variables.scss';
+
+.orders {
+    &__list {
+        @include column-flex-container;
+        height: 100%;
+    }
+}

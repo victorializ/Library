@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { AdminPage, AuthorsPage, BooksPage, LoginPage, MainPage, RegistrationPage } from './pages';
+import { AdminPage, AuthorsPage, BooksPage, LoginPage, MainPage, RegistrationPage, OrdersPage } from './pages';
 import { Footer, Header } from './components';
 
 import './App.scss';
@@ -18,6 +18,7 @@ function App() {
           <Route path='/book' component={BooksPage} />
           <Route path='/author' component={AuthorsPage} />
           <Route path='/admin' component={AdminPage} />
+          <Route path='/orders' component={OrdersPage} />
         </Switch>
       </div>
       <Footer />

@@ -26,7 +26,11 @@ const allConstants = {
         logout: 'Logout', 
         register: 'Registration', 
         registered: 'Registered successfully', 
-        reenter: 'Reenter password'
+        reenter: 'Reenter password', 
+        status: 'Status', 
+        returned: 'Returned', 
+        return: 'Please return book till', 
+        expired: 'Expired!'
     },
     ru: {
         title: 'Здорова, шо надо?',
@@ -55,7 +59,11 @@ const allConstants = {
         logout: 'Выйти нахуй', 
         register: 'я не с этого района', 
         registered: 'Ну здорова', 
-        reenter: 'Еще разок'
+        reenter: 'Еще разок', 
+        status: 'Status', 
+        returned: 'Returned', 
+        return: 'Please return book till', 
+        expired: 'ууу сука!'
     }
 };
 
