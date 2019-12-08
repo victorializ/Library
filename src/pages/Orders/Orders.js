@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import { Card } from 'semantic-ui-react'
+import { Card, Header } from 'semantic-ui-react'
 
 import { constants  } from '../../i18n';
 import { colors } from '../../assets/semantic-colors'
@@ -31,12 +31,15 @@ function Orders({id: userId}) {
 
 function OrdersList({data}) {
     return (
-        <Card.Group>
-            {
-              data.map(element => 
-                <Order key={element.bookingId} {...formatData(element)} />) 
-            }
-        </Card.Group>
+        <Fragment>
+            <Header>{constants.orders}</Header>
+            <Card.Group>
+                {
+                data.map(element => 
+                    <Order key={element.bookingId} {...formatData(element)} />) 
+                }
+            </Card.Group>
+        </Fragment>
     )
 }
 

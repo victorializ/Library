@@ -3,6 +3,6 @@
 .orders {
     &__list {
         @include column-flex-container;
-        height: 100%;
+        height: 80%;
     }
 }

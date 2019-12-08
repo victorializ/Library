@@ -10,7 +10,7 @@ const mock = {
     lastName: 'Orlova',
     token: 'sssssssssssssshit', 
     isBlocked: false, 
-    isAdmin: true
+    isAdmin: false
 }
 
 const mockAll = {
