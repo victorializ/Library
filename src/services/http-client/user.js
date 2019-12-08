@@ -3,10 +3,15 @@ import { promisify } from '../../utils/utils';
 
 const mock = {
     id: 1,
-    email: "allie",
-    firstName: "Alice",
-    lastName: "Orlova",
-    token: "sssssssssssssshit"
+    email: 'allie',
+    password: '1111',
+    firstName: 'Alice',
+    lastName: 'Orlova',
+    token: 'sssssssssssssshit'
+}
+
+const error = {
+    message: 'This is error!'
 }
 
 function login(email, password) {
@@ -15,16 +20,15 @@ function login(email, password) {
     //return post(url, {})
 
     //return promisify(mock, 'login error!'); //login with error
-
-    return promisify(mock);
+    const err = email !== mock.email || password !== mock.password ? error : '';
+    return promisify(mock, err);
 }
 
-function register(firstName, lastName, email, password) {
-    
+function register(user) {
     //const url = '/register';
-    //return post(url, {firstName, lastName, email, password});
-    
-    return promisify({data: {}});
+    //return post(url, user);
+    const err = user.email === mock.email ? error : '';
+    return promisify({data: {}}, err);
 }
 
 export { login, register };

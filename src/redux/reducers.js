@@ -10,7 +10,7 @@ const initialState = {
         token: ''
     }, 
     loading: false,
-    errorMessage: ''
+    error: null
 };
 
 function authReducer(state = initialState, action) {
@@ -30,7 +30,7 @@ function authReducer(state = initialState, action) {
       return {
           ...state, 
           loading: false, 
-          errorMessage: action.errorMessage
+          error: action.error
       };
     case constants.LOGOUT:
       return initialState;

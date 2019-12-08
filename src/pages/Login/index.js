@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import { login, logout } from '../../redux/actions';
 import { Login } from './Login';
 
-function mapStateToProps({loading, user:{token: isLoggedIn}, errorMessage}) {
+function mapStateToProps({loading, user:{token: isLoggedIn}, error}) {
   return {
     loading,
     isLoggedIn,
-    errorMessage
+    error
   };
 }
  

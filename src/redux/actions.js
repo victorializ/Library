@@ -18,7 +18,7 @@ function login(email, password) {
 
     function request(user) { return { type: constants.LOGIN_REQUEST, user } }
     function success(user) { return { type: constants.LOGIN_SUCCESS, user } }
-    function failure(errorMessage) { return { type: constants.LOGIN_FAILURE, errorMessage } }
+    function failure(error) { return { type: constants.LOGIN_FAILURE, error} }
 }
 
 function logout() {

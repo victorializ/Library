@@ -20,12 +20,12 @@ function useRequest(request, ...params) {
 }
 
 function WithRequest (props) {
-    const { WrappedComponent, data, error } = props;
+    const { WrappedComponent, data, error: { message } } = props;
 
     return (
-        data ? 
-            error ? 
-                <ErrorMessage text={error} /> 
+        data || message ? 
+            message ? 
+                <ErrorMessage text={message} /> 
                     :
                 <WrappedComponent data={data} {...props} />  
                 : 

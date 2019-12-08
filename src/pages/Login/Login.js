@@ -17,7 +17,7 @@ import "./style.scss";
 function Login({
   loading,
   isLoggedIn,
-  errorMessage, 
+  error, 
   login, 
   logout
 }) {
@@ -28,14 +28,14 @@ function Login({
     <div className="login__wrapper">
       <Segment color={colors.primary} className='login__form'>
         { loading && <Loader active inline='centered' /> }
-        { errorMessage && <ErrorMessage text={errorMessage} /> }
+        { error && <ErrorMessage text={error.message} /> }
         {
           !isLoggedIn ?
             <Fragment>
               <Form>
                 <Form.Field>
                   <label>
-                    {constants.firstName}
+                    {constants.email}
                   </label>
                   <input 
                     value={email}
@@ -44,9 +44,10 @@ function Login({
                 </Form.Field>
                 <Form.Field>
                   <label>
-                    {constants.lastName}
+                    {constants.password}
                   </label>
                   <input 
+                    type='password'
                     value={password}
                     placeholder={constants.lastName} 
                     onChange={({target: {value}}) => setPassword(value)}/>

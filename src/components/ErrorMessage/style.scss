@@ -5,11 +5,15 @@
 }
 .error-message {
     &__wrapper {
-        height: 80%;
         width: 100%;
        @include column-flex-container;
     }
-    width: 50%;
-    height: 100px;
+    width: 100%;  
     @include column-flex-container;
+}
+
+.ui.segment {
+    &:last-child, &:first-child {
+        margin-bottom: $space-xs;
+    }
 }
