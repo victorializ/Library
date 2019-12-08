@@ -4,4 +4,4 @@ import { User } from './User';
 
 const UserIcon = connect(({user}) => user)(User);
 
-export { UserIcon };
+export { UserIcon as CurrentUserIcon };

@@ -1,0 +1,11 @@
+@import '../../assets/variables.scss';
+
+.ui.cards {
+    margin-top: $space-xs;
+}
+
+.users {
+    &__list {
+        @include column-flex-container;
+    }
+}

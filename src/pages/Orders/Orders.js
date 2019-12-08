@@ -4,7 +4,7 @@ import { Card } from 'semantic-ui-react'
 
 import { constants  } from '../../i18n';
 import { colors } from '../../assets/semantic-colors'
-import { UserIcon, useRequest, WithRequest } from '../../components';
+import { CurrentUserIcon, useRequest, WithRequest } from '../../components';
 import moment from 'moment';
 
 import { formatData } from '../../services/format-data/order';
@@ -17,7 +17,7 @@ function Orders({id: userId}) {
   const [ orders, error ]  = useRequest(getAll, userId);
   return (
       <Fragment>
-        <UserIcon />   
+        <CurrentUserIcon />   
         <div className='orders__list'>
             <WithRequest 
                 error={error}
@@ -90,8 +90,5 @@ function Order({
         </Card>
     )
 }
-/*
-color={statuses[status()].color}
-${statuses[status()].message}`
-*/
+
 export { Orders };

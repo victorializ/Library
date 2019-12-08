@@ -4,7 +4,7 @@ import { Menu, Header as SHeader } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 
 import { constants  } from '../../i18n';
-import { UserIcon } from '../../components';
+import { CurrentUserIcon } from '../../components';
 
 import './style.scss';
 
@@ -19,7 +19,7 @@ function Header() {
             </Menu.Item>
             <Menu.Item>
                 <SHeader>
-                    <UserIcon />
+                    <CurrentUserIcon />
                 </SHeader>
             </Menu.Item> 
             <Menu.Item as={Link} to='/login'>

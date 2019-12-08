@@ -7,7 +7,9 @@ import { Link } from 'react-router-dom';
 
 import './style.scss';
 
-const User = ({firstName, lastName, isAdmin}) => 
+const User = ({firstName, lastName, isAdmin}) => {
+    console.log(firstName, lastName, isAdmin)
+    return (
     firstName && lastName ? 
         isAdmin ? 
             <Segment color={colors.red} className='user' as={Link} to='/admin'>
@@ -21,5 +23,6 @@ const User = ({firstName, lastName, isAdmin}) =>
             </Segment> 
         :
         <div></div>
-
+    )
+}
 export { User };

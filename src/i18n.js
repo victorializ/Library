@@ -30,7 +30,8 @@ const allConstants = {
         status: 'Status', 
         returned: 'Returned', 
         return: 'Please return book till', 
-        expired: 'Expired!'
+        expired: 'Expired!', 
+        userslist: 'Users list'
     },
     ru: {
         title: 'Здорова, шо надо?',
@@ -63,7 +64,8 @@ const allConstants = {
         status: 'Status', 
         returned: 'Returned', 
         return: 'Please return book till', 
-        expired: 'ууу сука!'
+        expired: 'ууу сука!', 
+        userslist: 'Пацаны'
     }
 };
 
