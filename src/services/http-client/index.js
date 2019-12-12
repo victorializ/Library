@@ -7,10 +7,12 @@ const instance = axios.create({
   responseType: 'json'
 });
 
+/*
 const redirects = {
   401: '/login',
   404: '/notfound'
 };
+*/
 
 instance.interceptors.request.use(
   (config) => {
@@ -22,15 +24,17 @@ instance.interceptors.request.use(
   }, error => Promise.reject(error)
 );
 
+/*
 instance.interceptors.response.use(
   response => response,
   ({ response = { status: 500 } }) => {
     const { status } = response;
-    const redirect = redirects[status];
+    //const redirect = redirects[status];
     if (redirect) document.location = redirect;
     return Promise.reject(response);
   }
 );
+*/
 
 export function get(path) {
   return instance.get(path);

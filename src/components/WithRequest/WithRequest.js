@@ -5,16 +5,24 @@ import { ErrorMessage } from '../index';
 
 import './style.scss';
 
-function useRequest(request, ...params) {
+function useRequest(query, resolve, ...params) {
     const [ data, setData ] = useState(null);
     const [ error, setError ] = useState('');
-    
-    useEffect(() => {
+
+    const request = () => {
         setData(null);
-        request(...params)
+        setError('');
+
+        return query(...params)
             .then(({data}) => setData(data))
             .catch(err => setError(err));
-      }, [request, ...params]);
+    }
+    
+    useEffect(() => {
+        if(resolve !== null) {
+            request();
+        }
+      }, resolve);
     
     return [data, error];
 }

@@ -122,17 +122,20 @@ const RegistrationResult = () =>
 
 function Registration() {
 
-  const [ user, setUser ] = useState(false);
-  const [ response, error ] = useRequest(register, user);
+  const [ user, setUser ] = useState(null);
+  const [ response, error ] = useRequest(register, user, user);
 
   return (
     <div className="registration__wrapper">
       <Segment color={colors.primary} className='registration__form'>
-        <WithRequest
-          error={error}
-          data={response}
-          WrappedComponent={RegistrationResult} 
-        />
+        {
+          user && 
+            <WithRequest
+              error={error}
+              data={response}
+              WrappedComponent={RegistrationResult} 
+            /> 
+        }
         <RegistrationForm 
           register={user => setUser(user)}
         />
