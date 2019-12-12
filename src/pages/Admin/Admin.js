@@ -37,7 +37,7 @@ function Order() {
   const [selectedUser, setSelectedUser] = useState(null);
   const [selectedBook, setSelectedBook] = useState(null);
   const [ order, errorOrder ] = useRequest(orderRequest, orderSelected, selectedUser, selectedBook);
-  
+
   useEffect(() => {
     if(order || errorOrder) {
       setOrderSelected(false);
@@ -117,9 +117,44 @@ function Order() {
   );
 }
 
+function ManageHeader() {
+  return (
+    <Menu  widths={4}>
+      <Menu.Item as={Link} to='/admin/manage/books'>
+        <Header>
+          {constants.books}
+        </Header>
+      </Menu.Item>
+      <Menu.Item as={Link} to='/admin/manage/authors'>
+        <Header>
+          {constants.bookAuthors}
+        </Header>
+      </Menu.Item>
+      <Menu.Item as={Link} to='/admin/manage/cells'>
+        <Header>
+          {constants.cells}
+        </Header>
+      </Menu.Item>
+      <Menu.Item as={Link} to='/admin/manage/users'>
+        <Header>
+          {constants.userslist}
+        </Header>
+      </Menu.Item>
+    </Menu>
+  )
+}
+
 function Manage() {
   return (
-    <div>Manage</div>
+    <div className="manage">
+        <ManageHeader />
+        <Switch>
+          <Route exact path='/admin/manage/authors' component={Order} />
+          <Route exact path='/admin/manage/books' component={Order} />
+          <Route exact path='/admin/manage/cells' component={Order} />
+          <Route path='/admin/manage/users' component={Manage} />
+        </Switch>
+    </div>
   );
 }
 
