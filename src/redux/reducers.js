@@ -14,7 +14,7 @@ const initialState = {
 };
 
 function isAdmin(user) {
-  return user.role === "Admin";
+  return user.role === "Admin" || user.role === "Manager";
 }
 
 function authReducer(state = initialState, action) {
