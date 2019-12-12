@@ -13,6 +13,10 @@ const initialState = {
     error: null
 };
 
+function isAdmin(user) {
+  return user.role === "Admin";
+}
+
 function authReducer(state = initialState, action) {
   switch (action.type) {
     case constants.LOGIN_REQUEST:
@@ -23,7 +27,10 @@ function authReducer(state = initialState, action) {
     case constants.LOGIN_SUCCESS:
       return {
         ...state,
-        user: action.user.data,
+        user: {
+          ...action.user.data,
+          isAdmin: isAdmin(action.user.data)
+        },
         loading: false,
       };
     case constants.LOGIN_FAILURE:

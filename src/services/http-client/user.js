@@ -3,14 +3,18 @@ import { get } from 'http';
 import { promisify } from '../../utils/utils';
 
 const mock = {
-    id: 1,
-    email: 'allie',
-    password: '1111',
-    firstName: 'Alice',
-    lastName: 'Orlova',
-    token: 'sssssssssssssshit', 
-    isBlocked: false, 
-    isAdmin: false
+ 
+        data: {
+            id: 1,
+            email: 'allie',
+            password: '1111',
+            firstName: 'Alice',
+            lastName: 'Orlova',
+            token: 'sssssssssssssshit', 
+            isBlocked: false, 
+            role: "Admin"
+        }
+    
 }
 
 const mockAll = {
@@ -53,7 +57,7 @@ function login(email, password) {
     //const url = '/authenticate';
     //return post(url, {})
 
-    const err = email !== mock.email || password !== mock.password ? error : '';
+    const err = email !== mock.data.email || password !== mock.data.password ? error : '';
     return promisify(mock, err);
 }
 

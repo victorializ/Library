@@ -1,31 +1,44 @@
 import React, { Fragment, useState } from 'react';
 
-import { Card, Dropdown } from 'semantic-ui-react';
+import { Card, Dropdown, Segment, Button } from 'semantic-ui-react';
 import { User, useRequest, WithRequest, ErrorMessage } from '../../components';
-import { getAll } from '../../services/http-client/user';
+import { getAll as getAllUsers } from '../../services/http-client/user';
+import { getAllBooks } from '../../services/http-client/books';
+import { order as orderRequest} from '../../services/http-client/orders';
 import { Link, Switch, Route } from 'react-router-dom';
 
 import './style.scss';
 import { constants } from '../../i18n';
 import { Menu, Header } from 'semantic-ui-react';
+import { colors } from '../../assets/semantic-colors';
 
 function Admin() {
   return (
     <Fragment>
+      <Segment textAlign="center">
+        {constants.admin}
+      </Segment>
       <AdminHeader />
-      <Switch>
-        <Route exact path='/admin' component={Order} />
-        <Route exact path='/admin/order' component={Order} />
-        <Route path='/admin/manage' component={Manage} />
-      </Switch>
+      <div className='admin'> 
+        <Switch>
+          <Route exact path='/admin' component={Order} />
+          <Route exact path='/admin/order' component={Order} />
+          <Route path='/admin/manage' component={Manage} />
+        </Switch>
+      </div>
     </Fragment>
   );
 }
 
 function Order() {
-  const [ users, error ] = useRequest(getAll, true);
+  const [ users, errorUsers ] = useRequest(getAllUsers, true);
+  const [ books, errorBooks ] = useRequest(getAllBooks, true);
+  const [ orderSelected, setOrderSelected ] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
-  const getOptions = () => {
+  const [selectedBook, setSelectedBook] = useState(null);
+  const [ order, errorOrder ] = useRequest(orderRequest, orderSelected, selectedUser, selectedBook);
+
+  const getUsers = () => {
     return users === null ? 
       [] : users.map(
         user => {
@@ -37,22 +50,63 @@ function Order() {
         }
       );
   }
+  const getBooks = () => {
+    return books === null ? 
+      [] : books.map(
+        book => {
+          return {
+            key: book.bookId, 
+            value: book.bookId,
+            text: book.name
+          }
+        }
+      )
+  }
   return (
     <div className="admin__order">
       {
-        error.message ?
-          <ErrorMessage text={error.message} /> 
-            :
-          <Dropdown 
-            search
-            selection
-            loading={users === null} 
-            onChange={(e, {value}) => setSelectedUser(value)}
-            value={selectedUser}
-            placeholder={constants.userslist}
-            options={getOptions()}
+          orderSelected && <WithRequest 
+            data={order} 
+            error={errorOrder}
+            WrappedComponent={() => <Segment color={colors.primary}>{constants.success}</Segment>} 
           />
-      }
+        }
+      <div className="admin__order__items">
+        {
+          errorBooks.message ?
+            <ErrorMessage text={errorBooks.message} /> 
+              :
+            <Dropdown 
+              search
+              selection
+              loading={users === null} 
+              onChange={(e, {value}) => setSelectedUser(value)}
+              value={selectedUser}
+              placeholder={constants.userslist}
+              options={getUsers()}
+            />
+        }
+        {
+          errorUsers.message ?
+            <ErrorMessage text={errorUsers.message} /> 
+              :
+            <Dropdown 
+              search
+              selection
+              loading={users === null} 
+              onChange={(e, {value}) => setSelectedBook(value)}
+              value={selectedBook}
+              placeholder={constants.books}
+              options={getBooks()}
+            />
+        }
+      </div>
+      <Button 
+        className='registration__button'
+        onClick={() => setOrderSelected(true)}
+        disabled={!selectedUser || !selectedBook}>
+        {constants.order}
+      </Button>
     </div>
   );
 }

@@ -7,6 +7,7 @@ import { book, sorting } from '../../types';
 import { colors } from '../../assets/semantic-colors';
 import { compose, compare } from '../../utils/utils';
 import { getAllBooks } from '../../services/http-client/books';
+import { formatData } from '../../services/format-data/books';
 
 import './style.scss';
 import { BooksList, useRequest, WithRequest } from '../../components';
@@ -103,7 +104,9 @@ function Books() {
   
   const findFunction = arr => 
     !input || !filter ? arr :
-      arr.filter(book => book[filter].toString().toLowerCase().includes(input.toLowerCase()));
+      arr.filter(book => {
+        return formatData(book)[filter].toString().toLowerCase().includes(input.toLowerCase())
+      });
 
   const putInOrder = items => compose(findFunction, sortFunction)(items);
 

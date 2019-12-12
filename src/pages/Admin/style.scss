@@ -11,8 +11,15 @@
 }
 
 .admin {
-    &__order {
-        @include column-flex-container;
+    @include centered-horizontal-container;
+    width: 100%;
+    height: 80%;
+    &__order{
         height: 80%;
+        width: 70%;
+        @include column-flex-container;
+        &__items {
+            @include centered-horizontal-container;
+        }
     }
 }

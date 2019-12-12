@@ -34,7 +34,8 @@ const allConstants = {
         userslist: 'Users list', 
         orders: 'Your orders',
         order: 'Create order',
-        manage: 'Manage library'
+        manage: 'Manage library', 
+        success: 'Success!'
     },
     ru: {
         title: 'Здорова, шо надо?',
@@ -71,7 +72,8 @@ const allConstants = {
         userslist: 'Пацаны', 
         orders: 'Записываемся на ноготочки',
         order: 'Новый заказ',
-        manage: 'То чего еще нет'
+        manage: 'То чего еще нет', 
+        success: 'Это успех!'
     }
 };
 
