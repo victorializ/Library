@@ -6,6 +6,12 @@
     &--selected {
         width: 100%;
         @include column-flex-container(top, left);
+        &__books {
+            height: 75vh;
+        }
+        &__name {
+            height: 10vh;
+        }
     }
     &__name {
         width: 100%;

@@ -122,11 +122,13 @@ function Books() {
         onFilterSet={filter => setFilter(filter)} 
         onFilterUnsert={() => setFilter('')}
       />
-      <WithRequest 
-        error={error}
-        data={putInOrder(books)} 
-        WrappedComponent={BooksList} 
-      /> 
+      <div class="books__list">
+        <WithRequest 
+          error={error}
+          data={putInOrder(books)} 
+          WrappedComponent={BooksList} 
+        /> 
+      </div>
     </Fragment>
   );
 }

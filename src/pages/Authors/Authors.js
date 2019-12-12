@@ -46,16 +46,20 @@ const SelectedAuthor = ({authorId}) => {
   const selectedAuthor = useRequest(getAuthor, authorId, authorId);
   return (
     <div className='authors--selected'>
-      <WithRequest 
-        data={selectedAuthor[0]} 
-        error={selectedAuthor[1]}
-        WrappedComponent={SelectedAuthorName} 
-      />
-      <WithRequest 
-        data={selectedAuthor[0]} 
-        error={selectedAuthor[1]}
-        WrappedComponent={AuthorsBooks} 
-      />
+      <div className='authors--selected__name'>
+        <WithRequest 
+          data={selectedAuthor[0]} 
+          error={selectedAuthor[1]}
+          WrappedComponent={SelectedAuthorName} 
+        />
+      </div>
+      <div className='authors--selected__books'>
+        <WithRequest 
+          data={selectedAuthor[0]} 
+          error={selectedAuthor[1]}
+          WrappedComponent={AuthorsBooks} 
+        />
+      </div>
     </div>
   ); 
 }

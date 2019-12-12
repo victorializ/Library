@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 
 import { Card, Dropdown, Segment, Button } from 'semantic-ui-react';
 import { User, useRequest, WithRequest, ErrorMessage } from '../../components';
@@ -37,6 +37,12 @@ function Order() {
   const [selectedUser, setSelectedUser] = useState(null);
   const [selectedBook, setSelectedBook] = useState(null);
   const [ order, errorOrder ] = useRequest(orderRequest, orderSelected, selectedUser, selectedBook);
+  
+  useEffect(() => {
+    if(order || errorOrder) {
+      setOrderSelected(false);
+    }  
+  }, [order, errorOrder, selectedUser, selectedBook]);;
 
   const getUsers = () => {
     return users === null ? 
