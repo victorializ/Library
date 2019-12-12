@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Menu, Header as SHeader } from 'semantic-ui-react'
+import { Menu, Header as SHeader } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 import { constants  } from '../../i18n';

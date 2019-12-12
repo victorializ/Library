@@ -32,7 +32,9 @@ const allConstants = {
         return: 'Please return book till', 
         expired: 'Expired!', 
         userslist: 'Users list', 
-        orders: 'Your orders'
+        orders: 'Your orders',
+        order: 'Create order',
+        manage: 'Manage library'
     },
     ru: {
         title: 'Здорова, шо надо?',
@@ -67,7 +69,9 @@ const allConstants = {
         return: 'Please return book till', 
         expired: 'ууу сука!', 
         userslist: 'Пацаны', 
-        orders: 'Записываемся на ноготочки'
+        orders: 'Записываемся на ноготочки',
+        order: 'Новый заказ',
+        manage: 'То чего еще нет'
     }
 };
 

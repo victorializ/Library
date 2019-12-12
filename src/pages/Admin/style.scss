@@ -9,3 +9,10 @@
         @include column-flex-container;
     }
 }
+
+.admin {
+    &__order {
+        @include column-flex-container;
+        height: 80%;
+    }
+}

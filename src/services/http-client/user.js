@@ -10,7 +10,7 @@ const mock = {
     lastName: 'Orlova',
     token: 'sssssssssssssshit', 
     isBlocked: false, 
-    isAdmin: false
+    isAdmin: true
 }
 
 const mockAll = {
@@ -67,8 +67,8 @@ function register(user) {
 function getAll() {
     //const url = '/User';
     //return get(url);
-    const err = mock.isAdmin ? '' : error;
-    return promisify(mockAll, err);
+    //const err = mock.isAdmin ? '' : error;
+    return promisify(mockAll);
 }
 
 
