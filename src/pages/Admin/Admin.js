@@ -23,7 +23,7 @@ function Admin() {
 }
 
 function Order() {
-  const [ users, error ] = useRequest(getAll);
+  const [ users, error ] = useRequest(getAll, true);
   const [selectedUser, setSelectedUser] = useState(null);
   const getOptions = () => {
     return users === null ? 

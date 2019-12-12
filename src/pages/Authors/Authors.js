@@ -43,7 +43,7 @@ const AuthorsBooks = ({data : {bookAuthors: books}}) =>
 
 
 const SelectedAuthor = ({authorId}) => {
-  const selectedAuthor = useRequest(getAuthor, authorId);
+  const selectedAuthor = useRequest(getAuthor, authorId, authorId);
   return (
     <div className='authors--selected'>
       <WithRequest 
@@ -63,7 +63,7 @@ const SelectedAuthor = ({authorId}) => {
 function Authors() {
   const [ authorId, setAuthorId ] = useState(null);
 
-  const authors = useRequest(getAllAuthors);
+  const authors = useRequest(getAllAuthors, true);
 
   return (
     <div className='authors'>

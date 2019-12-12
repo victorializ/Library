@@ -95,7 +95,7 @@ function Books() {
   const [ sort, setSort ] = useState('');
   const [ filter, setFilter ] = useState(book.Name);
 
-  const [ books, error ]  = useRequest(getAllBooks);
+  const [ books, error ]  = useRequest(getAllBooks, true);
   
   const sortFunction = arr => 
     !sort ? arr : 

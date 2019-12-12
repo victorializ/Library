@@ -22,7 +22,7 @@ function useRequest(query, resolve, ...params) {
         if(resolve !== null) {
             request();
         }
-      }, resolve);
+      }, params);
     
     return [data, error];
 }

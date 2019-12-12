@@ -14,7 +14,7 @@ import './style.scss';
 
 function Orders({id: userId}) {
     
-  const [ orders, error ]  = useRequest(getAll, userId);
+  const [ orders, error ]  = useRequest(getAll, userId, userId);
   return (
       <Fragment>
         <CurrentUserIcon />   

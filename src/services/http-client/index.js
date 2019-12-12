@@ -13,7 +13,7 @@ const redirects = {
   404: '/notfound'
 };
 */
-
+/*
 instance.interceptors.request.use(
   (config) => {
    const AUTH_TOKEN = JSON.stringify(store.getState().user.token);
@@ -23,7 +23,7 @@ instance.interceptors.request.use(
     return config;
   }, error => Promise.reject(error)
 );
-
+*/
 /*
 instance.interceptors.response.use(
   response => response,
