@@ -7,8 +7,8 @@ function login(email, password) {
 
         httpLogin(email, password)
             .then(
-                ({user: {data}}) => { 
-                    dispatch(success(data));
+                (user) => { 
+                    dispatch(success(user));
                 },
                 error => {
                     dispatch(failure(error));

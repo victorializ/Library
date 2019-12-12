@@ -23,7 +23,7 @@ function authReducer(state = initialState, action) {
     case constants.LOGIN_SUCCESS:
       return {
         ...state,
-        user: action.user,
+        user: action.user.data,
         loading: false,
       };
     case constants.LOGIN_FAILURE:
