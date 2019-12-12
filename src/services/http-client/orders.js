@@ -119,14 +119,12 @@ const mock = {
 function order (userId, bookId) {
     // const url = '/Order'; TODO: check urls
     //return post(url, {userId, bookId});
-     console.log(userId, bookId);
     return promisify({data: {}});
 }
  
 function getAll (userId) {
      //const url = `/Order/${userId}`;
      //return get(url);
-     console.log(userId);
      return promisify(mock);
 }
 

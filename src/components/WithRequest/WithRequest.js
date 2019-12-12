@@ -9,7 +9,6 @@ function useRequest(query, resolve, ...params) {
     const [ data, setData ] = useState(null);
     const [ error, setError ] = useState('');
 
-    console.log(query, resolve, params);
     const request = () => {
         setData(null);
         setError('');
