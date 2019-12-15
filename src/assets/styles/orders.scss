@@ -1,0 +1,6 @@
+.orders {
+    &__list {
+        @include column-flex-container;
+        height: 80%;
+    }
+}

@@ -1,0 +1,12 @@
+@import './variables.scss';
+
+.registration{
+    &__form {
+        height: 600px;
+        width: 500px;
+        @include column-flex-container;
+    }
+    &__button {
+        width: 100%;
+    }
+}

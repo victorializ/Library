@@ -1,23 +1,23 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { AdminPage, AuthorsPage, BooksPage, LoginPage, MainPage, RegistrationPage, OrdersPage } from './pages';
+import { AuthorsPage, BooksPage, LoginPage, MainPage, RegistrationPage, OrdersPage } from './pages';
 import { Footer, Header } from './components';
 
-import './App.scss';
+import './assets/styles/style.scss';
 
 function App() {
   return (
     <Router>
       <Header />
-      <div className="page__wrapper">
+      <div className="app__wrapper">
         <Switch>
           <Route exact path='/' component={MainPage} />
           <Route exact path='/registration' component={RegistrationPage} />
           <Route path='/login' component={LoginPage} />
           <Route path='/book' component={BooksPage} />
           <Route path='/author' component={AuthorsPage} />
-          <Route path='/admin' component={AdminPage} />
+          {/*<Route path='/admin' component={AdminPage} />*/}
           <Route path='/orders' component={OrdersPage} />
         </Switch>
       </div>

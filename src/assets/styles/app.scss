@@ -1,0 +1,16 @@
+.app {
+    &__footer {
+        height: 5vh;
+        text-align: center;
+    }
+    &__header {
+        height: 10vh;
+        &__logo {
+            margin-right: auto;
+        }
+    }
+    &__wrapper {
+        height: 85vh;
+        width: 100vw;
+    }
+}

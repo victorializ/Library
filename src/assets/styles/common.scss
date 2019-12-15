@@ -1,0 +1,17 @@
+@import './variables.scss';
+
+.center {
+    width: 100%;  
+    height: 100%;
+    @include column-flex-container;
+}
+
+.center-horizontal {
+    width: 100%;  
+    @include column-flex-container;
+}
+
+.center-vertical {
+    height: 100%;  
+    @include column-flex-container;
+}

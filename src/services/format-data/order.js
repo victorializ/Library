@@ -1,5 +1,13 @@
 function formatData(order) {
-    const { bookingId, book: {bookId, name, bookYear}, date, isFinished} = order;
+    const { bookingId, 
+        book: {
+            bookId, 
+            name, 
+            bookYear
+        }, 
+        date, 
+        isFinished 
+    } = order;
     return {
         id: bookingId, 
         bookId,

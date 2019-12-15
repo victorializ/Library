@@ -1,0 +1,7 @@
+.user {
+    display: flex;
+    height: 6vh;
+    &__name {
+        overflow: hidden;
+    }
+}

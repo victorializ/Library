@@ -1,0 +1,44 @@
+@import './variables.scss';
+
+.ui.cards>.card {
+    margin: $space-sm;
+}
+
+.ui.card, .ui.cards>.card {
+    width: 300px;
+    overflow: hidden;
+}
+
+.ui.segment {
+    margin: 0;
+}
+
+.ui.segment {
+    &:last-child, &:first-child {
+        margin-bottom: $space-xs;
+    }
+}
+
+.ui.cards {
+    margin-top: $space-xs;
+}
+
+header {
+    .ui.menu {
+        margin: 0;
+        height: 10vh;
+    }
+    .item {
+        border: 0;
+        width: 10vw;
+        @include centered-horizontal-container;
+    }
+}
+
+.ui.button {
+    margin: $space-xs 0;
+}
+
+.ui.search {
+    margin: $space-sm;
+}

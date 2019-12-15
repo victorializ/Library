@@ -1,0 +1,42 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Menu, Header as SHeader } from 'semantic-ui-react'
+
+import { constants } from '../../i18n';
+import { CurrentUser } from '../User/User';
+
+function Header() {
+  return (
+    <header>
+        <Menu className='app__header'>
+            <Menu.Item as={Link} to='/' className='app__header__logo'>
+                <SHeader>
+                    {constants.title}
+                </SHeader>
+            </Menu.Item>
+            <Menu.Item>
+                <SHeader>
+                    <CurrentUser />
+                </SHeader>
+            </Menu.Item> 
+            <Menu.Item as={Link} to='/login'>
+                <SHeader>
+                    {constants.login}
+                </SHeader>
+            </Menu.Item>
+            <Menu.Item as={Link} to='/author'>
+                <SHeader>
+                    {constants.bookAuthors}
+                </SHeader>
+            </Menu.Item>
+            <Menu.Item as={Link} to='/book'>
+                <SHeader>
+                    {constants.books}
+                </SHeader>
+            </Menu.Item>
+        </Menu>
+    </header>
+  );
+}
+
+export {  Header };

@@ -1,9 +1,30 @@
-import { Footer } from "./Footer/Footer";
-import { Header } from "./Header/Header";
-import { BooksList } from "./BooksList/BooksList";
-import { ErrorMessage } from "./ErrorMessage/ErrorMessage";
-import { CurrentUserIcon } from "./User";
-import { User } from "./User/User";
-import { WithRequest, useRequest } from "./WithRequest/WithRequest";
+import { Footer } from "./UITable/Footer";
+import { Header } from "./UITable/Header";
+import { ErrorMessage } from "./UITable/ErrorMessage";
+import { BooksList } from "./Book/BooksList";
+import { User, CurrentUser } from './User/User';
+import { RegistrationForm  } from './Registration/RegistrationForm';
+import { RegistrationResult } from './Registration/RegistrationResult'; 
+import { LoginForm } from './Login/LoginForm';
+import { AuthorsList } from './Author/AuthorsList';
+import { SelectedAuthor } from './Author/SelectedAutor';
+import { LoadingComponent } from './hocs/LoadingComponent';
+import { OrdersList } from './Order/OrderList';
+import { BooksTopLevelMenu } from './Book/BooksTopLevelMenu';
 
-export { Footer, Header, BooksList, ErrorMessage, WithRequest, useRequest, CurrentUserIcon, User };
+export { 
+    Header, 
+    Footer, 
+    User, 
+    CurrentUser,
+    BooksList, 
+    ErrorMessage, 
+    LoadingComponent, 
+    RegistrationResult, 
+    RegistrationForm, 
+    LoginForm,
+    AuthorsList, 
+    SelectedAuthor,
+    OrdersList,
+    BooksTopLevelMenu
+};

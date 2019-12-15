@@ -16,6 +16,7 @@ function genres(obj) {
 
 export function formatData(
     { 
+        bookId,
         name, 
         bookYear, 
         numberAvailable, 
@@ -23,6 +24,7 @@ export function formatData(
         bookAuthors 
     }) {
     return {
+        id: bookId,
         name, 
         bookYear,
         numberAvailable,

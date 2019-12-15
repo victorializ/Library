@@ -1,0 +1,26 @@
+$space-xs: 10px;
+$space-sm: 30px;
+$space-lg: 70px;
+
+$grey: #ccc;
+
+$main-background: url(./../../assets/images/books.jpg);
+
+@mixin column-flex-container($justify: center, $align: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: column;
+}
+
+@mixin centered-horizontal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centered-in-block {
+    width: 100%;  
+    height: 100%;
+    @include column-flex-container;
+}

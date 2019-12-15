@@ -1,0 +1,7 @@
+.login {
+    &__form {
+        min-height: 300px;
+        min-width: 300px;
+        @include column-flex-container;
+    }
+}

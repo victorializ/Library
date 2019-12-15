@@ -1,0 +1,17 @@
+@import './variables.scss';
+
+.books {
+    &__label {
+        height: 50px;
+    }
+    &__menu {
+        margin: 0;
+        height: 30vh;
+        @include column-flex-container;
+        background-image: $main-background;
+    }
+    &__search, &__filter {
+        @include centered-horizontal-container;
+        margin: $space-xs;
+    }
+}
