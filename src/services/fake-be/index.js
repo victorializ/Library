@@ -1,4 +1,3 @@
-/*
 import { getAllAuthors, getAuthor, newAuthor, addAuthor } from './authors';
 import { getAllBooks, newBook } from './books';
 import { getAllOrders, order } from './orders';
@@ -10,6 +9,3 @@ export {
     getAllOrders, order, 
     login, register, getAllUsers
 }
-*/
-
-export * from '../fake-be';

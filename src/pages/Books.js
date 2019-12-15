@@ -2,7 +2,7 @@ import React,  { useState, Fragment }  from 'react';
 
 import { book } from '../types';
 import { compose, compare } from '../utils/utils';
-import { getAllBooks } from '../services/http-client/books';
+import { getAllBooks } from '../services/http-client';
 
 import { 
   BooksList, 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { getAllAuthors } from '../services/http-client/authors';
+import { getAllAuthors } from '../services/http-client';
 import { useRequest } from '../hooks';
 import { LoadingComponent, SelectedAuthor, AuthorsList } from '../components';
 

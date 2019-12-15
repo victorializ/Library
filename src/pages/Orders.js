@@ -5,11 +5,11 @@ import { Header } from 'semantic-ui-react';
 import { constants  } from '../i18n';
 import { CurrentUser, LoadingComponent, OrdersList } from '../components';
 import { useRequest } from '../hooks';
-import { getAll } from '../services/http-client/orders';
+import { getAllOrders } from '../services/http-client';
 
 function Orders({id: userId}) {
     
-  const [ orders, error ]  = useRequest(getAll, userId);
+  const [ orders, error ]  = useRequest(getAllOrders, userId);
   return (
       <Fragment>
         <CurrentUser />   

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Segment } from 'semantic-ui-react';
 
 import { colors } from "../assets/semantic-colors";
-import { register } from '../services/http-client/user';
+import { register } from '../services/http-client';
 import { useRequest } from '../hooks';
 import { LoadingComponent, RegistrationForm , RegistrationResult } from '../components';
 

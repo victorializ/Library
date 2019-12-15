@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { getAuthor } from '../../services/http-client/authors';
+import { getAuthor } from '../../services/http-client';
 import { useRequest } from '../../hooks';
 import { LoadingComponent } from '../../components';
 import { SelectedAuthorName } from './SelectedAuthorName';

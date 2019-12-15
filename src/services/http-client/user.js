@@ -1,79 +1,18 @@
-import { post } from './index';
-import { get } from 'http';
-import { promisify } from '../../utils/utils';
-
-const mock = {
- 
-        data: {
-            id: 1,
-            email: 'allie',
-            password: '1111',
-            firstName: 'Alice',
-            lastName: 'Orlova',
-            token: 'sssssssssssssshit', 
-            isBlocked: false, 
-            role: "Admin"
-        }
-    
-}
-
-const mockAll = {
-    data: [
-        {
-            "userId": 1,
-            "firstName": "Alice",
-            "lastName": "Orlova",
-            "email": "allie",
-            "passwordHash": "hasssh",
-            "passwordSalt": "salt",
-            "isBlocked": false,
-            "bookings": [
-                {
-                    "bookingId": 3,
-                    "book": null,
-                    "isFinished": false
-                }
-            ]
-        },
-        {
-            "userId": 3,
-            "firstName": "Vika",
-            "lastName": "Aliz",
-            "email": "allie_orlova",
-            "passwordHash": "hash",
-            "passwordSalt": "salt",
-            "isBlocked": false,
-            "bookings": []
-        }
-    ]
-}
-
-const error = {
-    message: 'This is error!'
-}
+import { post, get } from './config';
 
 function login(email, password) {
-    
-    //const url = '/authenticate';
-    //return post(url, {})
-
-    const err = email !== mock.data.email || password !== mock.data.password ? error : '';
-    return promisify(mock, err);
+    const url = '/Users/Authenticate';
+    return post(url, {email, password})
 }
 
 function register(user) {
-    //const url = '/register';
-    //return post(url, user);
-    const err = user.email === mock.email ? error : '';
-    return promisify({data: {}}, err);
+    const url = '/Register';
+    return post(url, user);
 }
 
-function getAll() {
-    //const url = '/User';
-    //return get(url);
-    //const err = mock.isAdmin ? '' : error;
-    return promisify(mockAll);
+function getAllUsers() {
+    const url = '/Users';
+    return get(url);
 }
 
-
-export { login, register, getAll };
+export { login, register, getAllUsers };

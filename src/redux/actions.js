@@ -1,5 +1,5 @@
 import { constants } from './constants';
-import { login as httpLogin } from '../services/http-client/user';
+import { login as httpLogin } from '../services/http-client';
 
 function login(email, password) {
     return dispatch => {
