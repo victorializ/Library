@@ -1,16 +1,16 @@
 import { Footer } from "./UITable/Footer";
 import { Header } from "./UITable/Header";
 import { ErrorMessage } from "./UITable/ErrorMessage";
-import { BooksList } from "./Book/BooksList";
+import { BooksList } from "./Book/List";
 import { User, CurrentUser } from './User/User';
 import { RegistrationForm  } from './Registration/RegistrationForm';
 import { RegistrationResult } from './Registration/RegistrationResult'; 
 import { LoginForm } from './Login/LoginForm';
-import { AuthorsList } from './Author/AuthorsList';
+import { AuthorsList } from './Author/List';
 import { SelectedAuthor } from './Author/SelectedAutor';
 import { LoadingComponent } from './hocs/LoadingComponent';
 import { OrdersList } from './Order/OrderList';
-import { BooksTopLevelMenu } from './Book/BooksTopLevelMenu';
+import { BooksTopLevelMenu } from './Book/TopLevelMenu';
 
 export { 
     Header, 

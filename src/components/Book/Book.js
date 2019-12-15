@@ -32,7 +32,7 @@ function Book ({item}) {
                 </Card.Description>
             </Card.Content>
         </Card>
-    )
+    );
 }
 
 export { Book };

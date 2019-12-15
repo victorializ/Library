@@ -57,7 +57,7 @@ function Order({item}) {
                 </Card.Description>
             </Card.Content>
         </Card>
-    )
+    );
 }
 
 export { Order };

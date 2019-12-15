@@ -13,7 +13,7 @@ function useRequest(query, params = [], shouldRequestData = true) {
            
             query(...params)
                 .then(({data}) => setData(data))
-                .catch(err => setError(data))
+                .catch(err => setError(err))
                 .finally(() => setLoading(false))
         }
     }, [...params]);

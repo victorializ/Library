@@ -1,15 +1,13 @@
 import React,  { useState, Fragment }  from 'react';
 
-import { book } from '../types';
-import { compose, compare } from '../utils/utils';
-import { getAllBooks } from '../services/http-client';
-
 import { 
   BooksList, 
   BooksTopLevelMenu as TopLevelMenu, 
   LoadingComponent 
 } from '../components';
-
+import { book } from '../types';
+import { compose, compare } from '../utils/utils';
+import { getAllBooks } from '../services/http-client';
 import { useRequest } from '../hooks';
 
 function Books() {

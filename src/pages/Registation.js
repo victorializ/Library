@@ -14,7 +14,8 @@ function Registration() {
     <div className="center-vertical">
       <Segment 
         color={colors.primary} 
-        className='registration__form'>
+        className='registration__form'
+      >
         {
           user ? 
             <LoadingComponent

@@ -8,16 +8,16 @@ import image from "../assets/images/books.jpg";
 function Main() {
   return (
     <Fragment>
-        <img 
-          src={image} 
-          alt="Library"
-          className="main__image">  
-        </img>
-        <Header 
-          as='h1' 
-          textAlign='center'>
-          {constants.title}
-        </Header>
+      <img 
+        src={image} 
+        alt="Library"
+        className="main__image">  
+      </img>
+      <Header 
+        as='h1' 
+        textAlign='center'>
+        {constants.title}
+      </Header>
     </Fragment>
   );
 }

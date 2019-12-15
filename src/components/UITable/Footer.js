@@ -6,9 +6,10 @@ import { constants  } from '../../i18n';
 function Footer() {
   return (
     <Segment  
-      className="app__footer">
-        {constants.copyright}
-      </Segment>
+      className="app__footer"
+    >
+      {constants.copyright}
+    </Segment>
   );
 }
 

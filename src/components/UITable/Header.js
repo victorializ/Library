@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, Header as SHeader } from 'semantic-ui-react'
 
-import { constants } from '../../i18n';
 import { CurrentUser } from '../User/User';
+import { constants } from '../../i18n';
 
 function Header() {
   return (

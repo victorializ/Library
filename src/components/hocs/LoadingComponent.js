@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
-
 import { Loader } from 'semantic-ui-react';
+
 import { ErrorMessage } from '../UITable/ErrorMessage';
 
 function LoadingComponent({ 
@@ -25,7 +25,7 @@ function LoadingComponent({
                      </div>
             }
         </Fragment>
-    )
+    );
 }
 
 export { LoadingComponent };

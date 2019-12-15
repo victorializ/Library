@@ -3,6 +3,6 @@ import React  from 'react';
 import { Book } from './Book';
 import { ItemsList } from '../hocs/ItemsList';
 
-const BooksList = ({data}) => <ItemsList data={data} Component={Book} />
+const List = ({data}) => <ItemsList data={data} Component={Book} />
 
-export { BooksList };    
+export { List as BooksList };    

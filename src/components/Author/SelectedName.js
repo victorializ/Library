@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Segment } from 'semantic-ui-react';
 
-const SelectedAuthorName = (
+const SelectedName = (
     {
         data: {
             firstName = '', 
@@ -13,4 +13,4 @@ const SelectedAuthorName = (
   (firstName && lastName) && 
     <Segment className='authors__name'>{`${firstName} ${lastName}`}</Segment>
 
-export { SelectedAuthorName };
+export { SelectedName as SelectedAuthorName };

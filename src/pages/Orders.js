@@ -7,21 +7,21 @@ import { CurrentUser, LoadingComponent, OrdersList } from '../components';
 import { useRequest } from '../hooks';
 import { getAllOrders } from '../services/http-client';
 
-function Orders({id: userId}) {
-    
+function Orders({id: userId}) {  
   const response = useRequest(getAllOrders, [userId]);
+
   return (
-      <Fragment>
-        <CurrentUser />   
-        <Header>{constants.orders}</Header>
-        <div className='orders__list'>
-            <LoadingComponent
-                {...response}
-                WrappedComponent={OrdersList} 
-            /> 
-        </div>
-      </Fragment>
-  )
+    <Fragment>
+      <CurrentUser />   
+      <Header>{constants.orders}</Header>
+      <div className='orders__list'>
+          <LoadingComponent
+              {...response}
+              WrappedComponent={OrdersList} 
+          /> 
+      </div>
+    </Fragment>
+  );
 }
 
 const UserOrders = connect(({user}) => user)(Orders);
