@@ -9,15 +9,14 @@ import { getAllOrders } from '../services/http-client';
 
 function Orders({id: userId}) {
     
-  const [ orders, error ]  = useRequest(getAllOrders, userId);
+  const response = useRequest(getAllOrders, [userId]);
   return (
       <Fragment>
         <CurrentUser />   
         <Header>{constants.orders}</Header>
         <div className='orders__list'>
             <LoadingComponent
-                error={error}
-                data={orders} 
+                {...response}
                 WrappedComponent={OrdersList} 
             /> 
         </div>

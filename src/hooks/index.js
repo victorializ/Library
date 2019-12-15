@@ -1,27 +1,24 @@
-
 import { useState, useEffect } from 'react';
 
-function useRequest(query, resolve, ...params) {
+function useRequest(query, params = [], shouldRequestData = true) {
     const [ data, setData ] = useState(null);
-    const [ error, setError ] = useState('');
+    const [ error, setError ] = useState({message: null});
+    const [ loading, setLoading ] = useState(shouldRequestData);
 
-    const request = () => {
-        setData(null);
-        setError('');
-
-        return query(...params)
-            .then(({data}) => setData(data))
-            .catch(err => setError(err))
-            //.finilly(() => setError('err'))
-    }
-    
     useEffect(() => {
-        if(resolve !== null) {
-            request();
+        if(shouldRequestData) {
+            setData(null);
+            setLoading(true);
+            setError({message: null});
+           
+            query(...params)
+                .then(({data}) => setData(data))
+                .catch(err => setError(data))
+                .finally(() => setLoading(false))
         }
-      }, params);
-    
-    return [data, error];
+    }, [...params]);
+
+    return { data, error, loading };
 }
 
 export { useRequest };

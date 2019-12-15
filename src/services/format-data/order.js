@@ -5,7 +5,7 @@ function formatData(order) {
             name, 
             bookYear
         }, 
-        date, 
+        dateOfReturn: date, 
         isFinished 
     } = order;
     return {

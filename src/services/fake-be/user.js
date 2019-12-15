@@ -9,7 +9,7 @@ const mockUser = {
         lastName: 'Orlova',
         token: 'sssssssssssssshit', 
         isBlocked: false, 
-        role: "Admin"
+        role: "User"
     }
 }
 
@@ -49,16 +49,19 @@ const mockError = {
 }
 
 function login(email, password) {
+    console.log('login', email, password);
     const err = email !== mockUser.data.email || password !== mockUser.data.password ? mockError : '';
     return promisify(mockUser, err);
 }
 
 function register(user) {
+    console.log('register', JSON.stringify(user));
     const err = user.email === mockUser.email ? mockError : '';
     return promisify({data: {}}, err);
 }
 
 function getAllUsers() {
+    console.log('getAllUsers');
     const err = mockUser.role === 'Admin' ? '' : mockError;
     return promisify(mockAllUsers, err);
 }

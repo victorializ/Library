@@ -7,17 +7,15 @@ import { SelectedAuthorName } from './SelectedAuthorName';
 import { AuthorsBooks } from './AuthorsBooks';
 
 const SelectedAuthor = ({authorId}) => {
-    const selectedAuthor = useRequest(getAuthor, authorId);
+    const response = useRequest(getAuthor, [authorId]);
     return (
       <div className='authors--selected'>
         <LoadingComponent
-          data={selectedAuthor[0]} 
-          error={selectedAuthor[1]}
+          {...response}
           WrappedComponent={SelectedAuthorName} 
         />
         <LoadingComponent
-          data={selectedAuthor[0]} 
-          error={selectedAuthor[1]}
+          {...response}
           WrappedComponent={AuthorsBooks} 
         />
       </div>

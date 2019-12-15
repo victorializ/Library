@@ -7,7 +7,10 @@ function login(email, password) {
 
 function register(user) {
     const url = '/Register';
-    return post(url, user);
+    return post(url, {
+        ...user, 
+        PasswordConfirm: user.reenter
+    });
 }
 
 function getAllUsers() {

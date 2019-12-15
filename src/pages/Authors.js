@@ -7,14 +7,13 @@ import { LoadingComponent, SelectedAuthor, AuthorsList } from '../components';
 function Authors() {
   const [ authorId, setAuthorId ] = useState(null);
 
-  const authors = useRequest(getAllAuthors);
+  const response = useRequest(getAllAuthors);
 
   return (
     <div className='authors'>
       <div className='authors__list'>
         <LoadingComponent
-          error={authors[1]}
-          data={authors[0]} 
+          {...response}
           onAuthorSelect={authorId => setAuthorId(authorId)}
           WrappedComponent={AuthorsList} 
         />

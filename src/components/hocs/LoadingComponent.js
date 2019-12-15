@@ -1,21 +1,30 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import { Loader } from 'semantic-ui-react';
 import { ErrorMessage } from '../UITable/ErrorMessage';
 
-function LoadingComponent(props) {
-    const { WrappedComponent, data, error: { message } } = props;
-    
+function LoadingComponent({ 
+    data, 
+    error: { message },
+    loading, 
+    WrappedComponent, 
+    ...rest
+}) {
     return (
-        data || message ? 
-            message ? 
-                <ErrorMessage text={message} /> 
-                    :
-                <WrappedComponent data={data} {...props} />  
-                : 
-            <div className='center'>
-                <Loader active inline='centered'/>
-            </div>
+        <Fragment>
+            {
+                message && <ErrorMessage text={message} /> 
+            }
+            {  
+                data && <WrappedComponent data={data} {...rest} />  
+            }
+            {         
+                loading && 
+                     <div className='center'>
+                         <Loader active inline='centered'/>
+                     </div>
+            }
+        </Fragment>
     )
 }
 

@@ -23,7 +23,7 @@ const mock = {
                 "bookings": []
             },
             "isFinished": false, 
-            "date": '2019-12-05'
+            "dateOfReturn": '2019-12-05'
         },
         {
             "bookingId": 2,
@@ -66,7 +66,7 @@ const mock = {
                 "bookings": []
             },
             "isFinished": false,
-            "date": '2019-12-18'
+            "dateOfReturn": '2019-12-18'
         }, 
         {
             "bookingId": 4,
@@ -109,7 +109,7 @@ const mock = {
                 "bookings": []
             },
             "isFinished": true,
-            "date": '2019-12-01'
+            "dateOrReturn": '2019-12-01'
         }
     ]
 }

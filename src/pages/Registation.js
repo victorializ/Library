@@ -7,23 +7,25 @@ import { useRequest } from '../hooks';
 import { LoadingComponent, RegistrationForm , RegistrationResult } from '../components';
 
 function Registration() {
-
   const [ user, setUser ] = useState(false);
-  const [ response, error ] = useRequest(register, user);
+  const response = useRequest(register, [user], user);
 
   return (
     <div className="center-vertical">
       <Segment 
         color={colors.primary} 
         className='registration__form'>
-        <LoadingComponent
-          error={error}
-          data={response}
-          WrappedComponent={RegistrationResult} 
-        />
-        <RegistrationForm 
-          register={user => setUser(user)}
-        />
+        {
+          user ? 
+            <LoadingComponent
+              {...response}
+              WrappedComponent={RegistrationResult} 
+            />
+          :
+            <RegistrationForm 
+              register={user => setUser(user)}
+            />
+        }
       </Segment>
     </div>
   );

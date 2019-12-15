@@ -18,7 +18,7 @@ function Books() {
   const [ sort, setSort ] = useState('');
   const [ filter, setFilter ] = useState(book.Name);
 
-  const [ books, error ]  = useRequest(getAllBooks);
+  const response = useRequest(getAllBooks);
   
   const sortFunction = arr => 
     !sort ? arr : 
@@ -43,8 +43,8 @@ function Books() {
         onFilterUnsert={() => setFilter('')}
       />
       <LoadingComponent
-        error={error}
-        data={putInOrder(books)} 
+        {...response}
+        data={putInOrder(response.data)} 
         WrappedComponent={BooksList} 
       /> 
     </Fragment>
