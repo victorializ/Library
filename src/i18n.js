@@ -35,7 +35,10 @@ const allConstants = {
         orders: 'Your orders',
         order: 'Create order',
         manage: 'Manage library', 
-        success: 'Success!'
+        success: 'Success!',
+        cells: 'Cells', 
+        makeManages: 'Make manager',
+        makeUser: 'Make user'
     },
     ru: {
         title: 'Здорова, шо надо?',
@@ -73,7 +76,10 @@ const allConstants = {
         orders: 'Записываемся на ноготочки',
         order: 'Новый заказ',
         manage: 'То чего еще нет', 
-        success: 'Это успех!'
+        success: 'Это успех!', 
+        cells: 'Склад это вам не комора!', 
+        makeManager: 'Повышение',
+        makeUser: 'Увольнение'
     }
 };
 

@@ -10,6 +10,15 @@
     }
 }
 
+.new_author {
+    width: 100%;
+    @include centered-horizontal-container;
+}
+
+.new_author_form {
+    width: 50%;
+}
+
 .admin {
     @include centered-horizontal-container;
     width: 100%;
@@ -22,4 +31,9 @@
             @include centered-horizontal-container;
         }
     }
+}
+
+.manage {
+    height: 100%;
+    width: 100%;
 }

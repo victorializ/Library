@@ -20,3 +20,9 @@ export const user = {
     email: "email",
     password: "password"
 }
+
+export const roles = {
+    user: "User", 
+    manager: "Manager", 
+    admin: "Admin"
+}

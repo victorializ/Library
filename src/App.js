@@ -21,8 +21,9 @@ function App() {
           <Route path='/orders' component={OrdersPage} />
         </Switch>
       </div>
-      <Footer />
+
     </Router>
+    
   );
 }
 

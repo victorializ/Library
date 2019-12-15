@@ -1,7 +1,7 @@
-import { post } from './index';
-import { get } from 'http';
+import { post, get } from './index';
 import { promisify } from '../../utils/utils';
 
+import { store } from '../../redux/store';
 const mock = {
  
         data: {
@@ -54,25 +54,25 @@ const error = {
 
 function login(email, password) {
     
-    //const url = '/authenticate';
-    //return post(url, {})
+    const url = '/Users/Authenticate';
+    return post(url, {email,password})
 
     const err = email !== mock.data.email || password !== mock.data.password ? error : '';
     return promisify(mock, err);
 }
 
 function register(user) {
-    //const url = '/register';
-    //return post(url, user);
+    const url = '/Register';
+    return post(url, user);
     const err = user.email === mock.email ? error : '';
     return promisify({data: {}}, err);
 }
 
 function getAll() {
-    //const url = '/User';
-    //return get(url);
+    const url = '/Users';
+    return get(url);
     //const err = mock.isAdmin ? '' : error;
-    return promisify(mockAll);
+    //return promisify(mockAll);
 }
 
 

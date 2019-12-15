@@ -1,4 +1,4 @@
-import { get } from './index';
+import { get, post } from './index';
 import { promisify } from '../../utils/utils';
 
 const mock = { 
@@ -97,18 +97,29 @@ const mock = {
 };
 
 export function getAllAuthors() {
-    /*
+    
     const url = `/Author`;
     return get(url);
-    */
+    
    
     return promisify(mock);
 }
 
 export function getAuthor(id) {
-    /*
+    
     const url = `/Author/${id}`;
     return get(url);
-    */
+    
    return promisify({data: mock.data.find(element => element.authorId === id)});
+}
+
+export function newAuthor(firstName, lastName) {
+
+    const url = `/Author`;
+    return post(url, {firstName, lastName});
+}
+
+export function addAuthor(id, authorId) {
+    const url = `/Books/${id}/AddAuthor`;
+    return post (url, {authorId});
 }

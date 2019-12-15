@@ -6,7 +6,7 @@ import { formatData } from '../../services/format-data/books';
 
 import './style.scss';
 
-const Book = (
+export const Book = (
   {
     book: {
       name, 

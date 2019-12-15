@@ -15,7 +15,8 @@ function useRequest(query, resolve, ...params) {
 
         return query(...params)
             .then(({data}) => setData(data))
-            .catch(err => setError(err));
+            .catch(err => setError(err))
+            //.finilly(() => setError('err'))
     }
     
     useEffect(() => {

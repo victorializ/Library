@@ -1,5 +1,4 @@
-import { post } from './index';
-import { get } from 'http';
+import { post, get } from './index';
 import { promisify } from '../../utils/utils';
 
 const mock = {
@@ -117,15 +116,15 @@ const mock = {
 }
 
 function order (userId, bookId) {
-    // const url = '/Order'; TODO: check urls
-    //return post(url, {userId, bookId});
-    return promisify({data: {}});
+    const url = '/Bookings';  // TODO: check urls
+    return post(url, {"user" : {userId}, "book": {bookId}});
+    //return promisify({data: {}});
 }
  
 function getAll (userId) {
-     //const url = `/Order/${userId}`;
-     //return get(url);
-     return promisify(mock);
+     const url = `/Users/${userId}/GetBookings`;
+     return get(url);
+    // return promisify(mock);
 }
 
 export { getAll, order };

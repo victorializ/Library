@@ -13,17 +13,18 @@ const redirects = {
   404: '/notfound'
 };
 */
-/*
+
 instance.interceptors.request.use(
   (config) => {
-   const AUTH_TOKEN = JSON.stringify(store.getState().user.token);
+   const AUTH_TOKEN = store.getState().user.token;
+   console.log(AUTH_TOKEN);
    if (AUTH_TOKEN) {
-    config.headers['Authorization'] = AUTH_TOKEN;
+    config.headers['Authorization'] = `Bearer ${AUTH_TOKEN}`;
    }
     return config;
   }, error => Promise.reject(error)
 );
-*/
+
 /*
 instance.interceptors.response.use(
   response => response,

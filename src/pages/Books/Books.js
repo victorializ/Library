@@ -122,7 +122,7 @@ function Books() {
         onFilterSet={filter => setFilter(filter)} 
         onFilterUnsert={() => setFilter('')}
       />
-      <div class="books__list">
+      <div className="books__list">
         <WithRequest 
           error={error}
           data={putInOrder(books)} 

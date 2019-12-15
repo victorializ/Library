@@ -1,4 +1,4 @@
-import { get } from './index';
+import { get, post } from './index';
 import { promisify } from '../../utils/utils';
 const mock = {
     data : [
@@ -80,9 +80,15 @@ const mock = {
 };
 
 export function getAllBooks() {
-    /*
+    
     const url = `/Books`;
     return get(url);
-    */
+    
    return promisify(mock);
+}
+
+
+export function newBook(Name, BookYear, NumberAvailable) {
+    const url = `/Books`
+    return post(url, {Name, BookYear, NumberAvailable});
 }
