@@ -12,8 +12,8 @@ function Order() {
     const allBooksResponse = useRequest(getAllBooks);
 
     const [ orderProcess, setOrderProcess ] = useState(false);
-    const [selectedUser, setSelectedUser] = useState(null);
-    const [selectedBook, setSelectedBook] = useState(null);
+    const [ selectedUser, setSelectedUser ] = useState(null);
+    const [ selectedBook, setSelectedBook ] = useState(null);
     const response = useRequest(orderRequest, [selectedUser, selectedBook], orderProcess);
   
     const getDropdownOptions = (array, mapper) => {
@@ -73,7 +73,7 @@ function Order() {
                     setSelectedUser(value);
                 }}
                 value={selectedUser}
-                placeholder={constants.usersList}
+                placeholder={constants.userslist}
                 options={getDropdownOptions(allUsersResponse.data, userToDropdownOption)}
               />
           }

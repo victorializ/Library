@@ -32,3 +32,19 @@ export function formatData(
         bookAuthors: getStr(bookAuthors, authors)
     }
 }
+
+export function newBook(
+    {
+        Name, 
+        BookYear, 
+        NumberAvailable
+    }
+){
+    return {
+        name: Name, 
+        bookYear: BookYear, 
+        numberAvailable: NumberAvailable,
+        bookAuthors: '', 
+        bookGenres: ''
+    }
+}

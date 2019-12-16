@@ -9,7 +9,7 @@ const mockUser = {
         lastName: 'Orlova',
         token: 'sssssssssssssshit', 
         isBlocked: false, 
-        role: "User"
+        role: "Admin"
     }
 }
 
@@ -62,7 +62,7 @@ function register(user) {
 
 function getAllUsers() {
     console.log('getAllUsers');
-    const err = mockUser.role === 'Admin' ? '' : mockError;
+    const err = mockUser.data.role === 'Admin' ? '' : mockError;
     return promisify(mockAllUsers, err);
 }
 

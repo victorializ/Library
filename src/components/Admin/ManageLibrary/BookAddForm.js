@@ -54,3 +54,5 @@ const BookAddForm = ({submit}) => {
         </Form>
     )
 }
+
+export { BookAddForm };

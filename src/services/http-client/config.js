@@ -11,7 +11,7 @@ instance.interceptors.request.use(
   (config) => {
    const AUTH_TOKEN = JSON.stringify(store.getState().user.token);
    if (AUTH_TOKEN) {
-    config.headers['Authorization'] = AUTH_TOKEN;
+    config.headers['Authorization'] = `Bearer ${AUTH_TOKEN}`;
    }
     return config;
   }, error => Promise.reject(error)

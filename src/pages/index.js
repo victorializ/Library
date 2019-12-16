@@ -1,4 +1,4 @@
-//import { Admin } from "./Admin/Admin";
+import { Admin } from "./Admin";
 import { Authors } from "./Authors";
 import { Books } from "./Books";
 import { Login } from "./Login";
@@ -7,7 +7,7 @@ import { Registration } from "./Registation";
 import { UserOrders } from "./Orders";
 
 export { 
-   // Admin as AdminPage, 
+    Admin as AdminPage, 
     Authors as AuthorsPage, 
     Books as BooksPage, 
     Login as LoginPage,

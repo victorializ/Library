@@ -77,7 +77,7 @@ const allConstants = {
         manage: 'То чего еще нет', 
         success: 'Это успех!', 
         numberAvalible: 'Количество', 
-        add: 'Добавить книжечку'
+        add: 'Добавить шото'
     }
 };
 

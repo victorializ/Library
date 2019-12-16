@@ -16,7 +16,7 @@ function useRequest(query, params = [], shouldRequestData = true) {
                 .catch(err => setError(err))
                 .finally(() => setLoading(false))
         }
-    }, [...params]);
+    }, [...params, shouldRequestData]);
 
     return { data, error, loading };
 }

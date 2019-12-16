@@ -11,8 +11,10 @@ import { SelectedAuthor } from './Author/SelectedAutor';
 import { LoadingComponent } from './hocs/LoadingComponent';
 import { OrdersList } from './Order/OrderList';
 import { BooksTopLevelMenu } from './Book/TopLevelMenu';
+import { Book } from './Book/Book';
 
 export { 
+    Book,
     Header, 
     Footer, 
     User, 

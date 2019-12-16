@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { AuthorsPage, BooksPage, LoginPage, MainPage, RegistrationPage, OrdersPage } from './pages';
+import { AuthorsPage, BooksPage, LoginPage, MainPage, RegistrationPage, OrdersPage, AdminPage } from './pages';
 import { Footer, Header } from './components';
 
 import './assets/styles/style.scss';
@@ -17,7 +17,7 @@ function App() {
           <Route path='/login' component={LoginPage} />
           <Route path='/book' component={BooksPage} />
           <Route path='/author' component={AuthorsPage} />
-          {/*<Route path='/admin' component={AdminPage} />*/}
+          <Route path='/admin' component={AdminPage} />
           <Route path='/orders' component={OrdersPage} />
         </Switch>
       </div>
