@@ -36,7 +36,8 @@ const allConstants = {
         order: 'Create order',
         manage: 'Manage library', 
         success: 'Success!',
-        cells: 'Cells'
+        numberAvalible: 'Number Available', 
+        add: 'Add'
     },
     ru: {
         title: 'Здорова, шо надо?',
@@ -75,7 +76,8 @@ const allConstants = {
         order: 'Новый заказ',
         manage: 'То чего еще нет', 
         success: 'Это успех!', 
-        cells: 'Склад это вам не комора!'
+        numberAvalible: 'Количество', 
+        add: 'Добавить книжечку'
     }
 };
 

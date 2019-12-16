@@ -5,15 +5,16 @@ import { constants } from '../../i18n';
 import { LoadingComponent } from '../hocs/LoadingComponent';
 import { ErrorMessage } from '../UITable/ErrorMessage';
 import { useRequest } from '../../hooks';
-import { getAllBooks, getAllUsers } from '../../services/http-client';
+import { getAllBooks, getAllUsers, order as orderRequest } from '../../services/http-client';
 
 function Order() {
     const allUsersResponse = useRequest(getAllUsers);
     const allBooksResponse = useRequest(getAllBooks);
 
-    const [order, setOrder] = useState(null);
+    const [ orderProcess, setOrderProcess ] = useState(false);
     const [selectedUser, setSelectedUser] = useState(null);
     const [selectedBook, setSelectedBook] = useState(null);
+    const response = useRequest(orderRequest, [selectedUser, selectedBook], orderProcess);
   
     const getDropdownOptions = (array, mapper) => {
         return array === null ? 
@@ -36,22 +37,11 @@ function Order() {
         };
     };
 
-    const orderBook = () => {
-      return orderRequest(selectedUser, selectedBook).then(
-        () => setOrder({
-          data: true, 
-          error: {message: ""}
-        })
-      )
-    }
     return (
       <div className="admin__order">
         {
-          order &&  <LoadingComponent 
-              data={order.data} 
-              error={order.error}
-            />
-          }
+          orderProcess &&  <LoadingComponent {...response} />
+        }
         <div className="admin__order__items">
           {
             allBooksResponse.error.message ?
@@ -61,7 +51,10 @@ function Order() {
                 search
                 selection
                 loading={allBooksResponse.loading} 
-                onChange={(e, {value}) => setSelectedBook(value)}
+                onChange={(e, {value}) => {
+                    setOrderProcess(false);
+                    setSelectedBook(value);
+                }}
                 value={selectedBook}
                 placeholder={constants.books}
                 options={getDropdownOptions(allBooksResponse.data, bookToDropdownOption)}
@@ -75,7 +68,10 @@ function Order() {
                 search
                 selection
                 loading={allUsersResponse.loading} 
-                onChange={(e, {value}) => setSelectedUser(value)}
+                onChange={(e, {value}) => {
+                    setOrderProcess(false);
+                    setSelectedUser(value);
+                }}
                 value={selectedUser}
                 placeholder={constants.usersList}
                 options={getDropdownOptions(allUsersResponse.data, userToDropdownOption)}
@@ -84,7 +80,7 @@ function Order() {
         </div>
         <Button 
           className='registration__button'
-          onClick={orderBook}
+          onClick={() => setOrderProcess(true)}
           disabled={!selectedUser || !selectedBook}>
           {constants.order}
         </Button>
