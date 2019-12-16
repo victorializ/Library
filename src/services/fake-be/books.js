@@ -84,14 +84,12 @@ export function getAllBooks() {
    return promisify(mock);
 }
 
-export function newBook(Name, BookYear, NumberAvailable) {
-    console.log('new book', Name, BookYear, NumberAvailable);
+export function newBook(book) {
+    console.log('new book', JSON.stringify(book));
     return promisify({
         data: {
-            bookId: Math.floor(Math.random * 5), 
-            Name, 
-            BookYear, 
-            NumberAvailable
+            ...book,
+            bookId: 5
         }
     });
 }

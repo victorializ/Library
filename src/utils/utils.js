@@ -14,3 +14,8 @@ export const promisify = (data, error = '', delay = 1000) =>
         setTimeout(() => error ? reject(error) : resolve(data), 
     delay) 
 );
+
+export const getDropdownOptions = (array, mapper) => {
+    return array === null ? 
+    [] : array.map(item => mapper(item));
+}

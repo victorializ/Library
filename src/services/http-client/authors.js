@@ -10,12 +10,12 @@ export function getAuthor(id) {
     return get(url);
 }
 
-export function newAuthor(firstName, lastName) {
+export function newAuthor({firstName, lastName}) {
     const url = `/Authors`;
     return post(url, {firstName, lastName});
 }
 
-export function addAuthor(id, authorId) {
-    const url = `/Books/${id}/AddAuthor`;
+export function addAuthor(book, authorId) {
+    const url = `/Books/${book.bookId}/AddAuthor`;
     return post(url, {authorId});
 }

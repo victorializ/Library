@@ -111,12 +111,12 @@ export function getAuthor(id) {
     );
 }
 
-export function newAuthor(firstName, lastName) {
+export function newAuthor({firstName, lastName}) {
     console.log('new author', firstName, lastName);
     return promisify(
         {
             data: {
-                "authorId":  Math.random() * 5,
+                "authorId":  5,
                 "firstName": {firstName},
                 "lastName": {lastName},
                 "bookAuthors": []
@@ -125,9 +125,24 @@ export function newAuthor(firstName, lastName) {
     )
 }
 
-export function addAuthor(id, authorId) {
-    console.log('add author', id, authorId);
+export function addAuthor(book, authorId) {
+    console.log(book);
+    console.log('add author', book.bookId, authorId);
     return promisify({
-        data: {}
+        data: {
+            ...book, 
+            "bookAuthors": [
+                {
+                    "bookId": 6,
+                    "authorId": 2,
+                    "author": {
+                        "authorId": 2,
+                        "firstName": "Emily",
+                        "lastName": "Dickinson",
+                        "bookAuthors": []
+                    }
+                }
+            ]
+        }
     });
 }

@@ -6,7 +6,7 @@ import { useRequest } from '../../../hooks';
 import { LoadingComponent } from '../../index';
 
 function ManageUsers() {
-    const allUsersResponse = useRequest(getAllUsers, true);
+    const allUsersResponse = useRequest(getAllUsers);
     return (
       <LoadingComponent
         {...allUsersResponse}

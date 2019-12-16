@@ -6,6 +6,7 @@ import { LoadingComponent } from '../hocs/LoadingComponent';
 import { ErrorMessage } from '../UITable/ErrorMessage';
 import { useRequest } from '../../hooks';
 import { getAllBooks, getAllUsers, order as orderRequest } from '../../services/http-client';
+import { getDropdownOptions } from '../../utils/utils';
 
 function Order() {
     const allUsersResponse = useRequest(getAllUsers);
@@ -16,11 +17,6 @@ function Order() {
     const [ selectedBook, setSelectedBook ] = useState(null);
     const response = useRequest(orderRequest, [selectedUser, selectedBook], orderProcess);
   
-    const getDropdownOptions = (array, mapper) => {
-        return array === null ? 
-        [] : array.map(item => mapper(item));
-    }
-
     const bookToDropdownOption = book => {
         return {
             key: book.bookId, 

@@ -40,12 +40,12 @@ const BookAddForm = ({submit}) => {
             </Form.Field>
             <Form.Field>
                 <label>
-                    {constants.numberAvailable}
+                    {constants.numberAvalible}
                 </label>
                 <input 
                 name="NumberAvailable"
                 value={book.NumberAvailable}
-                placeholder={constants.numberAvailable}
+                placeholder={constants.numberAvalible}
                 onChange={handleChange}/>
             </Form.Field>
             <Button onClick={() => submit(book)}>

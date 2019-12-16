@@ -5,7 +5,7 @@ export function getAllBooks() {
     return get(url);
 }
 
-export function newBook(Name, BookYear, NumberAvailable) {
+export function newBook(book) {
     const url = `/Books`
-    return post(url, {Name, BookYear, NumberAvailable});
+    return post(url, book);
 }

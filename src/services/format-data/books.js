@@ -35,16 +35,19 @@ export function formatData(
 
 export function newBook(
     {
+        bookId,
         Name, 
         BookYear, 
-        NumberAvailable
-    }
+        NumberAvailable, 
+        bookAuthors
+    } = {}
 ){
     return {
+        bookId,
         name: Name, 
         bookYear: BookYear, 
         numberAvailable: NumberAvailable,
-        bookAuthors: '', 
-        bookGenres: ''
+        bookAuthors: bookAuthors ? bookAuthors : [], 
+        bookGenres: []
     }
 }

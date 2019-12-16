@@ -4,7 +4,10 @@ import { Form, Button } from 'semantic-ui-react';
 import { constants } from '../../../i18n';
 
 function AuthorAddForm({submit}) {
-    const [ author, setAuthor ] = useState(null);
+    const [ author, setAuthor ] = useState({
+        firstName: "", 
+        lastName: ""
+    });
     const handleChange =  ({target: {name, value}}) => {
         setAuthor({
           ...author, 

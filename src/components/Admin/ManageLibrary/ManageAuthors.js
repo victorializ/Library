@@ -9,7 +9,7 @@ import { AuthorAddForm } from './AuthorAddForm';
 
 function ManageAuthors() {
     const [ author, setAuthor ] = useState(null);
-    const response = useRequest(newAuthor, [author.firstName, author.lastName], author);
+    const response = useRequest(newAuthor, [author], author);
     
     const submit = author => setAuthor(author);
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { newBook as newBookRequest, addAuthor, getAllAuthors } from '../../../services/http-client';
 import { LoadingComponent, Book } from '../../index';
@@ -8,36 +8,52 @@ import { newBook } from '../../../services/format-data/books';
 import { ErrorMessage } from '../../index';
 import { constants } from '../../../i18n';
 import { BookAddForm } from './BookAddForm';
+import { getDropdownOptions } from '../../../utils/utils';
 
-//TODO: aaaaaaaaaaaa
 function ManageBooks() {
     const [ book, setBook ] = useState(null);
-    const addBookResponse = useRequest(newBookRequest, [book.Name, book.BookYear, book.NumberAvailable], book);
-    const allAuthorsResponse = useRequest(getAllAuthors, null, book);
+    const [ addingBook, setAddingBook ] = useState(false);
+    const addBookResponse = useRequest(newBookRequest, [book], addingBook);
+    const allAuthorsResponse = useRequest(getAllAuthors, [], addingBook);
+
     const [ selectedAuthor, setSelectedAuthor ] = useState(null);
-    const addAuthorResponse = useRequest(addAuthor, [book.bookId, selectedAuthor], selectedAuthor);
+    const addAuthorResponse = useRequest(addAuthor, [addBookResponse.data, selectedAuthor], selectedAuthor);
 
-    const submit = book => setBook(book);
+    const authorToDropdownOption =  author => {
+      return {
+        key: author.authorId,
+        value: author.authorId, 
+        text: `${author.firstName} ${author.lastName}`
+      };
+    };
 
-    const getAuthors = () => {
-      return allAuthorsResponse === null ? 
-        [] : allAuthorsResponse.data.map(
-          author => {
-            return {
-              key: author.authorId,
-              value: author.authorId, 
-              text: `${author.firstName} ${author.lastName}`
-            }
-          }
-        );
-    }
-
+  /*
+  const genreToDropdownOption = genre => {
+      return {
+          key: user.userId,
+          value: user.userId, 
+          text: `${user.firstName} ${user.lastName} (${user.email})`
+      };
+  };
+  */
+    const submit = book => {
+      setBook(book);
+      setAddingBook(true);
+    };
+    
+    useEffect(() => {
+      if(addAuthorResponse.data) {
+        setBook(addAuthorResponse.data);
+      }
+    }, [addAuthorResponse.data]);
+      
     return (
       <div className="new_author">
-        <LoadingComponent
+        {book && <LoadingComponent
             {...addBookResponse}
-            WrappedComponent={() => <Book book={newBook()} />}
+            WrappedComponent={() => <Book item={newBook(book)} />}
         />
+        }
         {
           allAuthorsResponse.error.message && 
             <ErrorMessage text={allAuthorsResponse.error.message} /> 
@@ -47,14 +63,16 @@ function ManageBooks() {
             <Dropdown 
               search
               selection
-              loading={allAuthorsResponse.loading} 
-              onChange={(e, {value}) => setSelectedAuthor(value)}
+              loading={allAuthorsResponse.loading || addAuthorResponse.loading} 
+              onChange={(e, {value}) => {
+                setAddingBook(false);
+                setSelectedAuthor(value);
+              }}
               value={selectedAuthor}
               placeholder={constants.bookAuthors}
-              options={getAuthors}
+              options={getDropdownOptions(allAuthorsResponse.data, authorToDropdownOption)}
             />
         }
-        <LoadingComponent {...addAuthorResponse} />
         <BookAddForm submit={submit} />
     </div>
     )
