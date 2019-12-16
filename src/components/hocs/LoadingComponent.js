@@ -2,12 +2,13 @@ import React, { Fragment } from 'react';
 import { Loader } from 'semantic-ui-react';
 
 import { ErrorMessage } from '../UITable/ErrorMessage';
+import { DefaultSuccessMessage } from '../UITable/SuccessMessage';
 
 function LoadingComponent({ 
     data, 
     error: { message },
     loading, 
-    WrappedComponent, 
+    WrappedComponent = DefaultSuccessMessage, 
     ...rest
 }) {
     return (

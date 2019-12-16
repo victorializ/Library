@@ -15,8 +15,14 @@ export const sorting = {
 export const user = {
     id: 'id',
     token: 'token',
-    firstName: "firstName",
-    lastName: "lastName",
-    email: "email",
-    password: "password"
+    firstName: 'firstName',
+    lastName: 'lastName',
+    email: 'email',
+    password: 'password'
+}
+
+export const roles = {
+    user: 'User', 
+    manager: 'Manager', 
+    admin: 'Admin'
 }
