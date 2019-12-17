@@ -24,12 +24,16 @@ function Book ({item}) {
                 <Card.Description>
                     {constants.available}: {numberAvailable}
                 </Card.Description>
-                <Card.Description>
-                    {constants.bookAuthors}: {bookAuthors}
-                </Card.Description>
-                <Card.Description>
-                    {constants.bookGenres}: {bookGenres}
-                </Card.Description>
+                { !!bookAuthors.length && 
+                    <Card.Description>
+                        {constants.bookAuthors}: {bookAuthors}
+                    </Card.Description>
+                }
+                { !!bookGenres.length && 
+                    <Card.Description>
+                        {constants.bookGenres}: {bookGenres}
+                    </Card.Description>
+                }
             </Card.Content>
         </Card>
     );
