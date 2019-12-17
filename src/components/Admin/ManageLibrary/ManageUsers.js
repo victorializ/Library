@@ -9,24 +9,24 @@ import { useRequest } from '../../../hooks';
 import { LoadingComponent } from '../../index';
 
 function ManageUsers() {
-    const [ loadUsers, setLoadUsers ] = useState(true);
-    const allUsersResponse = useRequest(getCustomersAndManagers, [], loadUsers);
+    const [ loadOrders, setLoadOrders ] = useState(true);
+    const response = useRequest(getCustomersAndManagers, [], loadOrders);
 
     useEffect(() => {
-      if(allUsersResponse.data) {
-        setLoadUsers(false);
+      if(response.data) {
+        setLoadOrders(false);
       }
-    }, [allUsersResponse.data]);
+    }, [response.data]);
     
     const changeRole = id => {
       return changeRoleRequest(id).then(
-        setLoadUsers(true)
+        setLoadOrders(true)
       );
     };
     
     return (
       <LoadingComponent
-        {...allUsersResponse}
+        {...response}
         WrappedComponent={UsersList}
         changeRole={changeRole}
       />

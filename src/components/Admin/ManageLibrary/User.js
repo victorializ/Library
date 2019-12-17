@@ -12,7 +12,7 @@ const User = ({ item, changeRole }) =>
         </Card.Content>
         <Card.Content extra>
             <Button fluid onClick={() => changeRole(item.id)}>
-                {item.role === roles.customer ? 
+                {item.role === roles.user ? 
                     constants.makeManager : constants.makeCustomer}
             </Button>
         </Card.Content>

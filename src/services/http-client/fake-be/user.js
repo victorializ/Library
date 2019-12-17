@@ -23,6 +23,7 @@ const mockAllUsers = {
             "passwordHash": "hasssh",
             "passwordSalt": "salt",
             "isBlocked": false,
+            "role": "Customer",
             "bookings": [
                 {
                     "bookingId": 3,
@@ -39,6 +40,7 @@ const mockAllUsers = {
             "passwordHash": "hash",
             "passwordSalt": "salt",
             "isBlocked": false,
+            "role": "Manager",
             "bookings": []
         }
     ]
