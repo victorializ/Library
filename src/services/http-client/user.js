@@ -21,4 +21,8 @@ function getCustomers() {
     const url = '/Account/GetCustomers';
     return get(url);
 }
+function getCustomersAndManagers(){
+    const url = '/Account/GetCustomersAndManagers';
+    return get(url);
+}
 export { login, register, getAllUsers, getCustomers };
