@@ -14,10 +14,8 @@ function Header() {
                     {constants.title}
                 </SHeader>
             </Menu.Item>
-            <Menu.Item>
-                <SHeader>
-                    <CurrentUser />
-                </SHeader>
+            <Menu.Item className='app__header__current-user'>
+                <CurrentUser />
             </Menu.Item> 
             <Menu.Item as={Link} to='/login'>
                 <SHeader>

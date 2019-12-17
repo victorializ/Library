@@ -15,7 +15,8 @@ function Main() {
       </img>
       <Header 
         as='h1' 
-        textAlign='center'>
+        textAlign="center"
+        className="main__label">
         {constants.title}
       </Header>
     </Fragment>

@@ -11,12 +11,12 @@ function getAllOrders(id) {
 }
 
 function getAllActiveOrders() {
-    const url = `/Booking/GetAllActive`; //TODO: clerify urls
+    const url = `/Bookings/GetAllActive`; //TODO: clerify urls
     return get(url);
 }
 
 function finishOrder(id) {
-    const url = `/Booking/${id}/FinishBooking`; //TODO: clerify urls
+    const url = `/Bookings/${id}/FinishBooking`; //TODO: clerify urls
     return get(url);
 }
 

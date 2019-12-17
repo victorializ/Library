@@ -1,6 +1,9 @@
 .main {
     &__image {
-        height: 85%;
-        width: 100%;
+        height: 65vh;
+        width: 100vw;
+    }
+    &__label {
+        height: 10vh;
     }
 }

@@ -16,6 +16,7 @@
 .ui.segment {
     &:last-child, &:first-child {
         margin-bottom: $space-xs;
+        margin-top: 0;
     }
 }
 

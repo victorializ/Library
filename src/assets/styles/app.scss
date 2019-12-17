@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 .app {
     &__footer {
         position:fixed;
@@ -10,6 +12,9 @@
         height: 10vh;
         &__logo {
             margin-right: auto;
+        }
+        &__current-user {
+            margin-left: -30px;
         }
     }
     &__wrapper {
