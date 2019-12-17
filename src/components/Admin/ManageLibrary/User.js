@@ -11,7 +11,7 @@ const User = ({item}) =>
         <Card.Content extra>
             <Button.Group>
                 <Button>
-                    {item.role === "User" ? "Make admin" : "Make user"}
+                    {item.role === "Customer" ? "Make admin" : "Make customer"}
                 </Button>
             </Button.Group>
         </Card.Content>

@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { getAllUsers } from '../../../services/http-client';
+import { getAllUsers, getCustomers } from '../../../services/http-client';
 import { UsersList } from './UsersList';
 import { useRequest } from '../../../hooks';
 import { LoadingComponent } from '../../index';
 
 function ManageUsers() {
-    const allUsersResponse = useRequest(getAllUsers);
+    const allUsersResponse = useRequest(getCustomers);
     return (
       <LoadingComponent
         {...allUsersResponse}

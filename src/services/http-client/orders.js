@@ -6,7 +6,7 @@ function order(userId, bookId) {
 }
  
 function getAllOrders(userId) {
-     const url = `/Users/${userId}/GetBookings`;
+     const url = `/Account/${userId}/GetBookings`;
      return get(url);
 }
 

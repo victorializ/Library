@@ -5,11 +5,11 @@ import { constants } from '../../i18n';
 import { LoadingComponent } from '../hocs/LoadingComponent';
 import { ErrorMessage } from '../UITable/ErrorMessage';
 import { useRequest } from '../../hooks';
-import { getAllBooks, getAllUsers, order as orderRequest } from '../../services/http-client';
+import { getAllBooks, getCustomers, order as orderRequest } from '../../services/http-client';
 import { getDropdownOptions } from '../../utils/utils';
 
 function Order() {
-    const allUsersResponse = useRequest(getAllUsers);
+    const allUsersResponse = useRequest(getCustomers);
     const allBooksResponse = useRequest(getAllBooks);
 
     const [ orderProcess, setOrderProcess ] = useState(false);
@@ -27,8 +27,8 @@ function Order() {
 
     const userToDropdownOption = user => {
         return {
-            key: user.userId,
-            value: user.userId, 
+            key: user.Id,
+            value: user.Id, 
             text: `${user.firstName} ${user.lastName} (${user.email})`
         };
     };
