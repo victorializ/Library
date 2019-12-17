@@ -23,4 +23,15 @@ function getCustomers() {
     return get(url);
 }
 
-export { login, register, getAllUsers, getCustomers };
+function getCustomersAndManagers(){
+    const url = '/Account/GetCustomersAndManagers';
+    return get(url);
+}
+
+export { 
+    login, 
+    register, 
+    getAllUsers, 
+    getCustomers, 
+    getCustomersAndManagers 
+};

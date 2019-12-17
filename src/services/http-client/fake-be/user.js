@@ -1,4 +1,4 @@
-import { promisify } from '../../utils/utils';
+import { promisify } from '../../../utils/utils';
 
 const mockUser = {
     data: {
@@ -71,4 +71,15 @@ function getCustomers() {
     return promisify(mockAllUsers);
 }
 
-export { login, register, getAllUsers, getCustomers };
+function getCustomersAndManagers(){
+    console.log(this.name);
+    return promisify(mockAllUsers);
+}
+
+export { 
+    login, 
+    register, 
+    getAllUsers, 
+    getCustomers, 
+    getCustomersAndManagers 
+};

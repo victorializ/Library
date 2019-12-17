@@ -1,4 +1,4 @@
-import { promisify } from '../../utils/utils';
+import { promisify } from '../../../utils/utils';
 
 const mock = {
     data : [
