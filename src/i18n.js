@@ -4,6 +4,7 @@ const allConstants = {
         books: 'Books', 
         bookAuthors: 'Authors', 
         bookGenres: 'Genres',
+        bookGenre: 'Genre',
         login: 'Login',
         admin: 'Admin page',
         copyright: '@2019 Author', 
@@ -38,13 +39,16 @@ const allConstants = {
         success: 'Success!',
         numberAvalible: 'Number Available', 
         add: 'Add', 
-        save: 'Save'
+        save: 'Save', 
+        makeCustomer: 'Make customer',
+        makeManager: 'Make manager'
     },
     ru: {
         title: 'Здорова, шо надо?',
         books: 'Книженции',
         bookAuthors: 'Шляпы',
         bookGenres: 'Жанры',
+        bookGenre: 'Жанр',
         login: 'Логин',
         admin: 'Главный штрих',
         copyright: '@2019 Две по три полоски',
@@ -79,7 +83,9 @@ const allConstants = {
         success: 'Это успех!', 
         numberAvalible: 'Количество', 
         add: 'Добавить шото', 
-        save: 'Все окей!'
+        save: 'Все окей!',
+        makeCustomer: 'Увольнение',
+        makeManager: 'Повышение'
     }
 };
 

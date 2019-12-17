@@ -72,8 +72,13 @@ function getCustomers() {
 }
 
 function getCustomersAndManagers(){
-    console.log(this.name);
+    console.log(getCustomersAndManagers.name);
     return promisify(mockAllUsers);
+}
+
+function changeRole(id) {
+    console.log(changeRole.name, id);
+    return promisify({data: {}});
 }
 
 export { 
@@ -81,5 +86,6 @@ export {
     register, 
     getAllUsers, 
     getCustomers, 
-    getCustomersAndManagers 
+    getCustomersAndManagers, 
+    changeRole 
 };

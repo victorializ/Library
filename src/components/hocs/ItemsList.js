@@ -3,7 +3,7 @@ import React  from 'react';
 import { Card } from 'semantic-ui-react';
 
 //TODO: clerify id everywhere 
-function ItemsList({data, Component}) {
+function ItemsList({data, Component, ...rest}) {
   return (
     <Card.Group>
       {
@@ -11,6 +11,7 @@ function ItemsList({data, Component}) {
           <Component 
             key={element.id} 
             item={element} 
+            {...rest}
           />) 
       }
     </Card.Group>

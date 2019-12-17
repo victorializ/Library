@@ -22,7 +22,7 @@ export const user = {
 }
 
 export const roles = {
-    user: 'User', 
+    user: 'Customer', 
     manager: 'Manager', 
     admin: 'Admin'
 }

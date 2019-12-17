@@ -6,6 +6,12 @@
     &--selected {
         width: 100%;
         @include column-flex-container(top, left);
+        &__name {
+            height: 5vh;
+        }
+        &__books {
+            height: 85vh;
+        }
     }
     &__name {
         width: 100%;
@@ -13,7 +19,7 @@
     }
     &__list {
         overflow-y: scroll;
-        height: 90vh;
+        height: 85vh;
         width: 300px;
         background-image: $main-background;
         &-item {

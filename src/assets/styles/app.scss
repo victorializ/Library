@@ -1,5 +1,8 @@
 .app {
     &__footer {
+        position:fixed;
+        bottom:0;
+        left:0;
         height: 5vh;
         text-align: center;
     }
@@ -10,7 +13,7 @@
         }
     }
     &__wrapper {
-        min-height: 85vh;
+        height: 85vh;
         width: 100vw;
     }
 }

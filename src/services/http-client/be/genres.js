@@ -1,11 +1,18 @@
 import { get, post } from './config';
 
-export function getAllGenres() {
-    const url = '/Genres'; //TODO: clerify url
+function getAllGenres() {
+    const url = '/Genres';
     return get(url);
 }
 
-export function addGenre(book, genreId) {
+function addGenre(book, genreId) {
     const url = `/Books/${book.bookId}/AddGenre`; //TODO
     return post(url, {genreId});
 }
+
+function newGenre(genre) {
+    const url = `Genres`; //TODO: clerify url
+    return post(url, genre);
+}
+
+export { getAllGenres, addGenre, newGenre };

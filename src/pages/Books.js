@@ -40,11 +40,13 @@ function Books() {
         onFilterSet={filter => setFilter(filter)} 
         onFilterUnsert={() => setFilter('')}
       />
-      <LoadingComponent
-        {...response}
-        data={putInOrder(response.data)} 
-        WrappedComponent={BooksList} 
-      /> 
+      <div className="books__list">
+        <LoadingComponent
+          {...response}
+          data={putInOrder(response.data)} 
+          WrappedComponent={BooksList} 
+        /> 
+      </div>
     </Fragment>
   );
 }

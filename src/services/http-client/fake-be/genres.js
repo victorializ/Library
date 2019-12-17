@@ -39,4 +39,11 @@ export function addGenre(book, genreId) {
             ]
         }
     })
-};
+}
+
+export function newGenre(genre) {
+    console.log(newGenre.name, JSON.stringify(genre));
+    return promisify({
+        data: {}
+    })
+}

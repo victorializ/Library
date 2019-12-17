@@ -64,7 +64,7 @@ function ManageBooks() {
     }
    
     return (
-      <div className="new_author">
+      <Fragment>
         {book && <LoadingComponent
             {...addBookResponse}
             WrappedComponent={() => <Book item={newBook(book)} />}
@@ -111,7 +111,7 @@ function ManageBooks() {
         {!book  && 
           <BookAddForm submit={submit} />
         }
-    </div>
+    </Fragment>
     )
   }
 

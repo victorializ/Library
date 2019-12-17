@@ -18,9 +18,3 @@ $main-background: url(./../../assets/images/books.jpg);
     justify-content: center;
     align-items: center;
 }
-
-.centered-in-block {
-    width: 100%;  
-    height: 100%;
-    @include column-flex-container;
-}

@@ -10,14 +10,18 @@ const SelectedAuthor = ({authorId}) => {
   const response = useRequest(getAuthor, [authorId]);
   return (
     <div className='authors--selected'>
-      <LoadingComponent
-        {...response}
-        WrappedComponent={SelectedAuthorName} 
+      <div className='authors--selected__name'>
+        <LoadingComponent
+          {...response}
+          WrappedComponent={SelectedAuthorName} 
+        />
+      </div>
+      <div className='authors--selected__books'>
+        <LoadingComponent
+          {...response}
+          WrappedComponent={SelectedAuthorsBooks} 
       />
-      <LoadingComponent
-        {...response}
-        WrappedComponent={SelectedAuthorsBooks} 
-      />
+      </div>
     </div>
   ); 
 };

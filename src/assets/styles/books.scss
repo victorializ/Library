@@ -14,4 +14,7 @@
         @include centered-horizontal-container;
         margin: $space-xs;
     }
+    &__list {
+        height: 55vh;
+    }
 }

@@ -38,7 +38,9 @@ function AuthorAddForm({submit}) {
                     onChange={handleChange}
                 />
             </Form.Field>
-            <Button onClick={() => submit(author)}>
+            <Button 
+                fluid
+                onClick={() => submit(author)}>
                 {constants.add}
             </Button>
         </Form>
