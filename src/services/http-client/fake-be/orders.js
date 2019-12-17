@@ -26,6 +26,29 @@ const mock = {
             "dateOfReturn": '2019-12-05'
         },
         {
+            "bookingId": 4,
+            "book": {
+                "bookId": 2,
+                "name": "thisisbook",
+                "bookYear": 3000,
+                "numberAvailable": 0,
+                "bookGenres": [],
+                "bookAuthors": []
+            },
+            "user": {
+                "id": 1,
+                "firstName": "Alice",
+                "lastName": "Orlova",
+                "email": "allie",
+                "passwordHash": "hash",
+                "passwordSalt": "salt",
+                "isBlocked": false,
+                "bookings": []
+            },
+            "isFinished": false, 
+            "dateOfReturn": '2019-12-29'
+        },
+        {
             "bookingId": 2,
             "book": {
                 "bookId": 1,
@@ -124,4 +147,14 @@ function getAllOrders(id) {
     return promisify(mock);
 }
 
-export { getAllOrders, order };
+function getAllActiveOrders() {
+    console.log(getAllActiveOrders.name);
+    return promisify({data: mock.data.filter(item => !item.isFinished)});
+}
+
+function finishOrder(id) {
+    console.log(finishOrder.name);
+    return promisify({data: mock.data.map(item => item.bookingId === id ? item.isFinished = true : item)});
+}
+
+export { getAllOrders, order, getAllActiveOrders, finishOrder };

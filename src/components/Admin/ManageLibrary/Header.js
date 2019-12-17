@@ -6,7 +6,7 @@ import { constants } from '../../../i18n';
 
 function ManageHeader() {
     return (
-      <Menu widths={4}>
+      <Menu widths={5}>
         <Menu.Item as={Link} to='/admin/manage/books'>
           <Header>
             {constants.books}
@@ -25,6 +25,11 @@ function ManageHeader() {
         <Menu.Item as={Link} to='/admin/manage/users'>
           <Header>
             {constants.userslist}
+          </Header>
+        </Menu.Item>
+        <Menu.Item as={Link} to='/admin/manage/orders'>
+          <Header>
+            {constants.allOrders}
           </Header>
         </Menu.Item>
       </Menu>

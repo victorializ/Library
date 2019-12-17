@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from 'react';
 
 import { 
-  getCustomersAndManagers, 
-  changeRole as changeRoleRequest
+  getAllActiveOrders, 
+  finishOrder as finishOrderRequest
 } from '../../../services/http-client';
-import { UsersList } from './UsersList';
+import { OrdersList } from './OrdersList';
 import { useRequest } from '../../../hooks';
 import { LoadingComponent } from '../../index';
 
-function ManageUsers() {
+function ManageOrders() {
     const [ loadUsers, setLoadUsers ] = useState(true);
-    const allUsersResponse = useRequest(getCustomersAndManagers, [], loadUsers);
-
+    const allUsersResponse = useRequest(getAllActiveOrders, [], loadUsers);
+  
     useEffect(() => {
       if(allUsersResponse.data) {
         setLoadUsers(false);
       }
     }, [allUsersResponse.data]);
     
-    const changeRole = id => {
-      return changeRoleRequest(id).then(
+    const finishOrder = id => {
+      return finishOrderRequest(id).then(
         setLoadUsers(true)
       );
     };
@@ -27,10 +27,10 @@ function ManageUsers() {
     return (
       <LoadingComponent
         {...allUsersResponse}
-        WrappedComponent={UsersList}
-        changeRole={changeRole}
+        WrappedComponent={OrdersList}
+        finishOrder={finishOrder}
       />
     )
 }
 
-export { ManageUsers };
+export { ManageOrders };

@@ -35,13 +35,16 @@ const allConstants = {
         userslist: 'Users list', 
         orders: 'Your orders',
         order: 'Create order',
+        allOrders: 'All orders', 
         manage: 'Manage library', 
         success: 'Success!',
         numberAvalible: 'Number Available', 
         add: 'Add', 
         save: 'Save', 
         makeCustomer: 'Make customer',
-        makeManager: 'Make manager'
+        makeManager: 'Make manager',
+        finishOrder: 'Finish order',
+        customer: 'Customer'
     },
     ru: {
         title: 'Здорова, шо надо?',
@@ -79,13 +82,16 @@ const allConstants = {
         userslist: 'Пацаны', 
         orders: 'Записываемся на ноготочки',
         order: 'Новый заказ',
+        allOrders: 'Заказики', 
         manage: 'То чего еще нет', 
         success: 'Это успех!', 
         numberAvalible: 'Количество', 
         add: 'Добавить шото', 
         save: 'Все окей!',
         makeCustomer: 'Увольнение',
-        makeManager: 'Повышение'
+        makeManager: 'Повышение', 
+        finishOrder: 'Разходимся',
+        customer: 'Чтец'
     }
 };
 

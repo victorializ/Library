@@ -6,6 +6,7 @@ import { ManageAuthors } from './ManageAuthors';
 import { ManageBooks } from './ManageBooks';
 import { ManageUsers } from './ManageUsers';
 import { ManageGenres } from './ManageGenres';
+import { ManageOrders } from './ManageOrders';
 
 function ManageLibrary() {
     return (
@@ -18,6 +19,7 @@ function ManageLibrary() {
                 <Route path='/admin/manage/users' component={ManageUsers} />
                 <Route path='/admin/manage/books' component={ManageBooks} />
                 <Route path='/admin/manage/genres' component={ManageGenres} />
+                <Route path='/admin/manage/orders' component={ManageOrders} />
               </Switch>
             </div>      
           </div>

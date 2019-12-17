@@ -10,4 +10,14 @@ function getAllOrders(id) {
      return get(url);
 }
 
-export { getAllOrders, order };
+function getAllActiveOrders() {
+    const url = `/Booking/GetAllActive`; //TODO: clerify urls
+    return get(url);
+}
+
+function finishOrder(id) {
+    const url = `/Booking/${id}/FinishBooking`; //TODO: clerify urls
+    return get(url);
+}
+
+export { getAllOrders, order, finishOrder, getAllActiveOrders };

@@ -5,9 +5,7 @@ import { User as UserTemplate } from '../../User/User';
 import { roles } from '../../../types';
 import { constants } from '../../../i18n';
 
-const User = ({item, changeRole, ...rest}) => {
-    console.log(item, changeRole, rest);
-    return (
+const User = ({ item, changeRole }) => 
     <Card>
         <Card.Content>
             <UserTemplate key={item.id} {...item} />
@@ -19,6 +17,5 @@ const User = ({item, changeRole, ...rest}) => {
             </Button>
         </Card.Content>
     </Card>
-    );
-}
+
 export { User };
