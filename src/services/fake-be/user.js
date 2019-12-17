@@ -16,7 +16,7 @@ const mockUser = {
 const mockAllUsers = {
     data: [
         {
-            "userId": 1,
+            "id": 1,
             "firstName": "Alice",
             "lastName": "Orlova",
             "email": "allie",
@@ -32,7 +32,7 @@ const mockAllUsers = {
             ]
         },
         {
-            "userId": 3,
+            "id": 3,
             "firstName": "Vika",
             "lastName": "Aliz",
             "email": "allie_orlova",
@@ -66,4 +66,9 @@ function getAllUsers() {
     return promisify(mockAllUsers, err);
 }
 
-export { login, register, getAllUsers };
+function getCustomers() {
+    console.log(getCustomers.name);
+    return promisify(mockAllUsers);
+}
+
+export { login, register, getAllUsers, getCustomers };

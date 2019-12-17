@@ -17,8 +17,10 @@ function getAllUsers() {
     const url = '/Account';
     return get(url);
 }
+
 function getCustomers() {
     const url = '/Account/GetCustomers';
     return get(url);
 }
+
 export { login, register, getAllUsers, getCustomers };

@@ -13,7 +13,7 @@ const mock = {
                 "bookAuthors": []
             },
             "user": {
-                "userId": 1,
+                "id": 1,
                 "firstName": "Alice",
                 "lastName": "Orlova",
                 "email": "allie",
@@ -56,7 +56,7 @@ const mock = {
                 ]
             },
             "user": {
-                "userId": 1,
+                "id": 1,
                 "firstName": "Alice",
                 "lastName": "Orlova",
                 "email": "allie",
@@ -99,7 +99,7 @@ const mock = {
                 ]
             },
             "user": {
-                "userId": 1,
+                "id": 1,
                 "firstName": "Alice",
                 "lastName": "Orlova",
                 "email": "allie",
@@ -114,13 +114,13 @@ const mock = {
     ]
 }
 
-function order(userId, bookId) {
-    console.log('order', userId, bookId);
+function order(id, bookId) {
+    console.log('order', id, bookId);
     return promisify({data: {}});
 }
  
-function getAllOrders(userId) {
-    console.log(getAllOrders.name, userId);
+function getAllOrders(id) {
+    console.log(getAllOrders.name, id);
     return promisify(mock);
 }
 
