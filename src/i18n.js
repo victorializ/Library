@@ -37,7 +37,8 @@ const allConstants = {
         manage: 'Manage library', 
         success: 'Success!',
         numberAvalible: 'Number Available', 
-        add: 'Add'
+        add: 'Add', 
+        save: 'Save'
     },
     ru: {
         title: 'Здорова, шо надо?',
@@ -77,7 +78,8 @@ const allConstants = {
         manage: 'То чего еще нет', 
         success: 'Это успех!', 
         numberAvalible: 'Количество', 
-        add: 'Добавить шото'
+        add: 'Добавить шото', 
+        save: 'Все окей!'
     }
 };
 

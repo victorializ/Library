@@ -39,7 +39,8 @@ export function newBook(
         Name, 
         BookYear, 
         NumberAvailable, 
-        bookAuthors
+        bookAuthors, 
+        bookGenres
     } = {}
 ){
     return {
@@ -48,6 +49,6 @@ export function newBook(
         bookYear: BookYear, 
         numberAvailable: NumberAvailable,
         bookAuthors: bookAuthors ? bookAuthors : [], 
-        bookGenres: []
+        bookGenres: bookGenres ? bookGenres : []
     }
 }
