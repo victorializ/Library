@@ -9,6 +9,7 @@ import { book } from '../types';
 import { compose, compare } from '../utils/utils';
 import { getAllBooks } from '../services/http-client';
 import { useRequest } from '../hooks';
+import { formatData } from '../services/format-data/books'; 
 
 function Books() {
 
@@ -24,7 +25,7 @@ function Books() {
   
   const findFunction = arr => 
     !input || !filter ? arr :
-      arr.filter(book => book[filter].toString().toLowerCase().includes(input.toLowerCase()));
+      arr.filter(book => formatData(book)[filter].toString().toLowerCase().includes(input.toLowerCase()));
 
   const putInOrder = items => compose(findFunction, sortFunction)(items);
 
