@@ -1,4 +1,4 @@
-import { post, get } from './config';
+import { post, get, put } from './config';
 
 function order(id, bookId) {
     const url = '/Bookings';
@@ -17,7 +17,7 @@ function getAllActiveOrders() {
 
 function finishOrder(id) {
     const url = `/Bookings/${id}/FinishBooking`; //TODO: clerify urls
-    return get(url);
+    return put(url);
 }
 
 export { getAllOrders, order, finishOrder, getAllActiveOrders };

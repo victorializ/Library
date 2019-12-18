@@ -9,18 +9,18 @@ import { useRequest } from '../../../hooks';
 import { LoadingComponent } from '../../index';
 
 function ManageUsers() {
-    const [ loadOrders, setLoadOrders ] = useState(true);
-    const response = useRequest(getCustomersAndManagers, [], loadOrders);
+    const [ loadUsers, setLoadUsers ] = useState(true);
+    const response = useRequest(getCustomersAndManagers, [], loadUsers);
 
     useEffect(() => {
       if(response.data) {
-        setLoadOrders(false);
+        setLoadUsers(false);
       }
     }, [response.data]);
     
     const changeRole = id => {
       return changeRoleRequest(id).then(
-        setLoadOrders(true)
+        () => setLoadUsers(true)
       );
     };
     
