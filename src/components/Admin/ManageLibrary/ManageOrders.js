@@ -25,11 +25,9 @@ function ManageOrders() {
     };
     
     return (
-      <LoadingComponent
-        {...allUsersResponse}
-        WrappedComponent={OrdersList}
-        finishOrder={finishOrder}
-      />
+      <LoadingComponent {...allUsersResponse}>
+        <OrdersList finishOrder={finishOrder}/>
+      </LoadingComponent>
     )
 }
 

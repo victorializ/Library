@@ -65,10 +65,10 @@ function ManageBooks() {
    
     return (
       <Fragment>
-        {book && <LoadingComponent
-            {...addBookResponse}
-            WrappedComponent={() => <Book item={newBook(book)} />}
-        />
+        {book && 
+          <LoadingComponent {...addBookResponse}>
+            <Book item={newBook(book)} />
+          </LoadingComponent>
         }
         {
           allAuthorsResponse.error.message && 

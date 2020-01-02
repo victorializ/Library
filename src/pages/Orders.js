@@ -15,10 +15,9 @@ function Orders({id: userId}) {
       <CurrentUser />   
       <Header>{constants.orders}</Header>
       <div className='orders__list'>
-          <LoadingComponent
-              {...response}
-              WrappedComponent={OrdersList} 
-          /> 
+        <LoadingComponent {...response}>
+          <OrdersList />
+        </LoadingComponent>
       </div>
     </Fragment>
   );

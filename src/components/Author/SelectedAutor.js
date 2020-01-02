@@ -11,16 +11,14 @@ const SelectedAuthor = ({authorId}) => {
   return (
     <div className='authors--selected'>
       <div className='authors--selected__name'>
-        <LoadingComponent
-          {...response}
-          WrappedComponent={SelectedAuthorName} 
-        />
+        <LoadingComponent {...response}>
+          <SelectedAuthorName />
+        </LoadingComponent>
       </div>
       <div className='authors--selected__books'>
-        <LoadingComponent
-          {...response}
-          WrappedComponent={SelectedAuthorsBooks} 
-      />
+        <LoadingComponent {...response}>
+          <SelectedAuthorsBooks />
+        </LoadingComponent>
       </div>
     </div>
   ); 

@@ -7,23 +7,17 @@ import { DefaultSuccessMessage } from '../UITable/SuccessMessage';
 function LoadingComponent({ 
     data, 
     error: { message },
-    loading, 
-    WrappedComponent = DefaultSuccessMessage, 
-    ...rest
+    loading,
+    children = DefaultSuccessMessage
 }) {
     return (
         <Fragment>
-            {
-                message && <ErrorMessage text={message} /> 
-            }
-            {  
-                data && <WrappedComponent data={data} {...rest} />  
-            }
-            {         
-                loading && 
-                     <div className='center'>
-                         <Loader active inline='centered'/>
-                     </div>
+            { message && <ErrorMessage text={message} /> }
+            { data && React.cloneElement(children, data={data}) }
+            { loading && 
+                    <div className='center'>
+                        <Loader active inline='centered'/>
+                    </div>
             }
         </Fragment>
     );

@@ -18,10 +18,9 @@ function Registration() {
       >
         {
           user ? 
-            <LoadingComponent
-              {...response}
-              WrappedComponent={RegistrationResult} 
-            />
+            <LoadingComponent {...response}>
+              <RegistrationResult />
+            </LoadingComponent>
           :
             <RegistrationForm 
               register={user => setUser(user)}

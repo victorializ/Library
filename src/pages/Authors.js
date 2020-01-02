@@ -11,11 +11,9 @@ function Authors() {
   return (
     <div className='authors'>
       <div className='authors__list'>
-        <LoadingComponent
-          {...response}
-          onAuthorSelect={authorId => setAuthorId(authorId)}
-          WrappedComponent={AuthorsList} 
-        />
+        <LoadingComponent {...response}>
+          <AuthorsList onAuthorSelect={authorId => setAuthorId(authorId)} />
+        </LoadingComponent>
       </div>
       {authorId && <SelectedAuthor authorId={authorId} />}
     </div>

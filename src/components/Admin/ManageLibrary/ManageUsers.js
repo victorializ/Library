@@ -25,11 +25,9 @@ function ManageUsers() {
     };
     
     return (
-      <LoadingComponent
-        {...response}
-        WrappedComponent={UsersList}
-        changeRole={changeRole}
-      />
+      <LoadingComponent {...response}>
+        <UsersList changeRole={changeRole}/>
+      </LoadingComponent>
     )
 }
 

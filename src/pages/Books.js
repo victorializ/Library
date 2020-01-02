@@ -42,11 +42,9 @@ function Books() {
         onFilterUnsert={() => setFilter('')}
       />
       <div className="books__list">
-        <LoadingComponent
-          {...response}
-          data={putInOrder(response.data)} 
-          WrappedComponent={BooksList} 
-        /> 
+        <LoadingComponent {...response}>
+          <BooksList data={putInOrder(response.data)}/> 
+        </LoadingComponent> 
       </div>
     </Fragment>
   );
