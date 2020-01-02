@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { newBook as newBookRequest, addAuthor, getAllAuthors, getAllGenres, addGenre } from '../../../services/http-client';
 import { LoadingComponent, Book } from '../../index';
@@ -64,7 +64,7 @@ function ManageBooks() {
     }
    
     return (
-      <Fragment>
+      <>
         {book && 
           <LoadingComponent {...addBookResponse}>
             <Book item={newBook(book)} />
@@ -76,7 +76,7 @@ function ManageBooks() {
         }
         {
           (book && (allAuthorsResponse.data || allAuthorsResponse.loading)) && 
-            <Fragment>
+            <>
               <Dropdown 
                 search
                 selection
@@ -106,12 +106,12 @@ function ManageBooks() {
                   constants.save
                 }
               </Button>
-            </Fragment>
+            </>
         }
         {!book  && 
           <BookAddForm submit={submit} />
         }
-    </Fragment>
+    </>
     )
   }
 

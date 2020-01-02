@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Order } from '../components/Admin/Order';
 import { ManageLibrary } from '../components/Admin/ManageLibrary/ManageLibrary';
@@ -6,7 +6,7 @@ import { AdminHeader } from '../components/Admin/Header';
 
 function Admin() {
     return (
-      <Fragment>
+      <>
         <AdminHeader />
         <div className='admin'> 
           <Switch>
@@ -15,7 +15,7 @@ function Admin() {
             <Route path='/admin/manage' component={ManageLibrary} />
           </Switch>
         </div>
-      </Fragment>
+      </>
     );
   }
 

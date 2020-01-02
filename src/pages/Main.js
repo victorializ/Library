@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Header } from 'semantic-ui-react'
 
 import { constants } from '../i18n';
@@ -7,7 +7,7 @@ import image from "../assets/images/books.jpg";
 
 function Main() {
   return (
-    <Fragment>
+    <>
       <img 
         src={image} 
         alt="Library"
@@ -19,7 +19,7 @@ function Main() {
         className="main__label">
         {constants.title}
       </Header>
-    </Fragment>
+    </>
   );
 }
 

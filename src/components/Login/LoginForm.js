@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Button,
@@ -30,7 +30,7 @@ function Login({
         { error && <ErrorMessage text={error.message} /> }
         {
           !isLoggedIn ?
-            <Fragment>
+            <>
               <Form>
                 <Form.Field>
                   <label>
@@ -59,9 +59,9 @@ function Login({
                 </Button>
               </Form>
               <Link to='/registration'>{constants.register}</Link>
-            </Fragment> 
+            </> 
             :
-            <Fragment>
+            <>
               <Header textAlign="center">
                 {constants.loggedin}
               </Header>
@@ -84,7 +84,7 @@ function Login({
                   {constants.logout}
               </Button>
               </Button.Group>
-            </Fragment>
+            </>
         }
       </Segment>
     </div>

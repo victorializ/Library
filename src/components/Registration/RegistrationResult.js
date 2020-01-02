@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   Button,
@@ -9,7 +9,7 @@ import { constants } from "../../i18n";
 import { colors } from "../../assets/semantic-colors";
 
 const RegistrationResult = () => 
-  <Fragment>
+  <>
     <Header textAlign="center">
       {constants.registered}
     </Header>
@@ -18,6 +18,6 @@ const RegistrationResult = () =>
       color={colors.primary}>
       {constants.login}
     </Button>
-  </Fragment>
+  </>
 
 export { RegistrationResult };

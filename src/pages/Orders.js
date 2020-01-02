@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { Header } from 'semantic-ui-react';
 
@@ -11,7 +11,7 @@ function Orders({id: userId}) {
   const response = useRequest(getAllOrders, [userId]);
 
   return (
-    <Fragment>
+    <>
       <CurrentUser />   
       <Header>{constants.orders}</Header>
       <div className='orders__list'>
@@ -19,7 +19,7 @@ function Orders({id: userId}) {
           <OrdersList />
         </LoadingComponent>
       </div>
-    </Fragment>
+    </>
   );
 }
 

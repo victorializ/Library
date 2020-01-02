@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
 
 import { newAuthor } from '../../../services/http-client';
 import { LoadingComponent } from '../../index';
@@ -14,10 +14,10 @@ function ManageAuthors() {
     const submit = author => setAuthor(author);
 
     return (
-        <Fragment>
+        <>
             <LoadingComponent {...response} />
             <AuthorAddForm submit={submit} />
-        </Fragment>
+        </>
     );
 }
 

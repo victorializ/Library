@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
 
 import { newGenre } from '../../../services/http-client';
 import { LoadingComponent } from '../../index';
@@ -14,10 +14,10 @@ function ManageGenres() {
     const submit = genre => setGenre(genre);
 
     return (
-        <Fragment>
+        <>
             <LoadingComponent {...response} />
             <GenreAddForm submit={submit} />
-        </Fragment>
+        </>
     );
 }
 

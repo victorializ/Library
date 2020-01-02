@@ -1,4 +1,4 @@
-import React,  { useState, Fragment }  from 'react';
+import React, { useState }  from 'react';
 
 import { 
   BooksList, 
@@ -30,7 +30,7 @@ function Books() {
   const putInOrder = items => compose(findFunction, sortFunction)(items);
 
   return (
-    <Fragment>
+    <>
       <TopLevelMenu 
         sort={sort}
         input={input}
@@ -46,7 +46,7 @@ function Books() {
           <BooksList data={putInOrder(response.data)}/> 
         </LoadingComponent> 
       </div>
-    </Fragment>
+    </>
   );
 }
 

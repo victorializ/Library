@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Loader } from 'semantic-ui-react';
 
 import { ErrorMessage } from '../UITable/ErrorMessage';
@@ -11,7 +11,7 @@ function LoadingComponent({
     children = DefaultSuccessMessage
 }) {
     return (
-        <Fragment>
+        <>
             { message && <ErrorMessage text={message} /> }
             { data && React.cloneElement(children, data={data}) }
             { loading && 
@@ -19,7 +19,7 @@ function LoadingComponent({
                         <Loader active inline='centered'/>
                     </div>
             }
-        </Fragment>
+        </>
     );
 }
 
