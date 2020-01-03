@@ -16,7 +16,9 @@ const User = ({firstName, lastName, isAdmin}) =>
             :
             <Segment color={colors.primary} className='user' as={Link} to='/orders'>
                 <Icon name="user outline" />
-                <div className='user__name'>{`${firstName} ${lastName}`}</div>
+                <div className='user__name'>
+                    {firstName} {lastName}
+                </div>
             </Segment> 
         :
         <div></div>

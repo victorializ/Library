@@ -53,7 +53,7 @@ function Order({item}) {
                     {bookYear}
                 </Card.Meta>
                 <Card.Description>
-                    {`${constants.status}: ${status().message}`}
+                    {constants.status}: {status().message}
                 </Card.Description>
             </Card.Content>
         </Card>

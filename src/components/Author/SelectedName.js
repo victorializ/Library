@@ -9,8 +9,9 @@ const SelectedName = (
             lastName = ''
         }
     }
-) =>
-  (firstName && lastName) && 
-    <Segment className='authors__name'>{`${firstName} ${lastName}`}</Segment>
+) => (firstName && lastName) && 
+    <Segment className='authors__name'>
+        {firstName} {lastName}
+    </Segment>
 
 export { SelectedName as SelectedAuthorName };

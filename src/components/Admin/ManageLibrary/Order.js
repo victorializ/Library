@@ -11,7 +11,7 @@ const Order = ({ item, finishOrder }) =>
         </Card.Content>
         <Card.Content extra>
             <div>
-                {`${constants.customer}: ${item.user.email}`}
+                {constants.customer}: {item.user.email}
             </div>
             <Button fluid onClick={() => finishOrder(item.bookingId)}>
                 {constants.finishOrder}

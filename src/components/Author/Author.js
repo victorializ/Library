@@ -19,7 +19,7 @@ const Author = (
         className='authors__list-item'
       >
         <List.Header>
-          {`${firstName} ${lastName}`}
+          {firstName} {lastName}
         </List.Header>
       </List.Content>
     </List.Item>
