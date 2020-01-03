@@ -26,7 +26,7 @@ function ManageUsers() {
     
     return (
       <LoadingComponent {...response}>
-        <UsersList changeRole={changeRole}/>
+        <UsersList changeRole={changeRole} data={response.data} />
       </LoadingComponent>
     )
 }

@@ -12,12 +12,12 @@ const SelectedAuthor = ({authorId}) => {
     <div className='authors--selected'>
       <div className='authors--selected__name'>
         <LoadingComponent {...response}>
-          <SelectedAuthorName />
+          <SelectedAuthorName data={response.data} /> 
         </LoadingComponent>
       </div>
       <div className='authors--selected__books'>
         <LoadingComponent {...response}>
-          <SelectedAuthorsBooks />
+          <SelectedAuthorsBooks data={response.data} />
         </LoadingComponent>
       </div>
     </div>

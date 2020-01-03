@@ -19,7 +19,7 @@ function Registration() {
         {
           user ? 
             <LoadingComponent {...response}>
-              <RegistrationResult />
+              <RegistrationResult data={response.data} />
             </LoadingComponent>
           :
             <RegistrationForm 

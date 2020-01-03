@@ -43,7 +43,7 @@ function Books() {
       />
       <div className="books__list">
         <LoadingComponent {...response}>
-          <BooksList data={putInOrder(response.data)}/> 
+          <BooksList data={putInOrder(response.data)}/>
         </LoadingComponent> 
       </div>
     </>

@@ -16,7 +16,7 @@ function Orders({id: userId}) {
       <Header>{constants.orders}</Header>
       <div className='orders__list'>
         <LoadingComponent {...response}>
-          <OrdersList />
+          <OrdersList data={response.data} />
         </LoadingComponent>
       </div>
     </>

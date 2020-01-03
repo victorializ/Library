@@ -12,7 +12,7 @@ function Authors() {
     <div className='authors'>
       <div className='authors__list'>
         <LoadingComponent {...response}>
-          <AuthorsList onAuthorSelect={authorId => setAuthorId(authorId)} />
+          <AuthorsList onAuthorSelect={authorId => setAuthorId(authorId)} data={response.data} />
         </LoadingComponent>
       </div>
       {authorId && <SelectedAuthor authorId={authorId} />}

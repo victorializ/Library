@@ -10,13 +10,13 @@ import { LoadingComponent } from '../../index';
 
 function ManageOrders() {
     const [ loadUsers, setLoadOrders ] = useState(true);
-    const allUsersResponse = useRequest(getAllActiveOrders, [], loadUsers);
+    const response = useRequest(getAllActiveOrders, [], loadUsers);
   
     useEffect(() => {
-      if(allUsersResponse.data) {
+      if(response.data) {
         setLoadOrders(false);
       }
-    }, [allUsersResponse.data]);
+    }, [response.data]);
     
     const finishOrder = id => {
       return finishOrderRequest(id).then(
@@ -25,8 +25,8 @@ function ManageOrders() {
     };
     
     return (
-      <LoadingComponent {...allUsersResponse}>
-        <OrdersList finishOrder={finishOrder}/>
+      <LoadingComponent {...response}>
+        <OrdersList finishOrder={finishOrder} data={response.data} />
       </LoadingComponent>
     )
 }

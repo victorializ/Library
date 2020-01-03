@@ -1,7 +1,7 @@
 import React  from 'react';
 
 import { Book } from './Book';
-import { ItemsList } from '../hocs/ItemsList';
+import { ItemsList } from '../ItemsList';
 
 const List = ({data}) => <ItemsList data={data} Component={Book} />
 

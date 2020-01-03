@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Dropdown } from 'semantic-ui-react';
 
 import { constants } from '../../i18n';
-import { LoadingComponent } from '../hocs/LoadingComponent';
+import { LoadingComponent } from '../LoadingComponent';
 import { ErrorMessage } from '../UITable/ErrorMessage';
 import { useRequest } from '../../hooks';
 import { getAllBooks, getCustomers, order as orderRequest } from '../../services/http-client';

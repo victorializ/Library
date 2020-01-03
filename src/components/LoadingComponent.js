@@ -1,8 +1,8 @@
 import React from 'react';
 import { Loader } from 'semantic-ui-react';
 
-import { ErrorMessage } from '../UITable/ErrorMessage';
-import { DefaultSuccessMessage } from '../UITable/SuccessMessage';
+import { ErrorMessage } from './UITable/ErrorMessage';
+import { DefaultSuccessMessage } from './UITable/SuccessMessage';
 
 function LoadingComponent({ 
     data, 
@@ -13,11 +13,11 @@ function LoadingComponent({
     return (
         <>
             { message && <ErrorMessage text={message} /> }
-            { data && React.cloneElement(children, data={data}) }
+            { data && children }
             { loading && 
-                    <div className='center'>
-                        <Loader active inline='centered'/>
-                    </div>
+                <div className='center'>
+                    <Loader active inline='centered'/>
+                </div>
             }
         </>
     );
