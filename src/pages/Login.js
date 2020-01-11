@@ -5,12 +5,14 @@ import { login, logout } from '../redux/actions';
 
 function mapStateToProps(
   {
-    loading, 
+    details: { 
+      loading, 
+      error
+    },
     user: {
       token: isLoggedIn, 
       isAdmin
-    }, 
-    error
+    }
   }
 ) {
   return {

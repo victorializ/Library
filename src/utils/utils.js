@@ -15,6 +15,15 @@ export const promisify = (data, error = '', delay = 1000) =>
     delay) 
 );
 
+export const reducerFactory = (initialState, handlers) => {
+    return (currentState = initialState, action) => {
+        const defaultHandler = () => currentState;
+        const currentHandler = handlers(currentState, action)[action.type] || defaultHandler;
+        return currentHandler();
+    };
+};
+
+//TODO: this function shouldn't be here (consider Dropdown component?)
 export const getDropdownOptions = (array, mapper) => {
     return array === null ? 
     [] : array.map(item => mapper(item));
