@@ -1,5 +1,5 @@
 import React from 'react';
-import { Loader } from 'semantic-ui-react';
+import { Loader } from './UITable/Loader';
 
 import { ErrorMessage } from './UITable/ErrorMessage';
 import { DefaultSuccessMessage } from './UITable/SuccessMessage';
@@ -14,11 +14,7 @@ function LoadingComponent({
         <>
             { message && <ErrorMessage text={message} /> }
             { data && children }
-            { loading && 
-                <div className='center'>
-                    <Loader active inline='centered'/>
-                </div>
-            }
+            <Loader loading={loading} />
         </>
     );
 }

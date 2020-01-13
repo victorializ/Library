@@ -20,4 +20,4 @@ function Authors() {
   );
 }
 
-export { Authors };
+export default Authors;

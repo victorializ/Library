@@ -25,4 +25,4 @@ function Orders({id: userId}) {
 
 const UserOrders = connect(({user}) => user)(Orders);
 
-export { UserOrders, Orders };
+export { Orders, UserOrders };
