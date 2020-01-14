@@ -138,22 +138,18 @@ const mock = {
 }
 
 function order(id, bookId) {
-    console.log('order', id, bookId);
     return promisify({data: {}});
 }
  
 function getAllOrders(id) {
-    console.log(getAllOrders.name, id);
     return promisify(mock);
 }
 
 function getAllActiveOrders() {
-    console.log(getAllActiveOrders.name);
     return promisify({data: mock.data.filter(item => !item.isFinished)});
 }
 
 function finishOrder(id) {
-    console.log(finishOrder.name);
     return promisify({data: mock.data.map(item => item.bookingId === id ? item.isFinished = true : item)});
 }
 

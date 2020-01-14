@@ -80,12 +80,10 @@ const mock = {
 };
 
 export function getAllBooks() {
-   console.log('get all books');
    return promisify(mock);
 }
 
 export function newBook(book) {
-    console.log('new book', JSON.stringify(book));
     return promisify({
         data: {
             ...book,

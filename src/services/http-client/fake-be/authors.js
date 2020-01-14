@@ -96,12 +96,10 @@ const mock = {
 };
 
 export function getAllAuthors() { 
-    console.log('get all authors');
     return promisify(mock);
 }
 
 export function getAuthor(id) {
-    console.log('get author', id);
     return promisify(
         {
             data: mock.data.find(
@@ -112,7 +110,6 @@ export function getAuthor(id) {
 }
 
 export function newAuthor({firstName, lastName}) {
-    console.log('new author', firstName, lastName);
     return promisify(
         {
             data: {
@@ -126,8 +123,6 @@ export function newAuthor({firstName, lastName}) {
 }
 
 export function addAuthor(book, authorId) {
-    console.log(book);
-    console.log('add author', book.bookId, authorId);
     return promisify({
         data: {
             ...book, 

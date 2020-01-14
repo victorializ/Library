@@ -18,12 +18,10 @@ const mock = {
 }
 
 export function getAllGenres() {
-    console.log(getAllGenres.name);
     return promisify(mock);
 }
 
 export function addGenre(book, genreId) {
-    console.log(addGenre.name, book.bookId, genreId);
     return promisify({
         data: {
             ...book, 
@@ -42,7 +40,6 @@ export function addGenre(book, genreId) {
 }
 
 export function newGenre(genre) {
-    console.log(newGenre.name, JSON.stringify(genre));
     return promisify({
         data: {}
     })
