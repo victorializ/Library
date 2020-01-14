@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+//import { connect } from 'react-redux';
 import { Icon, Segment } from 'semantic-ui-react';
 
 import { constants } from '../../i18n';
 import { colors } from "../../assets/semantic-colors";
+import { useUser } from '../../hooks/useUser';
 
 const User = ({firstName, lastName, isAdmin}) => 
     firstName && lastName ? 
@@ -23,6 +24,9 @@ const User = ({firstName, lastName, isAdmin}) =>
         :
         <div></div>
 
-const CurrentUser = connect(({user}) => user)(User);
-
+const CurrentUser = () => { 
+    const { user } = useUser();
+    return <User user={user} />
+};
+//const CurrentUser = connect(({user}) => user)(User);
 export { CurrentUser, User };

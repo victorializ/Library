@@ -1,15 +1,15 @@
 import React from 'react';
-import { connect } from 'react-redux';
+//import { connect } from 'react-redux';
 import { Header } from 'semantic-ui-react';
 
 import { constants  } from '../i18n';
 import { CurrentUser, LoadingComponent, OrdersList } from '../components';
-import { useRequest } from '../hooks';
+import { useRequest, useUser } from '../hooks';
 import { getAllOrders } from '../services/http-client';
 
-function Orders({id: userId}) {  
+function Orders() {  
+  const {id: userId} = useUser();
   const response = useRequest(getAllOrders, [userId]);
-
   return (
     <>
       <CurrentUser />   
@@ -23,6 +23,6 @@ function Orders({id: userId}) {
   );
 }
 
-const UserOrders = connect(({user}) => user)(Orders);
+//const UserOrders = connect(({user}) => user)(Orders);
 
-export { Orders, UserOrders };
+export { Orders as UserOrders };

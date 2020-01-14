@@ -1,8 +1,10 @@
-import { connect } from 'react-redux';
-
+//import { connect } from 'react-redux';
+import React from 'react';
 import { LoginForm } from '../components'; 
-import { login, logout } from '../redux/actions';
+import { useUser } from '../hooks';
+//import { login, logout } from '../redux/actions';
 
+/*
 function mapStateToProps(
   {
     details: { 
@@ -22,7 +24,18 @@ function mapStateToProps(
     isAdmin
   };
 }
- 
-const Login = connect(mapStateToProps, { login, logout })(LoginForm);
+*/ 
+//const Login = connect(mapStateToProps, { login, logout })(LoginForm);
 
+const Login = () => {
+  const {
+    user: {
+      token: isLoggedIn, 
+      isAdmin
+    }, 
+    error, 
+    loading
+  } = useUser();
+  return <LoginForm isLoggedIn={isLoggedIn} isAdmin={isAdmin} error={error} loading={loading} />
+}
 export { Login };
