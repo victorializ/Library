@@ -12,6 +12,7 @@ import { LoadingComponent } from './LoadingComponent';
 import { OrdersList } from './Order/OrderList';
 import { BooksTopLevelMenu } from './Book/TopLevelMenu';
 import { Book } from './Book/Book';
+import { ErrorBoundary } from './ErrorBoundary';
 
 export { 
     Book,
@@ -28,5 +29,6 @@ export {
     AuthorsList, 
     SelectedAuthor,
     OrdersList,
-    BooksTopLevelMenu
+    BooksTopLevelMenu, 
+    ErrorBoundary
 };
