@@ -1,5 +1,12 @@
 import axios from 'axios';
 import { store } from '../../../redux/store';
+//import { useUser } from '../../../hooks'; // It is not allowed to use hooks here
+
+/*
+It looks like I can't get value of context outside of the component tree :(, 
+I can't subscribe to it everywhere like to redux store 
+So I'll probably leave with redux for now
+*/
 
 const instance = axios.create({
   headers: { 'Content-Type': 'application/json' },

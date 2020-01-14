@@ -15,12 +15,11 @@ const UserContext = createContext({
 });
 
 const UserContextProvider = props => {
-    const [ state, setState ] = useState({
-        user: initialValue
-    });
+
+    const [ user, setUser ] = useState(initialValue);
 
     return (
-        <UserContext.Provider value={{...state, setUser: setState}}>
+        <UserContext.Provider value={{user, setUser}}>
             { props.children }
         </UserContext.Provider>
     )

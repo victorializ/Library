@@ -34,8 +34,18 @@ const Login = () => {
       isAdmin
     }, 
     error, 
-    loading
+    loading, 
+    login, 
+    logout
   } = useUser();
-  return <LoginForm isLoggedIn={isLoggedIn} isAdmin={isAdmin} error={error} loading={loading} />
+  console.log(error);
+  return <LoginForm 
+    isLoggedIn={isLoggedIn} 
+    isAdmin={isAdmin} 
+    error={error.message} 
+    loading={loading} 
+    login={login}
+    logout={logout}
+  />
 }
 export { Login };

@@ -51,7 +51,6 @@ const mockError = {
 }
 
 function login(email, password) {
-    console.log('login', email, password);
     const err = email !== mockUser.data.email || password !== mockUser.data.password ? mockError : '';
     return promisify(mockUser, err);
 }
