@@ -1,28 +1,19 @@
 import { constants } from './constants';
 import { login as httpLogin } from '../services/http-client';
 
-function login(email, password) {
-    return dispatch => {
-        dispatch(request({email, password}));
+const login = (email, password) => dispatch => {
+    dispatch(request({email, password}));
 
-        httpLogin(email, password)
-            .then(
-                (user) => { 
-                    dispatch(success(user));
-                },
-                error => {
-                    dispatch(failure(error));
-                }
-            );
-    };
+    httpLogin(email, password)
+        .then(
+            user => dispatch(success(user)),
+            error => dispatch(failure(error))
+        );
+};
 
-    function request(user) { return { type: constants.LOGIN_REQUEST, user } }
-    function success(user) { return { type: constants.LOGIN_SUCCESS, user } }
-    function failure(error) { return { type: constants.LOGIN_FAILURE, error} }
-}
-
-function logout() {
-    return { type: constants.LOGOUT };
-}
+const request = user => ({ type: constants.LOGIN_REQUEST, user });
+const success = user => ({ type: constants.LOGIN_SUCCESS, user });
+const failure = error => ({ type: constants.LOGIN_FAILURE, error });
+const logout = () => ({ type: constants.LOGOUT });
 
 export { login, logout };
