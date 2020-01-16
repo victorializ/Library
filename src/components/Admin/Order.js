@@ -27,8 +27,8 @@ function Order() {
 
     const userToDropdownOption = user => {
         return {
-            key: user.id,
-            value: user.id, 
+            key: user.userId,
+            value: user.userId, 
             text: `${user.firstName} ${user.lastName} (${user.email})`
         };
     };

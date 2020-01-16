@@ -1,8 +1,8 @@
 import { post, get, put } from './config';
 
-function order(id, bookId) {
+function order(userId, bookId) {
     const url = '/Bookings';
-    return post(url, {"user" : {id}, "book": {bookId}});
+    return post(url, {"user" : {userId}, "book": {bookId}});
 }
  
 function getAllOrders(id) {

@@ -8,10 +8,10 @@ import { constants } from '../../../i18n';
 const User = ({ item, changeRole }) => 
     <Card>
         <Card.Content>
-            <UserTemplate key={item.id} {...item} />
+            <UserTemplate key={item.userId} {...item} />
         </Card.Content>
         <Card.Content extra>
-            <Button fluid onClick={() => changeRole(item.id)}>
+            <Button fluid onClick={() => changeRole(item.userId)}>
                 {item.role === roles.user ? 
                     constants.makeManager : constants.makeCustomer}
             </Button>
