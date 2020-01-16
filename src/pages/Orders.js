@@ -7,7 +7,7 @@ import { CurrentUser, LoadingComponent, OrdersList } from '../components';
 import { useRequest } from '../hooks';
 import { getAllOrders } from '../services/http-client';
 
-function Orders({id: userId}) {  
+function Orders({userId}) {  
   const response = useRequest(getAllOrders, [userId]);
 
   return (
