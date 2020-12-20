@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BooksList component renders books list component correctly 1`] = `
+<ItemsList
+  Component={
+    Object {
+      "$$typeof": Symbol(react.memo),
+      "WrappedComponent": [Function],
+      "compare": null,
+      "displayName": "Connect(Book)",
+      "type": [Function],
+    }
+  }
+/>
+`;

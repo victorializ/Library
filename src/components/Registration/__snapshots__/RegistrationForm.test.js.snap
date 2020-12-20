@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RegistrationForm component renders correctly 1`] = `
+<Form
+  as="form"
+>
+  <FormField>
+    <label>
+      First name
+    </label>
+    <input
+      name="firstName"
+      onChange={[Function]}
+      placeholder="First name"
+      value=""
+    />
+  </FormField>
+  <FormField>
+    <label>
+      Last name
+    </label>
+    <input
+      name="lastName"
+      onChange={[Function]}
+      placeholder="Last name"
+      value=""
+    />
+  </FormField>
+  <FormField>
+    <label>
+      Email
+    </label>
+    <input
+      name="email"
+      onChange={[Function]}
+      placeholder="Email"
+      value=""
+    />
+  </FormField>
+  <FormField>
+    <label>
+      Password
+    </label>
+    <input
+      name="password"
+      onChange={[Function]}
+      placeholder="Password"
+      type="password"
+      value=""
+    />
+  </FormField>
+  <FormField>
+    <label>
+      Reenter password
+    </label>
+    <input
+      name="reenter"
+      onChange={[Function]}
+      placeholder="Reenter password"
+      type="password"
+      value=""
+    />
+  </FormField>
+  <Checkbox
+    checked={false}
+    label="I agree to the Terms and Conditions"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <Button
+    as="button"
+    className="registration__button"
+    disabled={true}
+    onClick={[Function]}
+  >
+    Registration
+  </Button>
+</Form>
+`;

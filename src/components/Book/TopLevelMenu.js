@@ -45,6 +45,7 @@ const TopLevelMenu = ({
           clickHandler={onFilterSet} />
       </Button.Group>
       <Search
+        className='books__search-bar'
         value = {input}
         showNoResults={false}
         onSearchChange ={(e, {value}) => onInput(value)}

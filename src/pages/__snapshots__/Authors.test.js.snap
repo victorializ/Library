@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Authors page component renders correctly 1`] = `
+<div
+  className="authors"
+>
+  <div
+    className="authors__list"
+  >
+    <LoadingComponent
+      data={null}
+      error={
+        Object {
+          "message": null,
+        }
+      }
+      loading={true}
+    >
+      <AuthorsList
+        data={null}
+        onAuthorSelect={[Function]}
+      />
+    </LoadingComponent>
+  </div>
+</div>
+`;

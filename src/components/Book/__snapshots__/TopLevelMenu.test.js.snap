@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopLevelMenu component renders top level menu component correctly 1`] = `
+<div
+  className="books__menu"
+>
+  <div
+    className="books__search"
+  >
+    <ButtonGroup>
+      <Button
+        as="button"
+        color="black"
+      >
+        Filters
+      </Button>
+      <MenuButton
+        name="name"
+      />
+      <ButtonOr />
+      <MenuButton
+        name="bookYear"
+      />
+      <ButtonOr />
+      <MenuButton
+        name="bookAuthors"
+      />
+      <ButtonOr />
+      <MenuButton
+        name="bookGenres"
+      />
+    </ButtonGroup>
+    <Search
+      className="books__search-bar"
+      icon="search"
+      input="text"
+      minCharacters={1}
+      noResultsMessage="No results found."
+      onSearchChange={[Function]}
+      showNoResults={false}
+    />
+  </div>
+  <div
+    className="books__filter"
+  >
+    <ButtonGroup>
+      <Button
+        as="button"
+        color="black"
+      >
+        Sort
+      </Button>
+      <MenuButton
+        name="asc"
+      />
+      <ButtonOr />
+      <MenuButton
+        name="desc"
+      />
+    </ButtonGroup>
+  </div>
+</div>
+`;

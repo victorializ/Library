@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component renders correctly 1`] = `
+<header>
+  <Menu
+    className="app__header"
+  >
+    <MenuItem
+      as={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "displayName": "Link",
+          "propTypes": Object {
+            "innerRef": [Function],
+            "onClick": [Function],
+            "replace": [Function],
+            "target": [Function],
+            "to": [Function],
+          },
+          "render": [Function],
+        }
+      }
+      className="app__header__logo"
+      to="/"
+    >
+      <Header>
+        Library
+      </Header>
+    </MenuItem>
+    <MenuItem
+      className="app__header__current-user"
+    >
+      <Connect(User) />
+    </MenuItem>
+    <MenuItem
+      as={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "displayName": "Link",
+          "propTypes": Object {
+            "innerRef": [Function],
+            "onClick": [Function],
+            "replace": [Function],
+            "target": [Function],
+            "to": [Function],
+          },
+          "render": [Function],
+        }
+      }
+      to="/login"
+    >
+      <Header>
+        Login
+      </Header>
+    </MenuItem>
+    <MenuItem
+      as={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "displayName": "Link",
+          "propTypes": Object {
+            "innerRef": [Function],
+            "onClick": [Function],
+            "replace": [Function],
+            "target": [Function],
+            "to": [Function],
+          },
+          "render": [Function],
+        }
+      }
+      to="/author"
+    >
+      <Header>
+        Authors
+      </Header>
+    </MenuItem>
+    <MenuItem
+      as={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "displayName": "Link",
+          "propTypes": Object {
+            "innerRef": [Function],
+            "onClick": [Function],
+            "replace": [Function],
+            "target": [Function],
+            "to": [Function],
+          },
+          "render": [Function],
+        }
+      }
+      to="/book"
+    >
+      <Header>
+        Books
+      </Header>
+    </MenuItem>
+  </Menu>
+</header>
+`;

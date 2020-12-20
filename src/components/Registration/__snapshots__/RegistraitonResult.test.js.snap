@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RegistrationResult component renders correctly 1`] = `
+<Fragment>
+  <Header
+    textAlign="center"
+  >
+    Registered successfully
+  </Header>
+  <Button
+    as={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "Link",
+        "propTypes": Object {
+          "innerRef": [Function],
+          "onClick": [Function],
+          "replace": [Function],
+          "target": [Function],
+          "to": [Function],
+        },
+        "render": [Function],
+      }
+    }
+    color="olive"
+    to="/login"
+  >
+    Login
+  </Button>
+</Fragment>
+`;

@@ -1,6 +1,6 @@
 import { promisify } from '../../../utils/utils';
 
-const mockUser = {
+const user = {
     data: {
         id: 1,
         email: 'allie',
@@ -8,80 +8,25 @@ const mockUser = {
         firstName: 'Alice',
         lastName: 'Orlova',
         token: 'sssssssssssssshit', 
-        isBlocked: false, 
-        role: "Admin"
+        isBlocked: false
     }
 }
 
-const mockAllUsers = {
-    data: [
-        {
-            "id": 1,
-            "firstName": "Alice",
-            "lastName": "Orlova",
-            "email": "allie",
-            "passwordHash": "hasssh",
-            "passwordSalt": "salt",
-            "isBlocked": false,
-            "role": "Customer",
-            "bookings": [
-                {
-                    "bookingId": 3,
-                    "book": null,
-                    "isFinished": false
-                }
-            ]
-        },
-        {
-            "id": 3,
-            "firstName": "Vika",
-            "lastName": "Aliz",
-            "email": "allie_orlova",
-            "passwordHash": "hash",
-            "passwordSalt": "salt",
-            "isBlocked": false,
-            "role": "Manager",
-            "bookings": []
-        }
-    ]
-}
-
-const mockError = {
+const error = {
     message: 'This is error!'
 }
 
 function login(email, password) {
-    const err = email !== mockUser.data.email || password !== mockUser.data.password ? mockError : '';
-    return promisify(mockUser, err);
+    const err = email !== user.data.email || password !== user.data.password ? error : '';
+    return promisify(user, err);
 }
 
-function register(user) {
-    const err = user.email === mockUser.email ? mockError : '';
+function register(newUser) {
+    const err = newUser.email === user.email ? error : '';
     return promisify({data: {}}, err);
-}
-
-function getAllUsers() {
-    const err = mockUser.data.role === 'Admin' ? '' : mockError;
-    return promisify(mockAllUsers, err);
-}
-
-function getCustomers() {
-    return promisify(mockAllUsers);
-}
-
-function getCustomersAndManagers(){
-    return promisify(mockAllUsers);
-}
-
-function changeRole(id) {
-    return promisify({data: {}});
 }
 
 export { 
     login, 
-    register, 
-    getAllUsers, 
-    getCustomers, 
-    getCustomersAndManagers, 
-    changeRole 
+    register
 };

@@ -1,15 +1,15 @@
 import React from 'react';
 import { Segment } from 'semantic-ui-react'
 
-import { constants  } from '../../i18n';
+import { constants } from '../../i18n';
 
 function Footer() {
   return (
-    <Segment  
-      className="app__footer"
-    >
-      {constants.copyright}
-    </Segment>
+    <footer>
+      <Segment id="footer" className="app__footer">
+        {constants.copyright}
+      </Segment>
+    </footer>
   );
 }
 

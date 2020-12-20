@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Authors renders author component correctly 1`] = `
+<ListItem>
+  <ListContent
+    className="authors__list-item"
+    onClick={[Function]}
+  >
+    <ListHeader>
+       
+    </ListHeader>
+  </ListContent>
+</ListItem>
+`;
+
+exports[`Authors renders authors list component correctly 1`] = `
+<List
+  divided={true}
+  inverted={true}
+/>
+`;
+
+exports[`Authors renders selected author component correctly 1`] = `
+<div
+  className="authors--selected"
+>
+  <div
+    className="authors--selected__name"
+  >
+    <LoadingComponent
+      data={null}
+      error={
+        Object {
+          "message": null,
+        }
+      }
+      loading={true}
+    >
+      <SelectedName
+        data={null}
+      />
+    </LoadingComponent>
+  </div>
+  <div
+    className="authors--selected__books"
+  >
+    <LoadingComponent
+      data={null}
+      error={
+        Object {
+          "message": null,
+        }
+      }
+      loading={true}
+    >
+      <SelectedBooks
+        data={null}
+      />
+    </LoadingComponent>
+  </div>
+</div>
+`;
+
+exports[`Authors renders selected books component correctly 1`] = `
+<ErrorMessage
+  text="No books available!"
+/>
+`;
+
+exports[`Authors renders selected name component correctly 1`] = `""`;

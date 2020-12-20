@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading component renders correctly when data is loaded 1`] = `
+<Fragment>
+  <p />
+  <Loader />
+</Fragment>
+`;
+
+exports[`Loading component renders correctly when error 1`] = `
+<Fragment>
+  <ErrorMessage
+    text="This is error"
+  />
+  <Loader />
+</Fragment>
+`;
+
+exports[`Loading component renders correctly when loading 1`] = `
+<Fragment>
+  <Loader />
+</Fragment>
+`;

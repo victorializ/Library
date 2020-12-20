@@ -16,10 +16,12 @@ const AuthorsList = (
         lastName
       }) => 
       <Author 
+          key={authorId}
           authorId={authorId}
           firstName={firstName}
           lastName={lastName}
           onAuthorSelect={onAuthorSelect}
+          className='authors__list-item'
       />
     )}
   </List>

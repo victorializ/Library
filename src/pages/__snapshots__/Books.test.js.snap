@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Books page component renders correctly 1`] = `
+<Fragment>
+  <TopLevelMenu
+    input=""
+    onFilterSet={[Function]}
+    onFilterUnsert={[Function]}
+    onInput={[Function]}
+    onSortSet={[Function]}
+    onSortUnsert={[Function]}
+    sort=""
+  />
+  <div
+    className="books__list"
+  >
+    <LoadingComponent
+      data={null}
+      error={
+        Object {
+          "message": null,
+        }
+      }
+      loading={true}
+    >
+      <List
+        data={null}
+      />
+    </LoadingComponent>
+  </div>
+</Fragment>
+`;

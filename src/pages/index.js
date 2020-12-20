@@ -5,12 +5,10 @@ import { Main } from "./Main";
 import { Registration } from "./Registation";
 import { UserOrders } from "./Orders";
 
-const AdminPage = lazy(() => import('./Admin'));
 const BooksPage = lazy(() => import('./Books'));
 const AuthorsPage = lazy(() => import('./Authors'));
 
 export { 
-    AdminPage, 
     AuthorsPage, 
     BooksPage, 
     Login as LoginPage,

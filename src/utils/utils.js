@@ -3,8 +3,8 @@ import { sorting } from '../types';
 export const compose = (...funcs) => 
     arg => funcs.reduce((acc, current) => current(acc), arg); 
 
-export const compare = ((a, b, sort, field, direction = sorting) => 
-    sort === direction.asc ?
+export const compare = ((a, b, sort, field) => 
+    sort === sorting.asc ?
         a[field] < b[field] ? -1 : 1 : 
         a[field] > b[field] ? -1 : 1
 );
@@ -23,8 +23,7 @@ export const reducerFactory = (initialState, handlers) => {
     };
 };
 
-//TODO: this function shouldn't be here (consider Dropdown component?)
 export const getDropdownOptions = (array, mapper) => {
     return array === null ? 
-    [] : array.map(item => mapper(item));
+    [] : array.map(mapper);
 }

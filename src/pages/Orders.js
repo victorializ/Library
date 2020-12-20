@@ -9,7 +9,6 @@ import { getAllOrders } from '../services/http-client';
 
 function Orders({userId}) {  
   const response = useRequest(getAllOrders, [userId]);
-
   return (
     <>
       <CurrentUser />   

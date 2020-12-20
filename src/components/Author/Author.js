@@ -13,10 +13,10 @@ const Author = (
   return (
     <List.Item 
       key={authorId} 
-      onClick={() => onAuthorSelect(authorId)}
     >
       <List.Content 
         className='authors__list-item'
+        onClick={() => onAuthorSelect(authorId)}
       >
         <List.Header>
           {firstName} {lastName}

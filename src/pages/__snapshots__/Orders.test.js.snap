@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Orders page component renders correctly 1`] = `
+<Fragment>
+  <Connect(User) />
+  <Header>
+    Your orders
+  </Header>
+  <div
+    className="orders__list"
+  >
+    <LoadingComponent
+      data={null}
+      error={
+        Object {
+          "message": null,
+        }
+      }
+      loading={true}
+    >
+      <OrdersList
+        data={null}
+      />
+    </LoadingComponent>
+  </div>
+</Fragment>
+`;

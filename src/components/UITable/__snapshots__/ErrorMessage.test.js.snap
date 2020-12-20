@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorMessage component renders correctly 1`] = `
+<div
+  className="center-horizontal"
+>
+  <Segment
+    className="center-horizontal"
+    color="red"
+  >
+    <Header
+      className="error__text"
+    />
+  </Segment>
+</div>
+`;
