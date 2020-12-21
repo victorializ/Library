@@ -1,8 +1,23 @@
 .user {
     display: flex;
-    height: 5vh;
-    width: 15vw;
+    margin-bottom: 0;
     &__name {
         overflow: hidden;
     }
+}
+
+.ui.segment.current__user:last-child, 
+.ui.segment.current__user:first-child {
+    margin-bottom: 0;
+}
+
+.current__user {
+    margin-top: 50px;
+    min-width: 155px;
+    height: 48px;
+}
+
+.app__header .current__user {
+    position: relative;
+    right: 30px;
 }
