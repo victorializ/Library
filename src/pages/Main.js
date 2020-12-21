@@ -7,19 +7,18 @@ import image from "../assets/images/books.jpg";
 
 function Main() {
   return (
-    <>
+    <div className="main">  
       <img 
         src={image} 
         alt="Library"
-        className="main__image">  
-      </img>
+        className="main__image"/>
       <Header 
         as='h1' 
         textAlign="center"
         className="main__label">
         {constants.title}
       </Header>
-    </>
+    </div>
   );
 }
 

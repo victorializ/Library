@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login page component renders correctly 1`] = `
+<div
+  className="center"
+>
+  <Segment
+    className="login__form"
+    color="olive"
+  >
+    <Form
+      as="form"
+    >
+      <FormField>
+        <label>
+          Email
+        </label>
+        <input
+          className="login__input-email"
+          onChange={[Function]}
+          placeholder="Email"
+          value=""
+        />
+      </FormField>
+      <FormField>
+        <label>
+          Password
+        </label>
+        <input
+          className="login__input-password"
+          onChange={[Function]}
+          placeholder="Password"
+          type="password"
+          value=""
+        />
+      </FormField>
+      <Button
+        as="button"
+        attached={true}
+        className="login__button"
+        disabled={true}
+        onClick={[Function]}
+      >
+        Login
+      </Button>
+    </Form>
+    <Link
+      className="registration__link"
+      to="/registration"
+    >
+      Registration
+    </Link>
+  </Segment>
+</div>
+`;

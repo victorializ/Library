@@ -10,10 +10,10 @@ import { colors } from "../../assets/semantic-colors";
 
 const RegistrationResult = () => 
   <>
-    <Header textAlign="center">
+    <Header textAlign="center" className='registered'>
       {constants.registered}
     </Header>
-    <Button 
+    <Button className='registered__login'
       as={Link} to='/login' 
       color={colors.primary}>
       {constants.login}

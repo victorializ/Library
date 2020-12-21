@@ -1,14 +1,33 @@
 @import './variables.scss';
 
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+#root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .app {
     &__footer {
-        position:fixed;
-        bottom:0;
-        left:0;
-        height: 5vh;
+        position: fixed;
+        bottom: 0;
+        left: 0;
         text-align: center;
     }
     &__header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
         height: 10vh;
         &__logo {
             margin-right: auto;
@@ -18,7 +37,12 @@
         }
     }
     &__wrapper {
-        height: 85vh;
-        width: 100vw;
+        height: 81vh;
+        padding-top: 10vh;
+        flex: 1;
     }
+}
+
+#footer {
+    margin-bottom: 0;
 }

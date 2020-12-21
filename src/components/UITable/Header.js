@@ -17,17 +17,17 @@ function Header() {
             <Menu.Item className='app__header__current-user'>
                 <CurrentUser />
             </Menu.Item> 
-            <Menu.Item as={Link} to='/login'>
+            <Menu.Item as={Link} to='/login' className='nav__login'>
                 <SHeader>
                     {constants.login}
                 </SHeader>
             </Menu.Item>
-            <Menu.Item as={Link} to='/author'>
+            <Menu.Item as={Link} to='/author' className='nav__author'>
                 <SHeader>
                     {constants.bookAuthors}
                 </SHeader>
             </Menu.Item>
-            <Menu.Item as={Link} to='/book'>
+            <Menu.Item as={Link} to='/book' className='nav__books'>
                 <SHeader>
                     {constants.books}
                 </SHeader>

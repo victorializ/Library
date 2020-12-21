@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Book component renders book component correctly 1`] = `
+<Card
+  className="book"
+>
+  <CardContent>
+    <CardHeader />
+    <CardMeta />
+    <CardDescription>
+      Available
+      : 
+    </CardDescription>
+  </CardContent>
+  <LoadingComponent
+    data={null}
+    error={
+      Object {
+        "message": null,
+      }
+    }
+    loading={false}
+  />
+</Card>
+`;

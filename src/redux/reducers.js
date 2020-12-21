@@ -5,12 +5,12 @@ import { reducerFactory } from '../utils/utils';
 
 const initialState = {
     user: {
-        id: '',
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
-        token: ''
+      id: '',
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      token: ''
     },
     details: { 
       loading: false,
@@ -38,11 +38,8 @@ function detailsHandlers(state, {error}) {
 function userHandlers(state, {user}) {
   return {
     [constants.LOGIN_SUCCESS]: () => {
-      const role = user.data.role;
       return {
-        ...user.data,
-        isAdmin: role === "Admin" || 
-          role === "Manager"
+        ...user.data
       }
     }, 
     [constants.LOGOUT]: () => initialState.user,
@@ -58,4 +55,4 @@ const authReducer = combineReducers({
   details: detailsReducer
 });
 
-export { authReducer };
+export { authReducer, detailsReducer, userReducer };

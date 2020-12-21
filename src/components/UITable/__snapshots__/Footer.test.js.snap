@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component renders correctly 1`] = `
+<footer>
+  <Segment
+    className="app__footer"
+    id="footer"
+  >
+    @2019 Author
+  </Segment>
+</footer>
+`;

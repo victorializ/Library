@@ -4,7 +4,7 @@ const {
     getAllAuthors, getAuthor, newAuthor, addAuthor, 
     getAllBooks, newBook, 
     getAllOrders, order, getAllActiveOrders, finishOrder,  
-    login, register, getAllUsers, getCustomers, getCustomersAndManagers, changeRole, 
+    login, register,
     getAllGenres, addGenre, newGenre
 } = functions;
 
@@ -12,6 +12,6 @@ export {
     getAllAuthors, getAuthor, newAuthor, addAuthor, 
     getAllBooks, newBook, 
     getAllOrders, order, getAllActiveOrders, finishOrder,  
-    login, register, getAllUsers, getCustomers, getCustomersAndManagers, changeRole, 
+    login, register,
     getAllGenres, addGenre, newGenre
 };

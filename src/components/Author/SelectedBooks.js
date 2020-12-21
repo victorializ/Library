@@ -7,12 +7,14 @@ const SelectedBooks = ({
     data: {
         bookAuthors: books
     }
-}) =>
-  books.length ? 
-    <BooksList 
-        data={books.map(({book}) => book)} 
-    />
-    : 
-    <ErrorMessage text={constants.nobooks} />
+}) => {
+    return books.length ? 
+        <BooksList 
+            data={books.map(({book}) => book)}
+            className='books__list'
+        />
+        : 
+        <ErrorMessage text={constants.nobooks} />
+}
 
 export { SelectedBooks as SelectedAuthorsBooks };

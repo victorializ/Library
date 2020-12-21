@@ -10,19 +10,17 @@ function mapStateToProps(
       error
     },
     user: {
-      token: isLoggedIn, 
-      isAdmin
+      token: isLoggedIn
     }
   }
 ) {
   return {
     loading,
     isLoggedIn,
-    error, 
-    isAdmin
+    error
   };
 }
  
 const Login = connect(mapStateToProps, { login, logout })(LoginForm);
 
-export { Login };
+export { Login, LoginForm };

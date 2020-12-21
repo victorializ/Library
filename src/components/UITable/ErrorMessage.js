@@ -9,7 +9,7 @@ const ErrorMessage = ({text}) =>
             color={colors.red} 
             className='center-horizontal'
            >
-            <Header>
+            <Header className='error__text'>
                 {text}
             </Header>
         </Segment>

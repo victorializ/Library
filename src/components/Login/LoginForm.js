@@ -17,8 +17,7 @@ function Login({
   isLoggedIn,
   error, 
   login, 
-  logout, 
-  isAdmin
+  logout
 }) {
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
@@ -26,8 +25,8 @@ function Login({
   return (
     <div className="center">
       <Segment color={colors.primary} className='login__form'>
-        { loading && <Loader active inline='centered' /> }
-        { error && <ErrorMessage text={error.message} /> }
+        { loading && <Loader active inline='centered' className='login__loader' /> }
+        { error && <ErrorMessage text={error.message} className='login__error' /> }
         {
           !isLoggedIn ?
             <>
@@ -37,6 +36,7 @@ function Login({
                     {constants.email}
                   </label>
                   <input 
+                    className='login__input-email'
                     value={email}
                     placeholder={constants.email} 
                     onChange={({target: {value}}) => setEmail(value)}/>
@@ -46,6 +46,7 @@ function Login({
                     {constants.password}
                   </label>
                   <input 
+                    className='login__input-password'
                     type='password'
                     value={password}
                     placeholder={constants.password} 
@@ -53,38 +54,32 @@ function Login({
                 </Form.Field>
                 <Button 
                   attached
+                  className='login__button'
                   onClick={() => login(email, password)}
                   disabled={!email || !password}>
                   {constants.login}
                 </Button>
               </Form>
-              <Link to='/registration'>{constants.register}</Link>
+              <Link to='/registration' className='registration__link'>{constants.register}</Link>
             </> 
             :
-            <>
+            <div className='logged-in'>
               <Header textAlign="center">
                 {constants.loggedin}
               </Header>
               <Button.Group>
-                {isAdmin ? 
-                  <Button 
-                    as={Link} to='/admin' 
-                    color={colors.red}>
-                    {constants.admin}
-                  </Button>
-                  :
-                  <Button 
-                    as={Link} to='/orders' 
-                    color={colors.primary}>
-                    {constants.personalAccount}
-                  </Button>
-                }
+                <Button 
+                  className='orders'
+                  as={Link} to='/orders' 
+                  color={colors.primary}>
+                  {constants.personalAccount}
+                </Button>
                 <Button.Or />
-                <Button onClick={logout}>
+                <Button className='logout' onClick={logout}>
                   {constants.logout}
               </Button>
               </Button.Group>
-            </>
+            </div>
         }
       </Segment>
     </div>

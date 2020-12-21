@@ -1,4 +1,4 @@
-import { post, get, put } from './config';
+import { post, get } from './config';
 
 function login(email, password) {
     const url = '/Account/Login';
@@ -13,31 +13,7 @@ function register(user) {
     });
 }
 
-function getAllUsers() {
-    const url = '/Account';
-    return get(url);
-}
-
-function getCustomers() {
-    const url = '/Account/GetCustomers';
-    return get(url);
-}
-
-function getCustomersAndManagers(){
-    const url = '/Account/GetCustomersAndManagers';
-    return get(url);
-}
-
-function changeRole(id) {
-    const url =`Account/${id}/AssignRole`;
-    return put(url);
-}
-
 export { 
     login, 
-    register, 
-    getAllUsers, 
-    getCustomers, 
-    getCustomersAndManagers, 
-    changeRole 
+    register
 };

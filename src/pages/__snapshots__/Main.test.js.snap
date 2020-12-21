@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main page component renders correctly 1`] = `
+<div
+  className="main"
+>
+  <img
+    alt="Library"
+    className="main__image"
+    src="books.jpg"
+  />
+  <Header
+    as="h1"
+    className="main__label"
+    textAlign="center"
+  >
+    Library
+  </Header>
+</div>
+`;
