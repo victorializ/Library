@@ -11,7 +11,7 @@ function addGenre(book, genreId) {
 }
 
 function newGenre(genre) {
-    const url = `Genres`; //TODO: clerify url
+    const url = `/Genres`; //TODO: clerify url
     return post(url, genre);
 }
 
