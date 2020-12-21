@@ -3,7 +3,7 @@
 exports[`MenuButton component renders books list component correctly 1`] = `
 <Button
   as="button"
-  className="menu__button"
+  className="menu__button book__undefined"
   color="olive"
   onClick={[Function]}
 />

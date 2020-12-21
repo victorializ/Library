@@ -28,7 +28,6 @@ function App() {
             </Switch>
           </Suspense>
         </main>
-        <Footer />
       </Router>
     </ErrorBoundary>
   );

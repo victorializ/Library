@@ -13,7 +13,7 @@ const MenuButton = ({name, selectedButton, clickHandler}) => {
 
   return (
     <Button 
-      className='menu__button'
+      className={`menu__button book__${name}`}
       onClick={() => clickHandler(name)}
       color={getButtonColor(name, selectedButton)}>
         {constants[name]}

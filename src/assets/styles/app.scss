@@ -18,6 +18,9 @@ body {
 
 .app {
     &__footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
         text-align: center;
     }
     &__header {

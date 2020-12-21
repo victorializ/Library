@@ -20,6 +20,7 @@ const TopLevelMenu = ({
     <div className="books__search">
       <Button.Group>
         <Button 
+          className='books__reset-filter'
           onClick={onFilterUnsert}
           color={colors.secondary}>
           {constants.filter}
@@ -45,7 +46,6 @@ const TopLevelMenu = ({
           clickHandler={onFilterSet} />
       </Button.Group>
       <Search
-        className='books__search-bar'
         value = {input}
         showNoResults={false}
         onSearchChange ={(e, {value}) => onInput(value)}
@@ -54,6 +54,7 @@ const TopLevelMenu = ({
     <div className="books__filter">
       <Button.Group>
         <Button 
+          className="books__reset-filter"
           onClick={onSortUnsert}
           color={colors.secondary}>
           {constants.sort}

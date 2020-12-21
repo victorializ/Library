@@ -44,7 +44,7 @@ function Order({item}) {
                 statuses.expired;
    
     return (
-        <Card className='book' color={status().color}>
+        <Card className='order__book' color={status().color}>
             <Card.Content>
                 <Card.Header>
                     {name}

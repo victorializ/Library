@@ -60,7 +60,7 @@ function Login({
                   {constants.login}
                 </Button>
               </Form>
-              <Link to='/registration'>{constants.register}</Link>
+              <Link to='/registration' className='registration__link'>{constants.register}</Link>
             </> 
             :
             <div className='logged-in'>
@@ -69,12 +69,13 @@ function Login({
               </Header>
               <Button.Group>
                 <Button 
+                  className='orders'
                   as={Link} to='/orders' 
                   color={colors.primary}>
                   {constants.personalAccount}
                 </Button>
                 <Button.Or />
-                <Button onClick={logout}>
+                <Button className='logout' onClick={logout}>
                   {constants.logout}
               </Button>
               </Button.Group>

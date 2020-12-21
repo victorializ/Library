@@ -2,11 +2,11 @@ import { promisify } from '../../../utils/utils';
 
 const user = {
     data: {
-        id: 1,
-        email: 'allie',
-        password: '1111',
-        firstName: 'Alice',
-        lastName: 'Orlova',
+        userId: 1,
+        firstName: 'Name',
+        lastName: 'LastName',
+        email: 'user@mail.com',
+        password: 'Admin1@3',
         token: 'sssssssssssssshit', 
         isBlocked: false
     }

@@ -8,9 +8,15 @@
         @include column-flex-container(top, left);
         &__name {
             height: 5vh;
+            .center {
+                margin-top: 10px;
+            }
         }
         &__books {
             height: 85vh;
+            .center-horizontal {
+                margin-top: 35px;
+            }
         }
     }
     &__name {

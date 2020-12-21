@@ -39,6 +39,7 @@ function RegistrationForm({register}) {
           {constants.firstName}
         </label>
         <input 
+          className='registration__firstName'
           name='firstName'
           value={user.firstName}
           placeholder={constants.firstName} 
@@ -49,6 +50,7 @@ function RegistrationForm({register}) {
           {constants.lastName}
         </label>
         <input 
+          className='registration__lastName'
           name='lastName'
           value={user.lastName}
           placeholder={constants.lastName} 
@@ -58,7 +60,8 @@ function RegistrationForm({register}) {
         <label>
           {constants.email}
         </label>
-        <input 
+        <input
+          className='registration__email'
           name='email'
           value={user.email}
           placeholder={constants.email} 
@@ -68,7 +71,8 @@ function RegistrationForm({register}) {
         <label>
           {constants.password}
         </label>
-        <input 
+        <input
+          className='registration__password'
           type='password'
           name='password'
           value={user.password}
@@ -80,6 +84,7 @@ function RegistrationForm({register}) {
           {constants.reenter}
         </label>
         <input 
+          className='registration__reenter'
           type='password'
           name='reenter'
           value={user.reenter}
@@ -87,6 +92,7 @@ function RegistrationForm({register}) {
           onChange={handleChange}/>
       </Form.Field>
       <Checkbox 
+        className='registration__agree'
         checked={checked}
         label={constants.agree}
         onChange={() => setChecked(!checked)}

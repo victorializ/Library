@@ -3,6 +3,7 @@
 exports[`RegistrationResult component renders correctly 1`] = `
 <Fragment>
   <Header
+    className="registered"
     textAlign="center"
   >
     Registered successfully
@@ -22,6 +23,7 @@ exports[`RegistrationResult component renders correctly 1`] = `
         "render": [Function],
       }
     }
+    className="registered__login"
     color="olive"
     to="/login"
   >

@@ -42,11 +42,11 @@ describe('user reducer', () => {
     it('should return user after login', () => {
         const user = {
             data: {
-                id: 1,
-                email: 'allie',
-                password: '1111',
-                firstName: 'Alice',
-                lastName: 'Orlova',
+                userId: 1,
+                firstName: 'Name',
+                lastName: 'LastName',
+                email: 'user@mail.com',
+                password: 'Admin1@3',
                 token: 'sssssssssssssshit', 
                 isBlocked: false
             }
@@ -59,11 +59,11 @@ describe('user reducer', () => {
     it('should remove user after logout', () => {
         const user = {
             data: {
-                id: 1,
-                email: 'allie',
-                password: '1111',
-                firstName: 'Alice',
-                lastName: 'Orlova',
+                userId: 1,
+                firstName: 'Name',
+                lastName: 'LastName',
+                email: 'user@mail.com',
+                password: 'Admin1@3',
                 token: 'sssssssssssssshit', 
                 isBlocked: false
             }

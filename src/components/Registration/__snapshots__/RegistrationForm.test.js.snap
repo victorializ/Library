@@ -9,6 +9,7 @@ exports[`RegistrationForm component renders correctly 1`] = `
       First name
     </label>
     <input
+      className="registration__firstName"
       name="firstName"
       onChange={[Function]}
       placeholder="First name"
@@ -20,6 +21,7 @@ exports[`RegistrationForm component renders correctly 1`] = `
       Last name
     </label>
     <input
+      className="registration__lastName"
       name="lastName"
       onChange={[Function]}
       placeholder="Last name"
@@ -31,6 +33,7 @@ exports[`RegistrationForm component renders correctly 1`] = `
       Email
     </label>
     <input
+      className="registration__email"
       name="email"
       onChange={[Function]}
       placeholder="Email"
@@ -42,6 +45,7 @@ exports[`RegistrationForm component renders correctly 1`] = `
       Password
     </label>
     <input
+      className="registration__password"
       name="password"
       onChange={[Function]}
       placeholder="Password"
@@ -54,6 +58,7 @@ exports[`RegistrationForm component renders correctly 1`] = `
       Reenter password
     </label>
     <input
+      className="registration__reenter"
       name="reenter"
       onChange={[Function]}
       placeholder="Reenter password"
@@ -63,6 +68,7 @@ exports[`RegistrationForm component renders correctly 1`] = `
   </FormField>
   <Checkbox
     checked={false}
+    className="registration__agree"
     label="I agree to the Terms and Conditions"
     onChange={[Function]}
     type="checkbox"

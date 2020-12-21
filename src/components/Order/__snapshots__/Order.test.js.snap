@@ -2,7 +2,7 @@
 
 exports[`Order component renders correctly 1`] = `
 <Card
-  className="book"
+  className="order__book"
   color="red"
 >
   <CardContent>

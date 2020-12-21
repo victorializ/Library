@@ -45,6 +45,7 @@ exports[`Login form component renders correctly 1`] = `
       </Button>
     </Form>
     <Link
+      className="registration__link"
       to="/registration"
     >
       Registration

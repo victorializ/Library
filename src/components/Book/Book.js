@@ -11,7 +11,7 @@ import { LoadingComponent } from '../LoadingComponent';
 import { ErrorMessage } from '../UITable/ErrorMessage';
 import { colors } from '../../assets/semantic-colors';
 
-function Book ({item, id: userId}) {
+function Book ({item, userId}) {
     const {
         id,
         name, 

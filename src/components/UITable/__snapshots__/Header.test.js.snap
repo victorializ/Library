@@ -47,6 +47,7 @@ exports[`Header component renders correctly 1`] = `
           "render": [Function],
         }
       }
+      className="nav__login"
       to="/login"
     >
       <Header>
@@ -68,6 +69,7 @@ exports[`Header component renders correctly 1`] = `
           "render": [Function],
         }
       }
+      className="nav__author"
       to="/author"
     >
       <Header>
@@ -89,6 +91,7 @@ exports[`Header component renders correctly 1`] = `
           "render": [Function],
         }
       }
+      className="nav__books"
       to="/book"
     >
       <Header>
