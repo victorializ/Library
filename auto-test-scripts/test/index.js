@@ -156,6 +156,6 @@ describe('Library', () => {
     await ordered.click();
     await driver.sleep(3000);
     const orders = await authPage.getOrders();
-    assert.strictEqual(orders.length, 4);
+    assert.strictEqual(orders.length, 1);
   });
 });
