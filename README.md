@@ -18,5 +18,7 @@ npm test
 npm start
 ```
 ## To get test covarage run 
+```
 npm run test -- --coverage --watchAll=false
+```
 and open in browser covarage/Icov-report/index.html
